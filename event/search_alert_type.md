@@ -1,0 +1,120 @@
+# Search Alert Type
+
+分页查询告警类型。
+
+## 请求格式
+
+```
+POST https://apigw-address/event-service/v2.1/alert-types/search?action=search
+```
+
+## 请求参数（URI）
+
+| 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
+|---------------|------------------|----------|-----------|--------------|
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+                                                                 
+
+## 请求参数（Body）
+| 名称 | 是否必须 | 数据类型 | 描述 |
+|------|-----------------|-----------|-------------|
+| expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| pagination     | false     | 见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)    | 分页的参数。如果不填，默认每页10条。默认按照`updateTime`降序排序。支持用户使用`AlertType`结构体中的字段指定排序。|
+
+## 响应参数
+
+| 名称  | 数据类型      | 描述               |
+|-------|----------------|---------------------------|
+| data | AlertType结构体Array | 告警类型|
+
+### AlertType结构体
+
+| 名称  | 数据类型      | 描述               |
+|----------------|-----------------------|----------|
+| typeId        | String                | 告警类型ID|
+| typeDesc   | StringI18n            | 告警类型描述。为一个国际化名称结构体。详见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3) |
+| orgId          | String                | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)|
+| parentTypeId        | String          | 父告警类型编号。如果为空，那么它本身就是父类型告警类型|
+| tag        | Tag结构体          | 标签|
+| updatePerson        | String                | 更新人|
+| updateTime    | Long                | 更新的UTC时间|
+
+
+
+## 输入输出示例
+
+### 请求示例
+
+```json
+POST https://apigw-address/event-service/v2.1/alert-types/search?action=search&orgId=1c499110e8800000
+{
+	"pagination": {
+		"pageNo": 1,
+		"pageSize": 1,
+		"sorters": [{
+			"field": "typeId",
+			"order": "DESC"
+		}]
+	}
+}
+```
+
+### 返回示例
+
+```json
+{
+	"pagination": {
+		"pageNo": 1,
+		"pageSize": 1,
+		"totalSize": 14,
+		"sortedBy": [{
+			"field": "typeId",
+			"order": "DESC"
+		}]
+	},
+	"code": 0,
+	"msg": "OK",
+	"requestId": "c1be09d8-a6f2-4647-92e1-3c545fa1b3dd",
+	"data": [{
+		"typeId": "dateType",
+		"orgId": "1c499110e8800000",
+		"typeDesc": {
+			"i18nValue": {
+				"en_US": "dateType desc",
+				"zh_CN": ""
+			}
+		},
+		"tags": {
+			
+		},
+		"updatePerson": "yj_test_customer",
+		"updateTime": 1546612655000
+	}]
+}
+```
+
+## Java SDK调用示例
+
+```java
+1.	public void testSearchAlertType() {  
+2.	        SearchAlertTypeRequest request = new SearchAlertTypeRequest();  
+3.	        request.setOrgId(orgId);  
+4.	        Pagination pagination = new Pagination();  
+5.	        pagination.setPageNo(1);  
+6.	        pagination.setPageSize(1);  
+7.	        List<Sorter> sorterList = new ArrayList<>();  
+8.	        sorterList.add(new Sorter("typeId", Sorter.Order.DESC));  
+9.	        pagination.setSorters(sorterList);  
+10.	        request.setPagination(pagination);  
+11.	  
+12.	        try {  
+13.	            SearchAlertTypeResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+14.	                    .url("https://apigw-address")  
+15.	                    .getResponse(request, SearchAlertTypeResponse.class);  
+16.	            Gson gson = new Gson();  
+17.	            System.out.println(gson.toJson(response));  
+18.	        } catch (Exception e) {  
+19.	            e.printStackTrace();  
+20.	        }  
+21.	    }
+```
