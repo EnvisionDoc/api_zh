@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-POST https://apigw-address/event-service/v2.1/history-alerts?action=updateTags
+POST https://{apigw-address}/event-service/v2.1/history-alerts?action=updateTags
 ```
 
 ## 请求参数（URI）
@@ -16,6 +16,7 @@ POST https://apigw-address/event-service/v2.1/history-alerts?action=updateTags
                                                                  
 
 ## 请求参数（Body）
+
 | 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
 |------|----------|--------------------|----|------|
 | eventId       | Query            | true     | String     | 告警id  |
@@ -26,7 +27,7 @@ POST https://apigw-address/event-service/v2.1/history-alerts?action=updateTags
 ## 响应参数
 
 | 名称  | 数据类型      | 描述               |
-|-------|----------------|---------------------------|
+|-------|----------------|-------|
 | data | Integer | 更新的条数|
 
 
@@ -35,7 +36,7 @@ POST https://apigw-address/event-service/v2.1/history-alerts?action=updateTags
 ### 请求示例
 
 ```json
-POST https://apigw-address/event-service/v2.1/history-alerts?action=updateTags&orgId=1c499110e8800000
+POST https://{apigw-address}/event-service/v2.1/history-alerts?action=updateTags&orgId=1c499110e8800000
 
 {
 	"eventId": "20190612cf89cd96b0be4cafcc342d0dc2ac75a4",
@@ -61,24 +62,24 @@ POST https://apigw-address/event-service/v2.1/history-alerts?action=updateTags&o
 ## Java SDK调用示例
 
 ```java
-1.	public void testUpdateHistoryAlertTags(){  
-2.	    String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
-3.	    String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
-4.	    UpdateHistoryAlertTagsRequest request = new UpdateHistoryAlertTagsRequest();  
-5.	    request.setOrgId("1c499110e8800000");  
-6.	    request.setEventId("20190612cf89cd96b0be4cafcc342d0dc2ac75a4");  
-7.	    Map<String,String> map = new HashMap<>();  
-8.	    map.put("tag000","000");  
-9.	    request.setTags(map);  
-10.	    request.setIsPatchUpdate(true);  
-11.	    request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
-12.	    try {  
-13.	        UpdateHistoryAlertTagsResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
-14.	                .url("https://apigw-address")  
-15.	                .getResponse(request, UpdateHistoryAlertTagsResponse.class);
-16.	        System.out.println(response);  
-17.	    }catch(Exception e){  
-18.	        System.out.print(e);  
-19.	    }  
-20.	}
+public void testUpdateHistoryAlertTags(){  
+    String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
+    String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
+    UpdateHistoryAlertTagsRequest request = new UpdateHistoryAlertTagsRequest();  
+    request.setOrgId("1c499110e8800000");  
+    request.setEventId("20190612cf89cd96b0be4cafcc342d0dc2ac75a4");  
+    Map<String,String> map = new HashMap<>();  
+    map.put("tag000","000");  
+    request.setTags(map);  
+	    request.setIsPatchUpdate(true);  
+	    request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
+	    try {  
+	        UpdateHistoryAlertTagsResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	                .url("https://{apigw-address}")  
+	                .getResponse(request, UpdateHistoryAlertTagsResponse.class);
+	        System.out.println(response);  
+	    }catch(Exception e){  
+	        System.out.print(e);  
+	    }  
+}
 ```

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds={}measurepoints={}timeWindow={}operator={}valueFilter={}accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds={}measurepoints={}timeWindow={}operator={}valueFilter={}accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -20,11 +20,6 @@ https://apigw-address/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds
 | operator       | Query            | false     | String    | 运算符，支持eq：等于；nq：不等于；gt：大于；lt：小于；ge：大于等于；le：小于等于；between：2个值的区间；in：属于多个值之一。                                                                                                                                     |
 | valueFilter      | Query            | false    | String   | 范围值，需与运算符配套使用，eq、nq、gt、ge、lt、le对应单值；between对应2个值；in对应多个值，多个值之间用逗号隔开，且数据类型必须与测点数据类型一致。如：operator=betwteen&valueFilter=a, b表示过滤a与b之间的数值。                                                                   |
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey)                                                                     
-
-## 请求参数（Body）
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|------------------|----------|-----------|-------------|
-|      |                  |          |           |             |
 
 ## 响应参数
 
@@ -56,7 +51,7 @@ https://apigw-address/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds
 
 ### 请求示例
 ```
-https://apigw-address/tsdb-service/v2.0/latest/filter?orgId=o15528761854851&assetIds=FGqRJKPM&modelId=model_xxx&measurepoint=pointId&timeWindow=&operator=le&valueFilter=55673.9&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId=o15528761854851&assetIds=FGqRJKPM&modelId=model_xxx&measurepoint=pointId&timeWindow=&operator=le&valueFilter=55673.9&accessKey=accessKey
 ```
 其中`operator=le&valueFilter=55673.9`的含义：以下示例将过滤出模型`model_xxx`的`pointId`数据点小于等于55673.9的值。
 
@@ -147,9 +142,9 @@ public void filterAssetsLatestDataTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/latest/filter")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/products?action=create
+https://{apigw-address}/connect-service/v2.1/products?action=create
 ```
 
 ## 请求参数（URI）
@@ -23,7 +23,7 @@ https://apigw-address/connect-service/v2.1/products?action=create
 | biDirectionalAuth | True      | Boolean      | 是否支持双向认证                                                   |
 | modelId           | True      | String      | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)   |
 | dataFormat        | True      | String      | 数据类型。枚举，Custom代表用户自定义数据类型，Json代表json数据类型。|
-| productName       | True      | 国际化名称结构体 | 产品名称                                                           |
+| productName       | True      | StringI18n | 产品名称                                                           |
 | productType       | True      | String      | 产品类型。枚举，Device代表普通产品类型，Gateway代表网关类型。|
 
 

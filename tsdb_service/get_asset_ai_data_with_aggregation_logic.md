@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/ai-normalized?orgId={}&modelId={}&assetIds={}&measurepointsWithLogic={}&interval={}&startTime={}&endTime={}&pageSize={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/ai-normalized?orgId={}&modelId={}&assetIds={}&measurepointsWithLogic={}&interval={}&startTime={}&endTime={}&pageSize={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -15,7 +15,8 @@ https://apigw-address/tsdb-service/v2.0/ai-normalized?orgId={}&modelId={}&assetI
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                                                                                                                                                                                                                            |
 | modelId       | Query            | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)                                                                                                                                                                                                                           |
 | assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs#assetid-assetid)                                                                                                                                                                                |
-| measurepointsWithLogic | Query            | true     | String    | 测点数据聚合逻辑，支持的聚合计算方式有count, avg, sum, max, min, first, last。<br>聚合查询的时间区间为`[startTime,endTime)`，即聚合操作数包含`startTime`时刻的数据，但不包含`endTime`时刻的数据；<br>支持查询的测点数上限为3000。格式为：函数(测点标识符)，例如：sum(pointId)。[如何获取pointId信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
+| measurepointsWithLogic | Query            | true     | String    | 测点数据聚合逻辑，支持的聚合计算方式有count, avg, sum, max, min, first, last。<br>聚合查询的时间区间为`[startTime,endTime)`，即聚合操作数包含`startTime`时刻的数据，但不包含`endTime`时刻的数据；<br>支持查询的测点数上限为3000。格式为：函数(测点标识符)，例如：sum(pointId)。[如何获取pointId信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)|
+| interval       | Query            | true     | Integer    | 聚合算法作用的时间间隔，有效值为0-1440，单位是分钟。当间隔为0，测点不能带聚合逻辑；当间隔值大于0，测点必须带聚合逻辑。|
 | startTime     | Query            | true     | String    | 采样数据开始时间，支持UTC时间格式和local时间格式。 local时间格式为YYYY-MM-DD HH:MM:SS。当格式为本地时间时，应用按照设备所在地的当地时间进行查询。 UTC时间格式需要加入时区信息，例如：2019-06-01T00:00:00+08:00；当格式为UTC格式时，应用对所有资产按照统一的开始时间戳和结束时间戳进行查询。 |
 | endTime       | Query            | true     | String    | 采样数据结束时间，格式必须与开始时间保持一致                                                                                                                                                                                                                                              |
 | pageSize      | Query            | false    | Integer   | 单设备单测点单页返回记录条数的上限，默认为1000。对于单次查询，返回总数据量遵循约束: （设备数 * 点数 * pagesize）≤ 640000。                                                                                                                                                                      |
@@ -59,7 +60,7 @@ https://apigw-address/tsdb-service/v2.0/ai-normalized?orgId={}&modelId={}&assetI
 ### 请求示例
 Local时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/ai-normalized?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepointsWithLogic=sum(opentsdb_ai_point_xxx)&interval=10&startTime=2019-06-01%2000:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/ai-normalized?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepointsWithLogic=sum(opentsdb_ai_point_xxx)&interval=10&startTime=2019-06-01%2000:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -95,7 +96,7 @@ https://apigw-address/tsdb-service/v2.0/ai-normalized?orgId=o15504722874071&mode
 ### 请求示例
 UTC时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/ai-normalized?accessKey=accessKey&assetIds=4DXYH7nS&pageSize=5000&interval=10&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00&orgId=o15504722874071&measurepointsWithLogic=sum(opentsdb_ai_point_xxx)
+https://{apigw-address}/tsdb-service/v2.0/ai-normalized?accessKey=accessKey&assetIds=4DXYH7nS&pageSize=5000&interval=10&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00&orgId=o15504722874071&measurepointsWithLogic=sum(opentsdb_ai_point_xxx)
 ```
 
 ### 返回示例
@@ -194,9 +195,9 @@ public void getAssetsAINormalizedDataTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/ai-normalized")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

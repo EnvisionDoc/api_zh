@@ -1,51 +1,37 @@
-# Get Gateway
+# Get Device
 
-获取子设备对应的网关信息。
+获取设备信息。
 
 ## 请求格式
 
 ```
-https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
+https://{apigw-address}/connect-service/v2.1/devices?action=get
 ```
 
 ## 请求参数（URI）
 
-| 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
-|---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
-
-
-
-## 请求参数（Body）
-
-| 名称          | 是否必须 | 数据类型 | 描述      |
-|--------------------|----------|-----------|--------------|
-| subDevices           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#deviceidentifier) |
-
-
-### DeviceIdentifier结构体
-
 注：以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
 
-| 名称      | 数据类型 |描述|
-|----------------|----------------|------------------|
-| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
-| productKey | String         | Product Key      |
-| deviceKey | String         | 设备key          |
-
+| 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
+|---------------|------------------|----------|-----------|--------------|
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
+| productKey | Query          | False       | String       | Product Key      |
+| deviceKey | Query           | False      | String       | 设备key          |
+    
 
 ## 响应参数
 
-| 名称| 数据类型 | 描述         |
-|-------------|-----------------------------------|-----------------------------|
-| data | Device结构体                          | 网关设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#device-devicetstruc)               |
+| 名称 | 数据类型 | 描述         |
+|-------------|-------------------|-----------------------------|
+| data |    Device结构体        | 网关设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/get_device.html#id3) |
 
 
-### Device结构体<devicetstruc>
+### Device结构体
 
-| 名称  |  数据类型      | 描述               |
-|-------|-------|---------------------------|
-| orgId |  String | 资产所属的组织ID|
+| 名称 | 数据类型 | 描述         |
+|------------------|-----------------------|----------------------------|
+| orgId |  String | 资产所属的组织ID |
 | assetId  | String         | 资产ID|
 | modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
@@ -61,7 +47,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 | deviceAttributes | Map（Key为String，Value为String） | 设备的属性                                                                 |
 | deviceTags       | Map（Key为String，Value为String） | 设备的标志                                                                 |
 | createTime       | Long                              | 设备的创建时间                                                             |
-| status           | String                            | 设备的状态（online, offline, inactive 或 disable）                         |
+| status           | String                            | 设备的状态（online、offline、inactive或disable）                         |
 | activeTime       | Long                              | 设备的激活时间                                                             |
 | lastOnlineTime   | Long                              | 设备最后一次上线时间                                                       |
 | lastOfflineTime  | Long                              | 设备最后一次离线时间                                                       |
@@ -72,11 +58,10 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 ### 请求示例
 
 ```
-POST
-https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway&orgId=o15475450989191
-{
-"subDevice":{"assetId":"gVRwKQ3C"}
-}
+url:https://{apigw-address}/connect-service/v2.1/devices?action=get&orgId=o15475450989191&assetId=9HhK0YxX
+method: GET
+headers: {}
+requestBody: null
 ```
 
 ### 返回示例
@@ -85,34 +70,38 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway&orgI
 responseBody: {
 	"code": 0,
 	"msg": "OK",
-	"requestId": "49ef6c03-02a0-449b-ab1e-92812071de80",
+	"requestId": "835a5cc4-4487-4bf2-961a-55bc0ee77d02",
 	"data": {
 		"orgId": "o15475450989191",
-		"assetId": "J1Rqyaqz",
-		"modelId": "AlterTest0617",
-		"modelIdPath": "/AlterTest0617",
-		"productKey": "JvY2tkBD",
+		"assetId": "9HhK0YxX",
+		"modelId": "abc-test",
+		"modelIdPath": "/abc-test",
+		"productKey": "mJo2gO5u",
 		"productName": {
-			"defaultValue": "testtopo",
+			"defaultValue": "abc-pk",
 			"i18nValue": {}
 		},
-		"productType": "Gateway",
+		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "qjndvVkK9E",
+		"deviceKey": "VcwTHRvYFb",
 		"deviceName": {
-			"defaultValue": "testtopo",
+			"defaultValue": "testforname",
 			"i18nValue": {}
 		},
-		"deviceSecret": "mUb5wk5ZylNcHwnhAGUO",
-		"deviceDesc": null,
+		"deviceSecret": "hOiv7SJAYuyVJp3CXJWJ",
+		"deviceDesc": "test for undatedevice",
 		"timezone": "+08:00",
-		"deviceAttributes": {},
-		"deviceTags": {},
-		"createTime": 1560759829419,
-		"status": "inactive",
-		"activeTime": 0,
-		"lastOnlineTime": 0,
-		"lastOfflineTime": 0
+		"deviceAttributes": {
+			"int11": 617
+		},
+		"deviceTags": {
+			"test": "test for tags"
+		},
+		"createTime": 1557905107199,
+		"status": "offline",
+		"activeTime": 1557909526473,
+		"lastOnlineTime": 1560743931658,
+		"lastOfflineTime": 1560744111658
 	}
 }
 ```

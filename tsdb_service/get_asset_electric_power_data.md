@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/electric-power?orgId={}&modelId={}&assetIds={}&measurepointsWithLogic={}&interval={}&startTime={}&endTime={}&pageSize={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/electric-power?orgId={}&modelId={}&assetIds={}&measurepointsWithLogic={}&interval={}&startTime={}&endTime={}&pageSize={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -21,11 +21,6 @@ https://apigw-address/tsdb-service/v2.0/electric-power?orgId={}&modelId={}&asset
 | endTime       | Query            | true     | String    | 采样数据结束时间，格式必须与开始时间保持一致                                                                                                                                                                                                                                              |
 | pageSize      | Query            | false    | Integer   | 单设备单测点单页返回记录条数的上限，默认为1000。对于单次查询，返回总数据量遵循约束: （设备数 * 点数 * pagesize）≤ 640000。                                                                                                                                                                      |
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey)                                                                     
-
-## 请求参数（Body）
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|------------------|----------|-----------|-------------|
-|      |                  |          |           |             |
 
 ## 响应参数
 
@@ -61,7 +56,7 @@ https://apigw-address/tsdb-service/v2.0/electric-power?orgId={}&modelId={}&asset
 ### 请求示例
 Local时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/electric-power?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepointsWithLogic=sum(opentsdb_pi_point_xxx)&interval=2&startTime=2019-06-01%2000:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/electric-power?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepointsWithLogic=sum(opentsdb_pi_point_xxx)&interval=2&startTime=2019-06-01%2000:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -97,7 +92,7 @@ https://apigw-address/tsdb-service/v2.0/electric-power?orgId=o15504722874071&mod
 ### 请求示例
 UTC时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/electric-power?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepointsWithLogic=sum(opentsdb_pi_point_xxx)&interval=2&startTime=2019-06-01%2B00:00:00&endTime=2019-06-11%2B23:00:00&pageSize=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/electric-power?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepointsWithLogic=sum(opentsdb_pi_point_xxx)&interval=2&startTime=2019-06-01%2B00:00:00&endTime=2019-06-11%2B23:00:00&pageSize=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -196,9 +191,9 @@ public void getAssetsElectricPowerDataTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/electric-power")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

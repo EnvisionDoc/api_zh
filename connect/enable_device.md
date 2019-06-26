@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/devices?action=enable
+https://{apigw-address}/connect-service/v2.1/devices?action=enable
 ```
 
 ## 请求参数（URI）
@@ -33,7 +33,7 @@ https://apigw-address/connect-service/v2.1/devices?action=enable
 ### 请求示例
 
 ```
-url:https://apigw-address/connect-service/v2.1/devices?action=enable&orgId=o15475450989191&assetId=9HhK0YxX
+url:https://{apigw-address}/connect-service/v2.1/devices?action=enable&orgId=o15475450989191&assetId=9HhK0YxX
 method: POST
 ```
 

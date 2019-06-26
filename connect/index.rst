@@ -1,17 +1,30 @@
-资产树服务
+接入服务
 ===============
 
 .. toctree::
    :maxdepth: 1
 
    overview
-   get_asset_tree
-   search_asset_tree
-   create_asset_and_associate_node
-   associate_asset
-   delete_asset_node
-   search_related_asset_node
-   search_asset_node
-   get_asset_trees
-   search_asset_path
+   get_product
+   search_product
+   create_product
+   update_product
+   delete_product
+   add_sub_device
+   remove_sub_device
+   get_gateway
+   search_sub_device
+   disable_device
+   enable_device
+   get_device
+   search_device
+   delete_device
+   create_device
+   update_device
+   get_command
+   cancel_command
+   invoke_service
+   set_measurepoint
+   get_event
+   search_event
 

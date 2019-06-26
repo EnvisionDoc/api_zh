@@ -6,7 +6,7 @@ EnOS开放涵盖系统各个核心业务流程的REST API接口。基于这些�
 
 EnOS提供以下API服务：
 
-- [接入服务]()：开放EnOS系统在设备连接和设备管理领域的业务能力，包括产品和设备的创建和管理。
+- [接入服务](/docs/api/zh_CN/latest/connect/overview.html)：开放EnOS系统在设备连接和设备管理领域的业务能力，包括产品和设备的创建和管理。
 - [模型服务](/docs/api/zh_CN/latest/model/overview.html)：支持搜索和获取组织内模型的详细信息。
 - [资产服务](/docs/api/zh_CN/latest/asset/overview.html)：提供组织内资产的创建、管理、更新等服务。
 - [事件服务](/docs/api/zh_CN/latest/event/overview.html)：提供设备事件的查询和管理服务。 
@@ -21,7 +21,7 @@ EnOS API请求包含以下组成部分：
 ### Request URI
 
 ```
-{URI-scheme}://{host-address}/{service-name}/{version}/{endpoint-URL}?{query-param=value}
+{URI-scheme}://{apigw-address}/{service-name}/{version}/{endpoint-URL}?{query-param=value}
 ```
 
 其中：
@@ -36,7 +36,7 @@ EnOS API请求包含以下组成部分：
 以获取某OU内某个资产信息为例，API请求格式如下：
 
 ```
-https://{host-address}/asset-service/v2.0/assets?orgId=abcd&assetId=123
+https://{apigw-address}/asset-service/v2.0/assets?orgId=abcd&assetId=123
 ```
 
 ### Request Header
@@ -50,7 +50,7 @@ https://{host-address}/asset-service/v2.0/assets?orgId=abcd&assetId=123
 用于补充Request URI以提供更加复杂的输入参数，如以下示例request body中包含的参数指定了更新资产的时区、描述、标签等属性：
 
 ```
-https://{host-address}/asset-service/v2.0/assets/update?orgId=abcd&isPatchUpdate=fasle
+https://{apigw-address}/asset-service/v2.0/assets/update?orgId=abcd&isPatchUpdate=fasle
 
 {
   "asset": {

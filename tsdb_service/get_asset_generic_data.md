@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/generic?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/generic?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -21,10 +21,6 @@ https://apigw-address/tsdb-service/v2.0/generic?orgId={}&modelId={}&assetIds={}&
 | pageSize      | Query            | false    | Integer   | 单设备单测点单页返回记录条数的上限，默认为1000。对于单次查询，返回总数据量遵循约束: （设备数 * 点数 * pagesize）≤ 640000。                                                                                                                                                                      |
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey)                                                                     
 
-## 请求参数（Body）
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|------------------|----------|-----------|-------------|
-|      |                  |          |           |             |
 
 ## 响应参数
 
@@ -59,7 +55,7 @@ https://apigw-address/tsdb-service/v2.0/generic?orgId={}&modelId={}&assetIds={}&
 ### 请求示例
 Local时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/generic?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_generic_point_xxx&startTime=2019-06-01%2010:18:00&endTime=2019-06-11%2018:37:00&pageSize=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/generic?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_generic_point_xxx&startTime=2019-06-01%2010:18:00&endTime=2019-06-11%2018:37:00&pageSize=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -95,7 +91,7 @@ https://apigw-address/tsdb-service/v2.0/generic?orgId=o15504722874071&modelId=&a
 ### 请求示例
 UTC时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/generic?assetIds=4DXYH7nS&measurepoints=opentsdb_generic_point_xxx&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00&pageSize=100&accessKey=accessKey&orgId=o15504722874071
+https://{apigw-address}/tsdb-service/v2.0/generic?assetIds=4DXYH7nS&measurepoints=opentsdb_generic_point_xxx&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00&pageSize=100&accessKey=accessKey&orgId=o15504722874071
 ```
 
 ### 返回示例
@@ -192,9 +188,9 @@ public void getAssetsGenericDataTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/generic")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

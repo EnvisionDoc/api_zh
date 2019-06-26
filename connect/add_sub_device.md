@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/device-topos?action=addSubDevice
+https://{apigw-address}/connect-service/v2.1/device-topos?action=addSubDevice
 ```
 
 ## 请求参数（URI）
@@ -19,8 +19,8 @@ https://apigw-address/connect-service/v2.1/device-topos?action=addSubDevice
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      | [DeviceIdentfier结构体]()  | 需要添加子设备的网关信息 |
-| subDevices           | True      | [DeviceIdentfier结构体]()  | 需要添加到指定网关的子设备列表信息 |
+| gateway | True      |DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/add_sub_device.html#deviceidentifier) |
+| subDevices           | True      | DeviceIdentfier结构体 | 需要添加到指定网关的子设备列表信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/add_sub_device.html#deviceidentifier)  |
 
 
 ### DeviceIdentifier结构体
@@ -39,8 +39,8 @@ https://apigw-address/connect-service/v2.1/device-topos?action=addSubDevice
 ## 响应参数
 
 | 名称| 数据类型 | 描述         |
-|-------------|-----------------------------------|-----------------------------|
-| data| String                           | （空）               |
+|-------------|--------------------|----------------|
+| data | String | （空）               |
 
 
 ## 错误码
@@ -57,7 +57,7 @@ https://apigw-address/connect-service/v2.1/device-topos?action=addSubDevice
 ### 请求示例
 
 ```
-url:https://apigw-address/connect-service/v2.1/device-topos?action=addSubDevice&orgId=o15475450989191
+url:https://{apigw-address}/connect-service/v2.1/device-topos?action=addSubDevice&orgId=o15475450989191
 method: POST
 {"subDevices":[{"assetId":"mAEsF3sm"}],"gateway":{"assetId":"J1Rqyaqz"}}
 ```

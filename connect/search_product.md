@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/products?action=search
+https://{apigw-address}/connect-service/v2.1/products?action=search
 ```
 
 ## 请求参数（URI）
@@ -28,7 +28,7 @@ https://apigw-address/connect-service/v2.1/products?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Product结构体                           | 查询得到的产品列表                |
+| data| Product结构体                           | 查询得到的产品列表，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)                |
 
 
 

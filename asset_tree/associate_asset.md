@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=associateAsset
+https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=associateAsset
 ```
 
 ## 请求参数（URI）
@@ -45,7 +45,7 @@ https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=associateAsset
 ### 请求示例
 
 ```
-https://apigw-address/asset-tree-service/v2.1/asset- 
+https://{apigw-address}/asset-tree-service/v2.1/asset- 
 nodes?action=associateAsset&orgId=o15589291276361&treeId=KRAceqRA&parentAssetId=LGRCJVDc&productKey=UwXL9jmm&deviceKey=eacdsz9IGJ
 ```
 

@@ -1,32 +1,29 @@
 # Get Points TSDB Meta Data
 
-获取指定设备的指定测点在某段时间内原始数据的值（包括AI、DI、和通用数据类型）并进行应用开发。
+获取模型测点对应的TSDB存储策略，一个测点根据其数据类型及用途可有多条存储策略，该API返回指定测点在当前OU内的所有TSDB存储策略元数据。
 
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
 ```
 
 ## 请求参数（URI）
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                                                                                                                                                                                                                            |
-| modelId       | Query            | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)                                                                                                                                                                                                                           |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)|
+| modelIds       | Query            | false    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)|
 | measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
                                               
 
-## 请求参数（Body）
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|------------------|----------|-----------|-------------|
-|      |                  |          |           |             |
 
 ## 响应参数
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| **items** | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id3)。|
+| items | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id3)。|
+
 
 ### items
 
@@ -58,7 +55,7 @@ https://apigw-address/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&meas
 ### 请求示例
 不指定测点：
 ```
-https://apigw-address/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds=opentsdb_model_xxx&measurepoints=
+https://{apigw-address}/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds=opentsdb_model_xxx&measurepoints=
 ```
 
 ### 返回示例
@@ -98,7 +95,7 @@ https://apigw-address/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds=o
 ### 请求示例
 指定测点：
 ```
-https://apigw-address/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds=opentsdb_model_xxx&measurepoints=opentsdb_di_point_xxx
+https://{apigw-address}/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds=opentsdb_model_xxx&measurepoints=opentsdb_di_point_xxx
 ```
 
 ### 返回示例
@@ -185,9 +182,9 @@ private static class Request extends PoseidonRequest{
       request.setMethod("GET");
 
       try {
-          EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+          JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                   .url("http://apim-gateway/tsdb-policy/v2.0/policies")
-                  .getResponse(request, EnOSResponse.class);
+                  .getResponse(request, JSONObject.class);
           System.out.println(response);
       } catch (Exception e) {
           e.printStackTrace();

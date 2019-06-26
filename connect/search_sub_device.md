@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/device-topos?action=searchSubDevice
+https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 ```
 
 ## 请求参数（URI）
@@ -19,8 +19,8 @@ https://apigw-address/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      | [DeviceIdentfier结构体]()  | 需要添加子设备的网关信息 |
-| pagination  | False      | [Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) | 分页参数，如果不填，默认每页10条。目前，不支持排序（忽略排序字段）。 |
+| gateway | True      | DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/search_sub_device.html#deviceidentifier) |
+| pagination  | False      | Pagination请求结构体  | 分页参数，如果不填，默认每页10条。目前，不支持排序（忽略排序字段）。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
 
 
 ### DeviceIdentifier结构体
@@ -40,16 +40,16 @@ https://apigw-address/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Device结构体Array                      | 网关下指定分页的一组子设备信息    |
+| data | Device结构体                     | 网关下指定分页的一组子设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/search_sub_device.html#id3)    |
 
 
 ### Device结构体
 
 | 名称| 数据类型 | 描述         |
 |------------------|--------------------|-------|
-| orgId            | String                            | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid) |
-| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid)|
-| modelId             | String                          | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modeid-modeid)|
+| orgId            | String                            | 资产所属的组织ID|
+| assetId  | String         | 资产ID|
+| modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
 | productKey       | String                            | Product Key                                                                |
 | productName      | StringI18n                        | product名称                                                                |
@@ -82,7 +82,7 @@ https://apigw-address/connect-service/v2.1/device-topos?action=searchSubDevice
 ### 请求示例
 
 ```
-url:https://apigw-address/connect-service/v2.1/device-topos?action=searchSubDevices&orgId=o15475450989191
+url:https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevices&orgId=o15475450989191
 method: POST
 requestBody: {"gateway":{"assetId":"J1Rqyaqz"}}
 ```

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-POST https://apigw-address/event-service/v2.0/alert-severities?action=search
+POST https://{apigw-address}/event-service/v2.0/alert-severities?action=search
 ```
 
 ## 请求参数（URI）
@@ -19,21 +19,21 @@ POST https://apigw-address/event-service/v2.0/alert-severities?action=search
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
 | expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
-| pagination     | false     | 见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)    | 分页的参数。如果不填，默认每页10条。按照`updateTime`降序排序。用户可以指定`AlertSeverity`结构体中的字段作为排序字段。|
+| pagination     | false     | Pagination请求结构体| 分页的参数。如果不填，默认每页10条。按照`updateTime`降序排序。用户可以指定`AlertSeverity`结构体中的字段作为排序字段。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)    |
 
 ## 响应参数
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| data | AlertSeverity结构体Array | 告警级别|
+| data | AlertSeverity结构体 | 告警级别，见[AlertSeverity结构体](/docs/api/zh_CN/latest/event/search_alert_severity.html#id4)|
 
 ### AlertSeverity结构体
 
 | 名称  | 数据类型      | 描述               |
 |----------------|-----------------------|----------|
 | severityId        | String                | 告警级别编号|
-| orgId          | String                | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)|
-| severityDesc   | StringI18n            | 告警级别描述。为一个国际化名称结构体。详见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3) |
+| orgId          | String                | 资产所属的组织ID|
+| severityDesc   | StringI18n            | 告警级别描述 |
 | tags        | Tag结构体          | 标签|
 | updatePerson        | String                | 更新人|
 | updateTime    | Long                | 更新的UTC时间
@@ -45,7 +45,7 @@ POST https://apigw-address/event-service/v2.0/alert-severities?action=search
 ### 请求示例
 
 ```json
-POST  https://apigw-address/event-service/v2.1/alert-severities?action=search&orgId=1c499110e8800000
+POST  https://{apigw-address}/event-service/v2.1/alert-severities?action=search&orgId=1c499110e8800000
 {
 	"pagination": {
 		"pageNo": 1,
@@ -95,29 +95,26 @@ POST  https://apigw-address/event-service/v2.1/alert-severities?action=search&or
 ## Java SDK调用示例
 
 ```java
-1.	public void testSearchAlertSeverity() {  
-2.	    SearchAlertSeverityRequest request = new SearchAlertSeverityRequest();  
-3.	    request.setOrgId("1c499110e8800000");  
-4.	    Pagination pagination = new Pagination();  
-5.	    pagination.setPageSize(1);  
-6.	    pagination.setPageNo(1);  
-7.	    Sorter sorter = new Sorter("severityID", Sorter.Order.ASC);  
-8.	    List<Sorter> sorterList = new ArrayList<>();  
-9.	    sorterList.add(sorter);  
-10.	    pagination.setSorters(sorterList);  
-11.	    request.setPagination(pagination);  
-12.	  
-13.	    request.headerParams().put("apim-accesskey", "4ced4f38-1ced-476e0a446215-a602-4307");  
-14.	  
-15.	  
-16.	    try {  
-17.	        SearchAlertSeverityResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
-18.	                .url("https://apigw-address")  
-19.	                .getResponse(request, SearchAlertSeverityResponse.class);  
-20.	        Gson gson = new Gson();  
-21.	        System.out.println(gson.toJson(response));  
-22.	    } catch (Exception e) {  
-23.	        System.out.print(e);  
-24.	    }  
-25.	}
+public void testSearchAlertSeverity() {  
+    SearchAlertSeverityRequest request = new SearchAlertSeverityRequest();  
+    request.setOrgId("1c499110e8800000");  
+    Pagination pagination = new Pagination();  
+    pagination.setPageSize(1);  
+	    pagination.setPageNo(1);  
+    Sorter sorter = new Sorter("severityID", Sorter.Order.ASC);  
+    List<Sorter> sorterList = new ArrayList<>();  
+    sorterList.add(sorter);  
+	    pagination.setSorters(sorterList);  
+	    request.setPagination(pagination);  
+	    request.headerParams().put("apim-accesskey", "4ced4f38-1ced-476e0a446215-a602-4307");  
+	    try {  
+	        SearchAlertSeverityResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	                .url("https://{apigw-address}")  
+	                .getResponse(request, SearchAlertSeverityResponse.class);  
+	        Gson gson = new Gson();  
+	        System.out.println(gson.toJson(response));  
+	    } catch (Exception e) {  
+	        System.out.print(e);  
+	    }  
+}
 ```

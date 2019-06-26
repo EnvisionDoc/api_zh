@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/asset-tree-service/v2.1/asset-
+https://{apigw-address}/asset-tree-service/v2.1/asset-
 paths?action=search
 ```
 
@@ -21,10 +21,10 @@ paths?action=search
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |-----------------|---------------|-------------------|-----|
-| pagination| false         | [Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)  | 用于在接口请求中描述分页要求。默认第一页，分页大小为100条记录  |
-| from | false         | From-to结构体       | 表示资产路径的起始点条件。如果不提供，则表示资产树的根节点。[参见From-to结构体](#from_to_struc)。                        |
-| to            | false         | From-to结构体         | 表示资产路径的终止点条件。如果不提供，则表示资产树的叶子节点。[参见From-to结构体](#from_to_struc) |
-| projection| false         | String Array         | 用于在接口请求中描述待返回的对象projection。对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fileds。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
+| pagination| false         |Pagination请求结构体  | 用于在接口请求中描述分页要求。默认第一页，分页大小为100条记录，见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)   |
+| from | false         | From-to结构体       | 表示资产路径的起始点条件。如果不提供，则表示资产树的根节点。[参见From-to结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_path.html#from-to-from-to-struc)。                        |
+| to            | false         | From-to结构体         | 表示资产路径的终止点条件。如果不提供，则表示资产树的叶子节点。[参见From-to结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_path.html#from-to-from-to-struc) |
+| projection| false         | String Array         | 用于在接口请求中描述待返回的对象projection。对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fields。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
 | pathProjection| false         | String                | 可填COMPLETE、END_NODE_ONLY。COMPLETE表示返回路径上的每个资产节点，默认为COMPLETE；END_NODE_ONLY表示只返回路径的起始点和终结点  |
 
 
@@ -46,16 +46,16 @@ paths?action=search
 | assetPaths | String Array Array             | 当`pathProjection`参数为COMPLETE时，其中每一个String Array为路径上起始到终止节点的每个资产Id，长度大于等于2。 当`pathProjection`参数为END_NODE_ONLY时，其中每一个String Array为路径的起始与终止节点的资产Id，长度固定为2。 |
 
 
-### asset结构体
+### Asset结构体
 
 | 名称 |数据类型  | 描述 |
 |------------------|-------------------|----------------------------------------|
-| assetId     | String            | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid)                             |
-| name        | 国际化名称结构体  | 该资产的各语言名称，参见*name结构体*   |
+| assetId     | String            | 资产ID               |
+| name        | StringI18n  | 该资产的各语言名称 |
 | description | String            | 资产描述                               |
-| attributes  | Map               | 资产所属的模型属性。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes)                   |
+| attributes  | Map               | 资产所属的模型属性                  |
 | timezone   | String            | 时区                                   |
-| modelId    | String            | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modeid-modeid)  |
+| modelId    | String            | 资产所属模型ID |
 | modelIdPath | String            | 模型id路径                             |
 | tags        | Tag结构体         | 用户自定义标签                         |
 
@@ -67,7 +67,7 @@ paths?action=search
 
 ```
 POST
-https://apigw-address/asset-tree-service/v2.1/asset-paths?treeId=Ek72W8bS&action=search&orgId=1c499110e8800000
+https://{apigw-address}/asset-tree-service/v2.1/asset-paths?treeId=Ek72W8bS&action=search&orgId=1c499110e8800000
 {
 "pagination":{
 "pageNo":1,
@@ -138,7 +138,7 @@ https://apigw-address/asset-tree-service/v2.1/asset-paths?treeId=Ek72W8bS&action
 
 ```
 POST
-https://apigw-address/asset-tree-service/v2.1/asset-paths?treeId=Ek72W8bS&action=search&orgId=1c499110e8800000
+https://{apigw-address}/asset-tree-service/v2.1/asset-paths?treeId=Ek72W8bS&action=search&orgId=1c499110e8800000
 {
     "pagination": {
         "pageNo": 1,

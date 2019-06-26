@@ -6,5 +6,5 @@
 
 | 操作名称     | 描述                |
 |--------------|---------------------|
-| Search Model | 根据组织id搜索模型  |
-| Get Model    | 根据modelId获取模型 |
+| [Get Model](getmodel)    | 根据modelId获取模型 |
+| [Search Thing Model](searchmodel) | 根据组织id搜索模型  |

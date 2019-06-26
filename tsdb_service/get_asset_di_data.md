@@ -28,7 +28,7 @@ Time       Status
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/di?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/di?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -44,10 +44,6 @@ https://apigw-address/tsdb-service/v2.0/di?orgId={}&modelId={}&assetIds={}&measu
 | pageSize      | Query            | false    | Integer   | 单设备单测点单页返回记录条数的上限，默认为1000。对于单次查询，返回总数据量遵循约束: （设备数 * 点数 * pagesize）≤ 640000。                                                                                                                                                                      |
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey)                                                                     
 
-## 请求参数（Body）
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|------------------|----------|-----------|-------------|
-|      |                  |          |           |             |
 
 ## 响应参数
 
@@ -82,7 +78,7 @@ https://apigw-address/tsdb-service/v2.0/di?orgId={}&modelId={}&assetIds={}&measu
 ### 请求示例
 Local时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/di?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx&startTime=2019-06-01%2000:00:00&endTime=2019-06-11%2023:00:00&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/di?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx&startTime=2019-06-01%2000:00:00&endTime=2019-06-11%2023:00:00&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -113,7 +109,7 @@ https://apigw-address/tsdb-service/v2.0/di?orgId=o15504722874071&modelId=&assetI
 ### 请求示例
 UTC时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/di?accessKey=accessKey&assetIds=4DXYH7nS&orgId=o15504722874071&measurepoints=opentsdb_di_point_xxx&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00
+https://{apigw-address}/tsdb-service/v2.0/di?accessKey=accessKey&assetIds=4DXYH7nS&orgId=o15504722874071&measurepoints=opentsdb_di_point_xxx&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00
 ```
 
 ### 返回示例
@@ -198,7 +194,6 @@ public void getAssetsStatusDataTest(){
     request.setQueryParam("modelId", "opentsdb_model_xxx");
     request.setQueryParam("assetIds","4DXYH7nS");
     request.setQueryParam("measurepoints", "opentsdb_di_point_xxx"); 
-    request.setQueryParam("interval", 10);
     request.setQueryParam("startTime", "2019-06-01 00:00:00"); //or in UTC format：2019-06-01T00:00:00+08:00
     request.setQueryParam("endTime", "2019-06-11 23:00:00");  //or in UTC format：2019-06-11T00:00:00+08:00
     request.setQueryParam("accessKey", appKey);
@@ -206,9 +201,9 @@ public void getAssetsStatusDataTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/di")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

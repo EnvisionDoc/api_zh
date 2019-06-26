@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -59,7 +59,7 @@ https://apigw-address/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&meas
 ### 请求示例
 Local时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/raw?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx,opentsdb_ai_point_xxx,opentsdb_generic_point_xxx&startTime=2019-06-01%2010:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx,opentsdb_ai_point_xxx,opentsdb_generic_point_xxx&startTime=2019-06-01%2010:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -95,7 +95,7 @@ https://apigw-address/tsdb-service/v2.0/raw?orgId=o15504722874071&modelId=&asset
 ### 请求示例
 UTC时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/raw?orgId=o15504722874071&accessKey=accessKey&modelId=opentsdb_model&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx,opentsdb_ai_point_xxx,opentsdb_generic_point_xxx&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00&pageSize=100
+https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&accessKey=accessKey&modelId=opentsdb_model&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx,opentsdb_ai_point_xxx,opentsdb_generic_point_xxx&startTime=2019-06-01T00:00:00%2B08:00&endTime=2019-06-11T23:00:00%2B08:00&pageSize=100
 ```
 
 ### 返回示例
@@ -193,9 +193,9 @@ public void getAssetsRawDataByTimeRangeTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/raw")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

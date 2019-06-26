@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/products?action=update
+https://{apigw-address}/connect-service/v2.1/products?action=update
 ```
 
 ## 请求参数（URI）
@@ -24,22 +24,22 @@ https://apigw-address/connect-service/v2.1/products?action=update
 | biDirectionalAuth | True      | Boolean      | 是否支持双向认证                                                   |
 | dynamicActivateEnabled           | False      | String      | 是否支持动态激活|
 | productName        | False      | String      | 数据类型。枚举，Custom代表用户自定义数据类型，Json代表json数据类型。|
-| productName       | True      | [国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3) | 产品名称                                                           |
+| productName       | True      | StringI18n | 产品名称，见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)                                                           |
 
 
 
 ## 响应参数
 
 | 名称| 数据类型 | 描述         |
-|-------------|-----------------------------------|-----------------------------|
-| data| String                           | 更新的产品的key               |
+|-------------|---------------|------------|
+| data | String                           | 更新的产品的key               |
 
 
 ## 错误码
 
 | 代码| 数据类型 | 描述         |
-|-------------|-----------------------------------|-----------------------------|
-| 11651|                       |Productkey不存在              |
+|-------------|--------------|-------------|
+| 11651 |                       | Productkey不存在              |
 
 ## 示例 1
 

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=delete
+https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=delete
 
 ```
 
@@ -38,7 +38,7 @@ https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=delete
 ### 请求示例
 
 ```
-https://apigw-address/asset-tree-service/v2.0/asset-nodes/delete?treeId=BRIt3ee3&action=delete&orgId=o15541858646501
+https://{apigw-address}/asset-tree-service/v2.0/asset-nodes/delete?treeId=BRIt3ee3&action=delete&orgId=o15541858646501
 {"assetId":"AdqP8rZ0"}
 ```
 

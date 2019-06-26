@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
+https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 ```
 
 ## 请求参数（URI）
@@ -26,7 +26,7 @@ https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Map（Key为assetId，Value为AssetTree结构体Array）   | 资产和其所在的资产树列表 |
+| data| Map（Key为assetId，Value为AssetTree结构体Array）   | 资产和其所在的资产树列表，见[AssetTree结构体](/docs/api/zh_CN/latest/asset_tree/get_asset_trees.html#id3) |
 
 
 ### AssetTree结构体
@@ -43,7 +43,7 @@ https://apigw-address/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 ### 请求示例
 
 ```
-https://apigw-address/asset-tree-service/v2.1/asset-nodes?action= getAssetTree&orgId=o15541858646501
+https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action= getAssetTree&orgId=o15541858646501
 {
  "assetIds": ["BtsYmF2r", "qf1vsBQW"]
 }

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/products?action=get
+https://{apigw-address}/connect-service/v2.1/products?action=get
 ```
 
 ## 请求参数（URI）
@@ -20,14 +20,14 @@ https://apigw-address/connect-service/v2.1/products?action=get
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Product结构体                           | Product的具体信息                |
+| data| Product结构体                           | Product的具体信息，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)                |
 
 
 ### Product结构体<productstruc>
 
 | 名称  |  数据类型      | 描述               |
 |-------|-------|---------------------------|
-| orgId |  String | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid) |
+| orgId |  String | 资产所属的组织ID |
 | productKey          | String| 产品名称                                             |
 | productName         | StringI18n |  产品名称                                            |
 | productSecret       | String                          | 产品私钥                                             |
@@ -35,7 +35,7 @@ https://apigw-address/connect-service/v2.1/products?action=get
 | productType         | Sting                           | 产品类型，Device代表普通类型，Gateway代表网关类型    |
 | dataFormat         | String                          | 数据类型，Custom代表用户自定义类型，Json代表json类型 |
 | productTags         | Map（key为String，value为String） | 产品标签                                             |
-| modelId             | String                          | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modeid-modeid)|
+| modelId             | String                          | 资产所属模型ID|
 | dynamicActiveEnable | Boolean                         | 是否支持动态激活                                     |
 | biDirectionalAuth   | Boolean                         | 是否支持双向认证                                     |
 | createTime      | Long                            | 创建时间                                             |

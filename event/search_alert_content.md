@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-POST https://apigw-address/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000 
+POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000 
 {}
 ```
 
@@ -23,22 +23,22 @@ POST https://apigw-address/event-service/v2.1/alert-contents?action=search&orgId
 | alertTypeId  | false    | String               | 告警类型ID   |
 | subAlertTypeId    | false    | String   | 告警子类型ID  |                       
 | expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
-| pagination     | false     | 见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)    | 分页的参数。如果不填，默认每页10条。默认按照`updateTime`降序排序，支持用户指定以下字段排序：`contentId`，`modelId`，`updatePerson`，`updateTime`。|
+| pagination     | false     | Pagination请求结构体    | 分页的参数。如果不填，默认每页10条。默认按照`updateTime`降序排序，支持用户指定以下字段排序：`contentId`，`modelId`，`updatePerson`，`updateTime`。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
 ## 响应参数
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| data | AlertContent结构体Array | 告警内容|
+| data | AlertContent结构体 | 告警内容，见[AlertContent结构体](/docs/api/zh_CN/latest/event/search_alert_content.html#id4)|
 
 ### AlertContent结构体
 
 | 名称  | 数据类型      | 描述               |
 |----------------|-----------------------|----------|
 | contentId| String           | 内容ID                 |
-| contentDesc | StringI18n | 告警内容描述。为一个国际化名称结构体。详见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)                |
+| contentDesc | StringI18n | 告警内容描述  |
 | modelId| String           | 模型ID                 |
-| orgId          | String                | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)|
+| orgId          | String| 资产所属的组织ID|
 | alertType  | AlertType结构体  | 告警类型               |
 | subAlertType| AlertType结构体  | 子告警类型             |
 | tags| Tag结构体        | 用户自定义告警内容标签 |
@@ -52,7 +52,7 @@ POST https://apigw-address/event-service/v2.1/alert-contents?action=search&orgId
 ### 请求示例
 
 ```json
-https://apigw-address/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000 
+https://{apigw-address}/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000 
 {
 	"pagination": {
 		"pageNo": 1,
@@ -114,12 +114,10 @@ https://apigw-address/event-service/v2.1/alert-contents?action=search&orgId=1c49
 				}
 			},
 			"tags": {
-				
 			},
 			"updateTime": 0
 		},
-		"tags": {
-			
+		"tags": {	
 		}
 	}]
 }
@@ -128,28 +126,25 @@ https://apigw-address/event-service/v2.1/alert-contents?action=search&orgId=1c49
 ## Java SDK调用示例
 
 ```java
-1.	public void testSearchAlertContent() {  
-2.	        SearchAlertContentRequest request = new SearchAlertContentRequest();  
-3.	        request.setOrgId(orgId);  
-4.	        request.setModelId("ssss");  
-5.	        Pagination pagination = new Pagination();  
-6.	        pagination.setPageNo(1);  
-7.	        pagination.setPageSize(1);  
-8.	        List<Sorter> sorterList = new ArrayList<>();  
-9.	        sorterList.add(new Sorter("contentId", Sorter.Order.DESC));  
-10.	        pagination.setSorters(sorterList);  
-11.	        request.setPagination(pagination);  
-12.	  
-13.	        try {  
-14.	            SearchAlertContentResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
-15.	                    .url("https://apigw-address")  
-16.	                    .getResponse(request, SearchAlertContentResponse.class);  
-17.	            Gson gson = new Gson();  
-18.	            System.out.println(gson.toJson(response));  
-19.	  
-20.	        } catch (Exception e) {  
-21.	            e.printStackTrace();  
-22.	        }  
-23.	  
-24.	    }
+public void testSearchAlertContent() {  
+        SearchAlertContentRequest request = new SearchAlertContentRequest();  
+        request.setOrgId(orgId);  
+        request.setModelId("ssss");  
+        Pagination pagination = new Pagination();  
+        pagination.setPageNo(1);  
+        pagination.setPageSize(1);  
+        List<Sorter> sorterList = new ArrayList<>();  
+        sorterList.add(new Sorter("contentId", Sorter.Order.DESC));  
+	        pagination.setSorters(sorterList);  
+	        request.setPagination(pagination);  
+	        try {  
+	            SearchAlertContentResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	                    .url("https://{apigw-address}")  
+	                    .getResponse(request, SearchAlertContentResponse.class);  
+	            Gson gson = new Gson();  
+	            System.out.println(gson.toJson(response)); 
+	        } catch (Exception e) {  
+	            e.printStackTrace();  
+	        }   
+}
 ```

@@ -17,6 +17,7 @@ EnOS API
    :maxdepth: 1
    :caption: Reference
 
+   connect/index
    model/index
    asset/index
    event/index

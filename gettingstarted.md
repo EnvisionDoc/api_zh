@@ -22,13 +22,13 @@
 使用Java调用SDK，需要安装Java core SDK（Poseidon）。Poseidon支持Java 7及以上版本。
 
 #### 安装方法
-访问[Maven仓库](https://mvnrepository.com/artifact/com.envisioniot/apim-poseidon/0.1.6)，下载Poseidon Jar安装包，在应用中引入Jar安装包。如果应用使用`pom`工程，则在`pom.xml`文件中加入以下依赖：
+访问[Maven仓库](https://mvnrepository.com/artifact/com.envisioniot/apim-poseidon/0.1.7)，下载Poseidon Jar安装包，在应用中引入Jar安装包。如果应用使用`pom`工程，则在`pom.xml`文件中加入以下依赖：
 
 ```xml
 <dependency>
   <groupId>com.envisioniot</groupId>
   <artifactId>apim-poseidon</artifactId>
-  <version>0.1.6</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 #### 使用方法
@@ -39,7 +39,7 @@
 
    ```
    Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
-           .url("https://{host-address}/fire/1.0.0/getNews?page=1&count=10")
+           .url("https://{apigw-address}/fire/1.0.0/getNews?page=1&count=10")
            .method("GET")
            .sync();
    ```
@@ -48,7 +48,7 @@
 
    ```
    Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
-           .url("https://{host-address}/fire/1.0.0/getNews?page=1&count=10")
+           .url("https://{apigw-address}/fire/1.0.0/getNews?page=1&count=10")
            .method("GET")
            .sync();
    ```
@@ -57,7 +57,7 @@
 
    ```
    Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
-               .url("https://{host-address}/lily/0.0.1/getPublic")
+               .url("https://{apigw-address}/lily/0.0.1/getPublic")
                .method("POST")
                .header("Content-Type", "application/json")
                .header("Cookie", "global_id=IAM_S_S7Yd5WXssqEBCququgzeR9JLNBnWr99S")
@@ -72,7 +72,7 @@
 
 ```java
 Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
-        .url("https://{host-address}/fire/1.0.0/getNews?page=1&count=10")
+        .url("https://{apigw-address}/fire/1.0.0/getNews?page=1&count=10")
         .method("GET").async( new PoseidonListener() {
               @Override
               public void onFailure(String errorMessage) {
@@ -97,7 +97,7 @@ userRequest.setQueryPath("1234");
 userRequest.setX_custom_header("ni hao shanghai");
 
 UserResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
-            .url("https://{host-address}")
+            .url("https://{apigw-address}")
             .getResponse(userRequest, UserResponse.class);
 ```
 .. note:: Request内置支持Header，Query，RequestBody，Path参数；异常情况需捕获PoseidonException异常查看具体问题。
@@ -123,7 +123,7 @@ from poseidon import poseidon
 appkey = 'appKey'
 appsecret = 'appSecret'
 
-url = 'https://{host-address}/tttttttt/v1/tyy?sid=28654780'
+url = 'https://{apigw-address}/tttttttt/v1/tyy?sid=28654780'
 
 req = poseidon.urlopen(appkey, appsecret, url)
 print(req)
@@ -136,7 +136,7 @@ from poseidon import poseidon
 appkey = 'appKey'
 appsecret = 'appSecret'
 
-url = 'https://{host-address}/tttttttt/v1/tyy?sid=28654780'
+url = 'https://{apigw-address}/tttttttt/v1/tyy?sid=28654780'
 
 header={}
 
@@ -153,7 +153,7 @@ from poseidon import poseidon
 appkey = 'appKey'
 appsecret = 'appSecret'
 
-url = 'https://{host-address}/tttttttt/v1/tyy?sid=28654780'
+url = 'https://{apigw-address}/tttttttt/v1/tyy?sid=28654780'
 
 data = {"username": "11111", "password": "11111"}
 
@@ -181,7 +181,7 @@ public class demo {
         String appSecret = "appSecret";
 
         String response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
-                .url("https://{host-address}/asset-service/v2.0/assets?orgId=1234&assetId=abcd")
+                .url("https://{apigw-address}/asset-service/v2.0/assets?orgId=1234&assetId=abcd")
                 .method("GET")
                 .sync();
         System.out.println(response);

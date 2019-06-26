@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-GET https://apigw-address/event-service/v2.1/alert-contents action=get&orgId=1c499110e8800000
+GET https://{apigw-address}/event-service/v2.1/alert-contents action=get&orgId=1c499110e8800000
 ```
 
 ## 请求参数（URI）
@@ -20,18 +20,18 @@ GET https://apigw-address/event-service/v2.1/alert-contents action=get&orgId=1c4
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| data | AlertContent结构体Array | 告警内容|
+| data | AlertContent结构体 | 告警内容，见[AlertContent结构体](/docs/api/zh_CN/latest/event/get_alert_content.html#id3)|
 
 ### AlertContent结构体
 
 | 名称  | 数据类型      | 描述               |
 |----------------|-----------------------|----------|
 | contentId| String           | 内容ID                 |
-| contentDesc | StringI18n | 告警内容描述。为一个国际化名称结构体。详见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)                |
+| contentDesc | StringI18n | 告警内容描述         |
 | modelId| String           | 模型ID                 |
-| orgId          | String                | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)|
-| alertType  | AlertType结构体  | 告警类型               |
-| subAlertType| AlertType结构体  | 子告警类型             |
+| orgId          | String                | 资产所属的组织ID|
+| alertType  | AlertType结构体  | 告警类型，见[AlertType结构体](/docs/api/zh_CN/latest/event/search_alert_type.html#id4)               |
+| subAlertType| AlertType结构体  | 子告警类型，见[AlertType结构体](/docs/api/zh_CN/latest/event/search_alert_type.html#id4)             |
 | tags| Tag结构体        | 用户自定义告警内容标签 |
 | updatePerson| String           | 更新人员名称           |
 | updateTime| Long             | 最后一次更新时间       |
@@ -43,7 +43,7 @@ GET https://apigw-address/event-service/v2.1/alert-contents action=get&orgId=1c4
 ### 请求示例
 
 ```json
-GET https://apigw-address/event-service/v2.1/alert-contents?action=get &contentId=doubleContentuid&orgId=1c499110e8800000
+GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get &contentId=doubleContentuid&orgId=1c499110e8800000
 ```
 
 ### 返回示例
@@ -73,8 +73,7 @@ GET https://apigw-address/event-service/v2.1/alert-contents?action=get &contentI
 					"zh_CN": ""
 				}
 			},
-			"tags": {
-				
+			"tags": {	
 			},
 			"updateTime": 0
 		},
@@ -85,13 +84,11 @@ GET https://apigw-address/event-service/v2.1/alert-contents?action=get &contentI
 					"zh_CN": ""
 				}
 			},
-			"tags": {
-				
+			"tags": {	
 			},
 			"updateTime": 0
 		},
-		"tags": {
-			
+		"tags": {	
 		}
 	}
 }
@@ -100,24 +97,22 @@ GET https://apigw-address/event-service/v2.1/alert-contents?action=get &contentI
 ## Java SDK调用示例
 
 ```java
-1.	public void testGetAlertContent() {  
-2.	        final String contentId = "doubleContentuid";  
-3.	        GetAlertContentRequest request = new GetAlertContentRequest();  
-4.	        request.setOrgId(orgId);  
-5.	        request.setContentId(contentId);  
-6.	  
-7.	        try {  
-8.	            GetAlertContentResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
-9.	                    .url("https://apigw-address")  
-10.	                    .getResponse(request, GetAlertContentResponse.class);  
-11.	            Gson gson = new Gson();  
-12.	            System.out.println(gson.toJson(response));  
-13.	            if (response.getCode() == 0) {  
-14.	                System.out.println(response.getData());  
-15.	            }  
-16.	        } catch (Exception e) {  
-17.	            e.printStackTrace();  
-18.	        }  
-19.	  
-20.	    }
+public void testGetAlertContent() {  
+        final String contentId = "doubleContentuid";  
+        GetAlertContentRequest request = new GetAlertContentRequest();  
+        request.setOrgId(orgId);  
+        request.setContentId(contentId);  
+        try {  
+            GetAlertContentResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+                    .url("https://{apigw-address}")  
+	                    .getResponse(request, GetAlertContentResponse.class);  
+	            Gson gson = new Gson();  
+	            System.out.println(gson.toJson(response));  
+	            if (response.getCode() == 0) {  
+	                System.out.println(response.getData());  
+	            }  
+	        } catch (Exception e) {  
+	            e.printStackTrace();  
+	        }  
+}
 ```

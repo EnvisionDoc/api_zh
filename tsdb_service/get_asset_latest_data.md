@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/tsdb-service/v2.0/latest?orgId={}&assetIds={}&measurepoints={}&timeWindow={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/latest?orgId={}&assetIds={}&measurepoints={}&timeWindow={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -18,10 +18,6 @@ https://apigw-address/tsdb-service/v2.0/latest?orgId={}&assetIds={}&measurepoint
 | timeWindow | Query            | false     | Integer    | 返回数据时间窗口设定，单位是分钟，最小值为0，不传则不约束。                                                                                                                                                                           |
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey)                                                                     
 
-## 请求参数（Body）
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|------------------|----------|-----------|-------------|
-|      |                  |          |           |             |
 
 ## 响应参数
 
@@ -54,7 +50,7 @@ https://apigw-address/tsdb-service/v2.0/latest?orgId={}&assetIds={}&measurepoint
 ### 请求示例
 Local时间格式：
 ```
-https://apigw-address/tsdb-service/v2.0/latest?orgId=o15528761854851&assetIds=4DXYH7nS&measurepoints=opentsdb_pi_point_xxx&timeWindow=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/latest?orgId=o15528761854851&assetIds=4DXYH7nS&measurepoints=opentsdb_pi_point_xxx&timeWindow=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -142,9 +138,9 @@ public void getAssetsLatestDataTest(){
     request.setMethod("GET");
 
     try {
-        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/latest")
-                .getResponse(request, EnOSResponse.class);
+                .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://apigw-address/connect-service/v2.1/products?action=delete
+https://{apigw-address}/connect-service/v2.1/products?action=delete
 ```
 
 ## 请求参数（URI）
@@ -21,8 +21,8 @@ https://apigw-address/connect-service/v2.1/products?action=delete
 ## 响应参数
 
 | 名称| 数据类型 | 描述         |
-|-------------|-----------------------------------|-----------------------------|
-| data| String                           | 删除的产品的key               |
+|-------------|---------------------------|-----------------------------|
+| data | String                           | 删除的产品的key               |
 
 
 ## 错误码

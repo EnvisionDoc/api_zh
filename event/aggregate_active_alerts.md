@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-POST https://apigw-address/event-service/v2.1/active-alerts?action=aggregate
+POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate
 ```
 
 ## 请求参数（URI）
@@ -18,10 +18,10 @@ POST https://apigw-address/event-service/v2.1/active-alerts?action=aggregate
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |----------------|----------|--------------------|----|
-| expression     | false    | String| 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| expression     | false    | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | groupByField   | true     | String             | 分组字段：`contentId`，`assetId`，`modelId`，`measurepointId`，`severityId`，`typeId`，`subTypeId` |
-| startOccurTime | false    | String，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) | 告警触发时间的起始时间   |
-| endOccurTime   | false    | String，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) | 告警触发时间的结束时间|
+| startOccurTime | false    | String| 告警触发时间的起始时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)    |
+| endOccurTime   | false    | String| 告警触发时间的结束时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
 
 
 
@@ -37,7 +37,7 @@ POST https://apigw-address/event-service/v2.1/active-alerts?action=aggregate
 ### 请求示例
 
 ```json
-POST https://apigw-address/event-service/v2.1/active-alerts?action=aggregate&orgId=1c499110e8800000
+POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate&orgId=1c499110e8800000
 
 {
 	"groupByField": "assetId"
@@ -70,24 +70,20 @@ POST https://apigw-address/event-service/v2.1/active-alerts?action=aggregate&org
 
 ```java
 public void testAggregateActiveAlert(){  
-2.	       String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
-3.	       String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
-4.	  
-5.	       AggregateActiveAlertRequest request = new AggregateActiveAlertRequest();  
-6.	       request.setOrgId("1c499110e8800000");  
-7.	       request.setGroupByField("assetId");  
-8.	  
-9.	       request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
-10.	  
-11.	  
-12.	       try {  
-13.	           AggregateActiveAlertResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
-14.	                   .url("https://apigw-address")  
-15.	                   .getResponse(request, AggregateActiveAlertResponse.class);  
-16.	           Gson gson = new Gson();  
-17.	           System.out.println(gson.toJson(response));  
-18.	       }catch(Exception e){  
-19.	           System.out.print(e);  
-20.	       }  
-21.	   }
+       String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
+       String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
+       AggregateActiveAlertRequest request = new AggregateActiveAlertRequest();  
+       request.setOrgId("1c499110e8800000");  
+       request.setGroupByField("assetId");  
+       request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
+	       try {  
+	           AggregateActiveAlertResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	                   .url("https://{apigw-address}")  
+	                   .getResponse(request, AggregateActiveAlertResponse.class);  
+	           Gson gson = new Gson();  
+	           System.out.println(gson.toJson(response));  
+	       }catch(Exception e){  
+	           System.out.print(e);  
+	       }  
+	   }
 ```
