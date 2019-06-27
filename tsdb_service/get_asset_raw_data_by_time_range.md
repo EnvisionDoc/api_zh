@@ -46,10 +46,10 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&me
 
 | 名称        | 数据类型 | 描述                           |
 |---------------|-----------|--------------------------------------|
-| localtime     | String    | 数据本地时间标记，精确到秒，当入参时间格式为UTC格式时，该值为null。 |
-| assetId       | String    | 资产ID。                                             |
-| pointId | String    | 此参数是变量，表示测点的标识符。                                    |
-| timestamp     | String    | 数据时间戳，UNIX时间，精确到秒。                                    |
+| localtime     | Object    | 数据本地时间标记，精确到秒，当入参时间格式为UTC格式时，该值为null。 |
+| assetId       | Object    | 资产ID。                                             |
+| pointId | Object    | 此参数是变量，表示测点的标识符与数据。                                    |
+| timestamp     | Object    | 数据时间戳，UNIX时间，精确到秒。                                    |
 
 ## 错误码
 有关错误码的描述，参见[通用错误码](overview#errorcode)。
@@ -125,26 +125,7 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&accessKey=ac
 }
 ```
 
-## 示例代码（Java）
-
-### V1
-
-```java
-private static String appKey = "29b8d293-dddd-4c31f0e3a356-0fc0-4fdf";
-private static String appSecret = "f0e3a356-0fc0-6666-b1e5-b34da152b79c";
-
-public static void testENOS() throws EnOSApiException {
-    String enosApiUrl = "https://beta-portal-cn4.eniot.io:8081/enosapi";
-    EnOSClient client = new EnOSDefaultClient(enosApiUrl, appKey, appSecret);
-
-    GetAssetsRawDataByTimeRangeRequest request = new GetAssetsRawDataByTimeRangeRequest(String orgId, String modelId, 
-    String assetIds, String measurepoints, String startTime, String endTime, Integer pageSize);
-    EnOSResponse<JSONObject> response = client.execute(request);
-    System.out.println(JSON.toJSONString(response));
-}
-```
-
-### V2
+## Java SDK调用示例
 
 ```java
 private static class Request extends PoseidonRequest{

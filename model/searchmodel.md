@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/model-service/v2.0/thing-models?action=search
+https://{apigw-address}/model-service/v2.1/thing-models?action=search
 ```
 
 ## 请求参数（Body）

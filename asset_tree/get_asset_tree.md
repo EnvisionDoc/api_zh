@@ -30,7 +30,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 |-------|-------|---------------------------|
 | assetId |  String | 资产ID|
 |modelId|String|资产所属模型ID|
-|modelIdPath|String|modelIdPath路径。|
+|modelIdPath|String|模型ID的路径。|
 | name | StringI18n |支持国际化的资产名称|
 |timezone  |  String  |资产所属时区|
 | description | String | 资产描述|

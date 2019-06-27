@@ -168,7 +168,7 @@ print(req)
 
 ### 示例
 
-以下示例为使用Java SDK调用`GetAsset` API获取资产详细信息：
+以下示例为使用Java SDK调用*Get Asset* API获取资产详细信息：
 
 ```
 import com.envision.apim.poseidon.config.PConfig;
@@ -177,11 +177,11 @@ import com.envision.apim.poseidon.core.Poseidon;
 public class demo {
     public static void main(String[] args) {
 
-        String appKey = "appKey";
-        String appSecret = "appSecret";
+        String appKey = "app_Key";
+        String appSecret = "app_Secret";
 
         String response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
-                .url("https://{apigw-address}/asset-service/v2.0/assets?orgId=1234&assetId=abcd")
+                .url("https://{apigw-address}/asset-service/v2.1/assets?action=get&orgId={org_id}&assetId={asset_id}")
                 .method("GET")
                 .sync();
         System.out.println(response);
@@ -189,7 +189,7 @@ public class demo {
     }
 ```
 
-运行完成后，返回数据示例为：
+以上示例代码运行完成后，返回数据示例为：
 
 ```
 {
@@ -197,7 +197,7 @@ public class demo {
   "code": 0,
   "data": {
     "modelId": "model_id",
-    "assetId": "abcd",
+    "assetId": "asset_id",
     "timezone": "+08:00",
     "name": {
       "i18nValue": {},
@@ -207,7 +207,7 @@ public class demo {
       "system": "System"
     },
     "modelIdPath": null,
-    "orgId": "1234",
+    "orgId": "org_id",
     "desc": null,
     "tags": {}
   },

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/asset-tree-service/v2.1/asset-nodes/searchAsset?action=searchAsset
+https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 ```
 
 ## 请求参数（URI）

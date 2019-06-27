@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelIds={}&assetIds={}&measurepoints={}&startTime={}&endTime={}&pageSize={}&accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -22,7 +22,7 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&me
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| items | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id3)。|
+| data | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id3)。|
 
 
 ### items
@@ -66,7 +66,7 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds
   "requestId": null,
   "msg": "success",
   "submsg": "success",
-  "items": [
+  "data": [
     {
       "tsdb_metadata": {
         "opentsdb_di_point_xxx": [
@@ -119,26 +119,7 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId=o15504722874071&modelIds
 }
 ```
 
-## 示例代码（Java）
-
-### V1
-
-```java
-private static String appKey = "29b8d293-dddd-4c31f0e3a356-0fc0-4fdf";
-  private static String appSecret = "f0e3a356-0fc0-6666-b1e5-b34da152b79c";
-
-  public static void testENOS() throws EnOSApiException {
-      String enosApiUrl = "https://beta-portal-cn4.eniot.io:8081/enosapi";
-      EnOSClient client = new EnOSDefaultClient(enosApiUrl, appKey, appSecret);
-
-      GetPointsTSDBMetaDataRequest request = new GetPointsTSDBMetaDataRequest(String orgId, 
-          String modelIds, String measurepoints);
-      EnOSResponse<JSONObject> response = client.execute(request);
-      System.out.println(JSON.toJSONString(response));
-  }
-```
-
-### V2
+## Java SDK调用示例
 
 ```java
 private static class Request extends PoseidonRequest{
