@@ -170,7 +170,7 @@ print(req)
 
 以下示例为使用Java SDK调用*Get Asset* API获取资产详细信息：
 
-```
+```java
 import com.envision.apim.poseidon.config.PConfig;
 import com.envision.apim.poseidon.core.Poseidon;
 

@@ -27,7 +27,7 @@ EnOS API请求包含以下组成部分：
 其中：
 
 - `URI-sheme`：协议，支持HTTPS协议。
-- `host-address`：该EnOS环境API服务的地址，其范式为`apim-{enos-environment}.envisioniot.com`，其中`enos-environment`为EnOS的部署环境名称。
+- `apigw-address`：该EnOS环境API服务的地址，其范式为`apim-{enos-environment}.envisioniot.com`，其中`enos-environment`为EnOS的部署环境名称。
 - `service-name`：服务名称，如`asset-service`。
 - `version`：API版本，如`v2.0`。
 - `endpoint-URL`：资源及对资源的操作，如`assets/update`。
@@ -42,7 +42,7 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get&orgId=1234&assetId=
 
 ### Request Header
 
-请求URI与服务的REST API规范和HTTP规范所需的任何其他字段，绑定在request header中。
+Request URI的REST API规范和HTTP规范所需的任何其他字段，绑定在request header中。
 
 常用的request header为`Content-Type`，代表数据提交方式，一般情况下它的值可设为`application/json;charset=UTF-8`；若执行文件上传或其他表单提交，值设为`multipart/form-data;charset=UTF-8`。
 
@@ -100,11 +100,13 @@ EnOS API的返回为以下格式的JSON结构体：
 
 #### Pagination请求结构体
 
+Pagination参数表示随机分页。默认分页大小是10。
+
 | 名称     | 数据类型          | 是否必需 | 描述                  |
 | -------- | ----------------- | -------- | --------------------- |
 | pageNo   | Integer           | true     | 请求页数，从1开始     |
 | pageSize | Integer           | true     | 每页记录数，必须大于0 |
-| sorters  | Sorter结构体Array | talse    | 分页排序方式          |
+| sorters  | Sorter结构体Array | false    | 分页排序方式          |
 
 **Sorter结构体**
 
@@ -132,9 +134,12 @@ EnOS API的返回为以下格式的JSON结构体：
 
 Projection参数用于对返回data结果集的裁剪，数据类型为String Array。其中每个String表示返回结果中需要返回的一个结果字段。没有在projection中指定的字段，在结果集中不返回。在指定字段时，可以使用：
 
-- [*] 表示一个Array中的每一个对象
-- \* 表示任意字段值
-- . 表示子字段
+|符号|描述|
+|------------|--------------|
+|`[*]`|	表示一个Array中的每一个对象|
+|`*`  |		表示任意字段值|
+|`.`	|	表示子字段|
+
 
 当不提供projection参数时，表示不对data结果集做裁剪。
 
@@ -186,7 +191,7 @@ Projection参数用于对返回data结果集的裁剪，数据类型为String Ar
     "data": null
 }
 
-99403 
+99403 错误示例：缺少权限 
 {
     "code": 99403,
     "msg": “Denied resource: orgId o15589291276361",
@@ -194,7 +199,7 @@ Projection参数用于对返回data结果集的裁剪，数据类型为String Ar
     "data": null
 }
 
-99500
+99500 错误示例：服务器内部错误
 {
     "code": 99500,
     "msg": " Internal Server Error",
