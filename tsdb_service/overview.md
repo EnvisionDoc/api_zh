@@ -35,13 +35,13 @@
 |      |           | All asset authentication failed                                                                         | 当前App对查询的所有设备都没有权限                  |
 |      |           | Invalid Argument                                                                                        | 参数无效或缺失                                     |
 |      |           | [modelId] permission denied!                                                                            | modelId无效或不存在                                |
-| 430  | Integer   |                                                                                                         | 结果集过大，服务调用失败                                         |
+| 430  | Integer   |                                                                                                         | 请求超出服务内部的网络传输的最大限制                                         |
 | 701  | Integer   |                                                                                                         | 服务出错                                           |
 | 702  | Integer   | Params startTime[] or endTime[] is invalid, and date format of them should be consistent                | 时间格式错误，local时间格式为YYYY-MM-DD HH:MM:SS；<br> UTC时间格式需要加入时区信息，例如：2019-06-01T00:00:00+08:00|
 |      |           | xxx cannot be null or negative                                                                          | 参数xxx不可为空或者为负数                          |
 |      |           | xxx is empty                                                                                            | 参数xxx不可为空                                    |
 |      |           | only one xxx is allowed                                                                                 | 参数xxx至多一个                                    |
-|      |           | assetIds size* measurepoints size* pageSize is too large to query, result size may exceed RPC limit | 单次查询结果集过大                                 |
+|      |           | assetIds size* measurepoints size* pageSize is too large to query, result size may exceed RPC limit | 单次查询结果集过大,要求设备数\*测点数\*pageSize<=640000                                 |
 |      |           | param xxx is invalid                                                                                    | 参数xxx无效                                        |
 |      |           | endTime should not be later than startTime                                                              | 查询结束时间应比开始时间晚                         |
 |      |           | is not a valid integer                                                                                  | 参数不是一个有效的整数类型                         |

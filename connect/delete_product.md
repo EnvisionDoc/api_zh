@@ -37,7 +37,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=delete
 ### 请求示例
 
 ```
-POST: /connect-service/v2.0/products?action=delete&orgId=xxx&productKey=xxx
+POST: /connect-service/v2.1/products?action=delete&orgId=xxx&productKey=xxx
 ```
 
 ### 返回示例

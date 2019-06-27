@@ -46,15 +46,19 @@ https://{apigw-address}/connect-service/v2.1/products?action=create
 ### 请求示例
 
 ```
-POST: /connect-service/v2.0/products?action=create&orgId=xxx
+POST: /connect-service/v2.1/products?action=create&orgId=xxx
 {
 	"productDesc":"openapi_sdk_create_test",
 	"biDirectionalAuth":false,
 	"modelId":"AlterTest0615",
 	"dataFormat":"Custom",
-	"productName":"{\"defaultValue\":\"openapi_sdk_9\",\"i18nValue\":{}}",
+	"productName":{
+		"defaultValue":"AlterTest0615_Product",
+		"i18nValue":{}
+	},
 	"productType":"Device"
 }
+
 ```
 
 ### 返回示例

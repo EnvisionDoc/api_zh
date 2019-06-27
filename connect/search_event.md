@@ -43,7 +43,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 ### 请求示例
 
 ```
-url:https://{apigw-address}/connect-service/v2.0/events/search?action=search&orgId=1c499110e8800000
+url:https://{apigw-address}/connect-service/v2.1/events/search?action=search&orgId=1c499110e8800000
 method: POST
 requestBody: {"pagination":{"pageNo":1,"pageSize":2},"action":"search"}
 ```

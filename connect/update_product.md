@@ -46,12 +46,15 @@ https://{apigw-address}/connect-service/v2.1/products?action=update
 ### 请求示例
 
 ```
-POST: /connect-service/v2.0/products?action=update&orgId=xxx&productKey=xxx
+POST: /connect-service/v2.1/products?action=update&orgId=xxx&productKey=xxx
 {
 	"productDesc":"test_sdk_update",
 	"biDirectionalAuth":true,
 	"dynamicActivateEnabled":true,
-	"productName": {"defaultValue":"openapi_sdk_8","i18nValue":{}}"
+	"productName": {
+		"defaultValue":"AlterTest0615_Product",
+		"i18nValue":{}
+	}
 }
 ```
 

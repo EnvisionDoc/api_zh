@@ -57,7 +57,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 ### 请求示例
 
 ```
-GET: /connect-service/v2.0/products?action=get&orgId=abc&productKey=def
+GET: /connect-service/v2.1/products?action=get&orgId=abc&productKey=def
 ```
 
 ### 返回示例

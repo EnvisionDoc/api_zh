@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-POST https://{apigw-address}/event-service/v2.0/alert-severities?action=search
+POST https://{apigw-address}/event-service/v2.1/alert-severities?action=search
 ```
 
 ## 请求参数（URI）

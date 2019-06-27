@@ -38,7 +38,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=search
 ### 请求示例
 
 ```
-POST: /connect-service/v2.0/products?action=search&orgId=abc 
+POST: /connect-service/v2.1/products?action=search&orgId=abc 
 {
 	"expression":"modelId=\"AlterTest0615\"",
 	"pagination":{
