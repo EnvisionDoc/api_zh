@@ -20,7 +20,7 @@ https://{apigw-address}/connect-service/v2.1/commands?action=setMeasurepoint
 | assetId  | Query            | False   | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
 | productKey | Query          | False       | String       | Product Key      |
 | deviceKey | Query           | False      | String       | 设备key|
-| measurepointId      | Query| True | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)|
+| measurepointId      | Query| True | String    | 资产测点。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)|
 | pendingTtl     | Query| False| Integer    | 缓存存储时间，单位为秒 范围[0 - 172800（即48小时）]，默认值为0。当pendingTtl为0时，表示命令即时执行。 |
 | timeout        | Query| False         | Integer    | 服务执行超时时间，单位为秒 范围[1 - 60]，默认值为30秒|
 
