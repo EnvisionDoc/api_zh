@@ -22,7 +22,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=get
 
 |名称|数据类型|描述|
 |-----------|-----------|----------|
-|data|Object|物模型|
+|data|Object|物模型，见[ThingModel结构体](/docs/api/zh_CN/latest/model/searchmodel.html#thingmodel-thingmodel)定义|
 
 
 
