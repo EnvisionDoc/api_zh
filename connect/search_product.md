@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | productKey        | Query            | true    | String    | Product Key|
 
 
@@ -57,13 +57,13 @@ POST: /connect-service/v2.1/products?action=search&orgId=abc
 	"requestId":"a82752bb-9eb0-4cd5-b0c6-0c1aeb35f6d2",
 	"data":[
 		{
-			"orgId":"o15475450989191",
-			"productKey":"atC41UIe",
+			"orgId":"yourOrgId",
+			"productKey":"yourProductKey",
 			"productName":{
 				"defaultValue":"openapi_sdk_8",
 				"i18nValue":{}
 			},
-			"productSecret":"1uhl4Gwx9X8",
+			"productSecret":"yourProductSecret",
 			"productDesc":"test_sdk_update",
 			"productType":"Device",
 			"dataFormat":"Custom",
@@ -73,13 +73,13 @@ POST: /connect-service/v2.1/products?action=search&orgId=abc
 			"biDirectionalAuth":true
 		},
 		{
-			"orgId":"o15475450989191",
-			"productKey":"gHuxgR8s",
+			"orgId":"yourOrgId",
+			"productKey":"yourProductKey",
 			"productName":{
 				"defaultValue":"AlterTest0615_Product",
 				"i18nValue":{}
 			},
-			"productSecret":"4ucumSU0dWV",
+			"productSecret":"yourProductSecret",
 			"productDesc":"",
 			"productType":"Device",
 			"dataFormat":"Json",

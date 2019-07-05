@@ -12,8 +12,8 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
-| assetId       | Query            | true    | String    | 资产ID。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid)        |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId       | Query            | true    | String    | 资产ID。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)        |
 
 
 ## 响应参数
@@ -75,7 +75,7 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get&orgId=1c499110e8800
       "system": "Solar System"
                   },
     "modelIdPath": "/planet",
-    "orgId": "o15444172373271",
+    "orgId": "yourOrgId",
     "desc": null,
     "tags": {}
            },

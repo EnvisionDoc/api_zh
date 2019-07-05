@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -29,7 +29,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
+| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | String         | Product Key      |
 | deviceKey | String         | 设备key          |
 
@@ -95,23 +95,23 @@ responseBody: {
 		"msg": "OK",
 		"requestId": "498d1c5b-7c4f-401a-a9ff-9072931bec2e",
 		"data": [{
-			"orgId": "o15475450989191",
+			"orgId": "yourOrgId",
 			"assetId": "mAEsF3sm",
 			"modelId": "AlterTest0617",
 			"modelIdPath": "/AlterTest0617",
-			"productKey": "Vu82Agp3",
+			"productKey": "yourProductKey",
 			"productName": {
 				"defaultValue": "AlterTest0617_Product",
 				"i18nValue": {}
 			},
 			"productType": "Device",
 			"dataFormat": "Json",
-			"deviceKey": "96Z711wx5d",
+			"deviceKey": "yourDeviceKey",
 			"deviceName": {
 				"defaultValue": "testforCreatedevice",
 				"i18nValue": {}
 			},
-			"deviceSecret": "SlqmFerDkPHvnQW5y8wK",
+			"deviceSecret": "yourDeviceSecret",
 			"deviceDesc": "test for createdevice",
 			"timezone": "+08:00",
 			"deviceAttributes": {
@@ -124,23 +124,23 @@ responseBody: {
 			"lastOnlineTime": 0,
 			"lastOfflineTime": 0
 		}, {
-			"orgId": "o15475450989191",
+			"orgId": "yourOrgId",
 			"assetId": "gVRwKQ3C",
 			"modelId": "AlterTest0617",
 			"modelIdPath": "/AlterTest0617",
-			"productKey": "Vu82Agp3",
+			"productKey": "yourProductKey",
 			"productName": {
 				"defaultValue": "AlterTest0617_Product",
 				"i18nValue": {}
 			},
 			"productType": "Device",
 			"dataFormat": "Json",
-			"deviceKey": "32412434314",
+			"deviceKey": "yourDeviceKey",
 			"deviceName": {
 				"defaultValue": "AlterTest0617_Product",
 				"i18nValue": {}
 			},
-			"deviceSecret": "65hjmU4MwiFiCFjWv588",
+			"deviceSecret": "yourDeviceSecret",
 			"deviceDesc": null,
 			"timezone": "+10:00",
 			"deviceAttributes": {},

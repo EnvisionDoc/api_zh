@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | eventId        | Query| True         | String    |事件ID |
 
 
@@ -58,9 +58,9 @@ GET
     "requestId":"0c45090a-f7c0-476c-8d47-33947d7a57f6",
     "data":{
         "id":"20190506587247156ca85be5e3422d30e2642dd1",
-        "orgId":"1c499110e8800000",
-        "productKey":"CRJ0mNO1",
-        "deviceKey":"99ji8WwMCr",
+        "orgId":"yourOrgId",
+        "productKey":"yourProductKey",
+        "deviceKey":"yourDeviceKey",
         "assetId":"wNzx7q3S",
         "tslEventKey":"guzang01",
         "tslEventType":"INFO",

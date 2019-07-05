@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 
@@ -29,7 +29,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
+| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | String         | Product Key      |
 | deviceKey | String         | 设备key          |
 
@@ -87,23 +87,23 @@ responseBody: {
 	"msg": "OK",
 	"requestId": "49ef6c03-02a0-449b-ab1e-92812071de80",
 	"data": {
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "J1Rqyaqz",
 		"modelId": "AlterTest0617",
 		"modelIdPath": "/AlterTest0617",
-		"productKey": "JvY2tkBD",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "testtopo",
 			"i18nValue": {}
 		},
 		"productType": "Gateway",
 		"dataFormat": "Json",
-		"deviceKey": "qjndvVkK9E",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "testtopo",
 			"i18nValue": {}
 		},
-		"deviceSecret": "mUb5wk5ZylNcHwnhAGUO",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": null,
 		"timezone": "+08:00",
 		"deviceAttributes": {},

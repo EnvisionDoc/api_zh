@@ -12,7 +12,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)  |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
 
 
 ## 请求参数（Body）
@@ -28,7 +28,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 
 | 名称      | 是否必须  | 数据类型 | 描述      |
 |-----------|---------------|----|--------------|
-| assetIds| False | String Array | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid)|
+| assetIds| False | String Array | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | modelIds | False | String Array | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modeid-modeid) |
 | rootModelIds | False | String Array | 资产所属的根模型ID。如果想查询多个根模型，就提供多个根模型ID。|
 | nameLike | False | nameLike结构体 | 用于描述对国际化名称的查询条件，见[nameLike结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_node.html#namelike-namelikestruc) |

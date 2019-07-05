@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-types/search?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
                                                                  
 
 ## 请求参数（Body）
@@ -77,7 +77,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-types/search?action=search
 	"requestId": "c1be09d8-a6f2-4647-92e1-3c545fa1b3dd",
 	"data": [{
 		"typeId": "dateType",
-		"orgId": "1c499110e8800000",
+		"orgId": "yourOrgId",
 		"typeDesc": {
 			"i18nValue": {
 				"en_US": "dateType desc",

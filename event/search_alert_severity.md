@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-severities?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
                                                                  
 
 ## 请求参数（Body）
@@ -76,7 +76,7 @@ POST  https://{apigw-address}/event-service/v2.1/alert-severities?action=search&
 	"requestId": "bd591868-0eb1-46dc-a989-c1de33cc671e",
 	"data": [{
 		"severityId": "001",
-		"orgId": "1c499110e8800000",
+		"orgId": "yourOrgId",
 		"severityDesc": {
 			"i18nValue": {
 				"en_US": "Serious！！！",

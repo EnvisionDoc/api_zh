@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -70,7 +70,7 @@ requestBody: {
     },
     "timezone":"+08:00",
     "source":0,
-    "productKey":"Vu82Agp3",
+    "productKey":"yourProductKey",
     "deviceAttributes":{
         "testatt":111111
     },
@@ -93,8 +93,8 @@ responseBody: {
     "requestId":"fd79d0f5-69c5-4fa8-add4-69f5ca1b635f",
     "data":{
         "assetId":"Uvmm5AXU",
-        "productKey":"Vu82Agp3",
-        "deviceKey":"1115pswxk7",
+        "productKey":"yourProductKey",
+        "deviceKey":"yourDeviceKey",
         "deviceSecrete":"Z5YtZaQpK5IWocakV7zQ"
     }
 }

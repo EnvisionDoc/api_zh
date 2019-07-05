@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -81,23 +81,23 @@ responseBody: {
 	"msg": "OK",
 	"requestId": "59ecd409-7baa-4726-ba10-c0bde35ffb09",
 	"data": [{
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "7u4bfyO0",
 		"modelId": "lxctimelooker",
 		"modelIdPath": "/lxctimelooker",
-		"productKey": "vzzG0GFg",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "lxcpro",
 			"i18nValue": {}
 		},
 		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "TeyRhjOnfh",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "time2dev11",
 			"i18nValue": {}
 		},
-		"deviceSecret": "iCp1wixMv843ABrYnD3I",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": null,
 		"timezone": "+09:00",
 		"deviceAttributes": {},
@@ -108,23 +108,23 @@ responseBody: {
 		"lastOnlineTime": 1560743915454,
 		"lastOfflineTime": 1560744095454
 	}, {
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "Fi0HQ8FO",
 		"modelId": "AlterTest0615",
 		"modelIdPath": "/AlterTest0615",
-		"productKey": "gHuxgR8s",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "AlterTest0615_Product",
 			"i18nValue": {}
 		},
 		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "325132545",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "AlterTest0615",
 			"i18nValue": {}
 		},
-		"deviceSecret": "V2Ny4NTlt40NZDaF3xj5",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": null,
 		"timezone": "+08:00",
 		"deviceAttributes": {},
@@ -135,23 +135,23 @@ responseBody: {
 		"lastOnlineTime": 1560743931247,
 		"lastOfflineTime": 1560743931712
 	}, {
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "6FytqleL",
 		"modelId": "AlterTest0614",
 		"modelIdPath": "/AlterTest0614",
-		"productKey": "zpFCD7pd",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "AlterTest0614_Product",
 			"i18nValue": {}
 		},
 		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "324314123431",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "AlterTest0614",
 			"i18nValue": {}
 		},
-		"deviceSecret": "R6wPIKHaMrcwnpzOSZYe",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": null,
 		"timezone": "+08:00",
 		"deviceAttributes": {
@@ -165,23 +165,23 @@ responseBody: {
 		"lastOnlineTime": 1560743930253,
 		"lastOfflineTime": 1560743930346
 	}, {
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "V4TjS0n4",
 		"modelId": "AlertTest0613",
 		"modelIdPath": "/AAA100/AlertTest0613",
-		"productKey": "gTsWB8mX",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "AlertTest0613_Product",
 			"i18nValue": {}
 		},
 		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "324132514331",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "AlertTest0613",
 			"i18nValue": {}
 		},
-		"deviceSecret": "0u06LivvksMGxtJoSBT5",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": null,
 		"timezone": "+08:00",
 		"deviceAttributes": {
@@ -195,23 +195,23 @@ responseBody: {
 		"lastOnlineTime": 1560743916848,
 		"lastOfflineTime": 1560743929003
 	}, {
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "wjIXsqTQ",
 		"modelId": "zcmx---1",
 		"modelIdPath": "/zcmx---1",
-		"productKey": "J5GKPipa",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "zccp-----1",
 			"i18nValue": {}
 		},
 		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "krL0iNa4as",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "zccp-----222",
 			"i18nValue": {}
 		},
-		"deviceSecret": "KUiw16CE4A4QTabkt0QN",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": null,
 		"timezone": "+08:00",
 		"deviceAttributes": {

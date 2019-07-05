@@ -13,7 +13,7 @@ paths?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)  |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
 | treeId          | Query            | true     | String    | 资产树ID |
 
 
@@ -34,7 +34,7 @@ paths?action=search
 |-----------|---------------|----|-----------------------|
 | rootModelIds| false   | String Array         | 根模型id，如果希望查询多个根模型就提供多个根模型id  |
 | modelIds   | false   | String Array         | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modeid-modeid)  |
-| assetIds    | false          | Array          | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
+| assetIds    | false          | Array          | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 
 
 

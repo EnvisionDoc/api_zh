@@ -12,7 +12,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |-------|-------------|-----|------|----------|
-| orgId   | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid) |
+| orgId   | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid) |
 | scope   | Query            | False    | Integer   | 查询范围。0：只从`orgId`指定的OU查找，1：从`orgId`指定的OU与公有模型所在的OU查找。默认值为1 |
 | modelId | Query            | True     | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modeid-modeid)|
 
@@ -50,7 +50,7 @@ GET https://{apigw-address}/model-service/v2.1/thing-models?action=get&orgId=1c4
     "data": {
                 "modelId": "planet",
                 "modelIdPath": "/planet",
-                "orgId": "1c499110e8800000",
+                "orgId": "yourOrgId",
                 "name": {
                     "defaultValue": "行星",
                     "i18nValue": {

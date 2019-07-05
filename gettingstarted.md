@@ -207,7 +207,7 @@ public class demo {
       "system": "System"
     },
     "modelIdPath": null,
-    "orgId": "org_id",
+    "orgId": "yourOrgId",
     "desc": null,
     "tags": {}
   },

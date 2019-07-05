@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | productKey        | Query            | true    | String    | Product Key|
 
 
@@ -69,13 +69,13 @@ GET: /connect-service/v2.1/products?action=get&orgId=abc&productKey=def
 	"msg":"OK",
 	"requestId":"345e68bc-e98a-45b1-a931-d255a6336847",
 	"data" :{
-		"orgId":"o15475450989191",
-		"productKey":"atC41UIe",
+		"orgId":"yourOrgId",
+		"productKey":"yourProductKey",
 		"productName":{
 			"defaultValue":"openapi_sdk_8",
 			"i18nValue":{}
 		},
-		"productSecret":"1uhl4Gwx9X8",
+		"productSecret":"yourProductSecret",
 		"productDesc":"test_sdk_update",
 		"productType":"Device",
 		"dataFormat":"Custom",

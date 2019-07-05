@@ -12,8 +12,8 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
-| assetId  | Query            | False   | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | Query          | False       | String       | Product Key      |
 | deviceKey | Query           | False      | String       | 设备key          |
 | commandId | Query            | False    | String        | 命令key          |
@@ -65,9 +65,9 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get&deviceKey=WRJ2c
     "requestId": "7d863d517eae4f18a2776452eb1305bb",
     "data": {
         "commandId": "2242591201245044736",
-        "orgId": "sysenos2018",
-        "productKey": "doxkidR0",
-        "deviceKey": "WRJ2c1yMa5",
+        "orgId": "yourOrgId",
+        "productKey": "yourProductKey",
+        "deviceKey": "yourDeviceKey",
         "assetId": "KmItYUh4",
         "createTime": 1556172678510,
         "createLocalTime": 1556172678510,

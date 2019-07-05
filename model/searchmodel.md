@@ -12,7 +12,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |:-----------|:-----------------|:---------|:----------|:-----------------------------------------------------------------------------------------|
-| orgId      | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)|
+| orgId      | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
 | scope      | Query            | False    | Integer   | 查询范围。 0：只从指定orgId查寻找； 1：从指定orgId和公共orgId查寻。默认为1               |
 | expression | Query            | False    | String    | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | projection | Query            | False    | String Array     | 对结果进行projection，对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fields。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
@@ -36,10 +36,10 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | name          | StringI18n | 模型名字|
 | desc          | String| 模型描述|
 | tags          | Map (Key为String，Value为String)| 用户自定义标签|
-| attributes    | Map (Key为String，Value为`ThingAttribute`结构体)| 静态属性定义的map类型值，key为静态属性id，value为属性定义|
-| measurepoints | Map (Key为String，Value为`ThingMeasurepoint`结构体)| 静态属性定义的map类型值，key为测点id，value为测点定义，见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
-| services      | Map (Key为String，Value为`ThingService`结构体)     | 服务定义的map类型值，key为服务id，value为服务定义，见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
-| events        | Map (Key为String，Value为`ThingEvent`结构体)       | 事件定义的map类型值，key为事件id，value为事件定义，见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
+| attributes    | Map (Key为String，Value为`ThingAttribute`结构体)| 静态属性定义的map类型值，key为静态属性id，value为属性定义，属性定义的结构请见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
+| measurepoints | Map (Key为String，Value为`ThingMeasurepoint`结构体)| 静态属性定义的map类型值，key为测点id，value为测点定义，测点定义的结构请见[ThingAttribute结构体](searchmodel.html#thingteasurepoint-thingteasurepoint)|
+| services      | Map (Key为String，Value为`ThingService`结构体)     | 服务定义的map类型值，key为服务id，value为服务定义，服务定义的结构请见[ThingAttribute结构体](searchmodel.html#thingservice-thingservice)|
+| events        | Map (Key为String，Value为`ThingEvent`结构体)       | 事件定义的map类型值，key为事件id，value为事件定义，事件定义的结构请见[ThingAttribute结构体](searchmodel.html#thingevent-thingevent)|
 
 
 ### ThingAttribute结构体<thingattribute>
@@ -55,7 +55,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | unit       | Unit结构体| 单位。见[Unit结构体](/docs/api/zh_CN/latest/model/searchmodel.html#unit-unit)|
 
 
-### ThingMeasurepoint结构体
+### ThingMeasurepoint结构体<thingteasurepoint>
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
@@ -68,7 +68,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 |signalType|String|信号类型。有如下类型：Generic、AI、PI、DI|
 | unit       | Unit结构体| 单位。见[Unit结构体](/docs/api/zh_CN/latest/model/searchmodel.html#unit-unit)|
 
-### ThingService结构体
+### ThingService结构体<thingservice>
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
@@ -81,7 +81,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | callType   | String| 调用类型<!--同步：SYNC；异步：ASYNC-->|       
 
 
-### ThingEvent结构体
+### ThingEvent结构体<thingevent>
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
@@ -161,7 +161,7 @@ POST https://{apigw-address}/model-service/v2.1/thing-models?action=search
     "pageNo": 1,
 "pageSize": 10
   },
-  "orgId": "1ad3889266800000"
+  "orgId": "yourOrgId"
 }
 
 ```
@@ -178,7 +178,7 @@ POST https://{apigw-address}/model-service/v2.1/thing-models?action=search
             {
                 "modelId": "planet",
                 "modelIdPath": "/planet",
-                "orgId": "1c499110e8800000",
+                "orgId": "yourOrgId",
                 "name": {
                     "defaultValue": "行星",
                     "i18nValue": {
@@ -303,7 +303,7 @@ POST https://{apigw-address}/model-service/v2.1/thing-models?action=search
 {
                 "modelId": "noiseSensor",
                 "modelIdPath": "/noiseSensor",
-                "orgId": "sysenos2018",
+                "orgId": "yourOrgId",
                 "name": {
                     "defaultValue": "Noise Sensor",
                     "i18nValue": {

@@ -14,8 +14,8 @@ https://{apigw-address}/connect-service/v2.1/devices?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
-| assetId  | Query            | False   | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid) |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | Query          | False       | String       | Product Key      |
 | deviceKey | Query           | False      | String       | 设备key          |
     
@@ -72,23 +72,23 @@ responseBody: {
 	"msg": "OK",
 	"requestId": "835a5cc4-4487-4bf2-961a-55bc0ee77d02",
 	"data": {
-		"orgId": "o15475450989191",
+		"orgId": "yourOrgId",
 		"assetId": "9HhK0YxX",
 		"modelId": "abc-test",
 		"modelIdPath": "/abc-test",
-		"productKey": "mJo2gO5u",
+		"productKey": "yourProductKey",
 		"productName": {
 			"defaultValue": "abc-pk",
 			"i18nValue": {}
 		},
 		"productType": "Device",
 		"dataFormat": "Json",
-		"deviceKey": "VcwTHRvYFb",
+		"deviceKey": "yourDeviceKey",
 		"deviceName": {
 			"defaultValue": "testforname",
 			"i18nValue": {}
 		},
-		"deviceSecret": "hOiv7SJAYuyVJp3CXJWJ",
+		"deviceSecret": "yourDeviceSecret",
 		"deviceDesc": "test for undatedevice",
 		"timezone": "+08:00",
 		"deviceAttributes": {

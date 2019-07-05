@@ -12,7 +12,7 @@ GET https://{apigw-address}/event-service/v2.1/alert-contents action=get&orgId=1
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | contentId         | Query            | true     | String    | 告警内容ID。                |
                                                                  
 
@@ -62,7 +62,7 @@ GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get &conten
 			}
 		},
 		"modelId": "ssss",
-		"orgId": "1c499110e8800000",
+		"orgId": "yourOrgId",
 		"updatePerson": "yj_test_customer",
 		"updateTime": 1546612131000,
 		"alertType": {

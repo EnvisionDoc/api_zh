@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |---------------|--------|----------|-----------|
-| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
                                                                  
 
 ## 请求参数（Body）

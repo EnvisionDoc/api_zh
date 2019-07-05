@@ -12,13 +12,13 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 ## 请求参数（Body）
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| assetIds         | Query            | true     | String Array   | 一组资产ID （assetId），最多100个。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#assetid-assetid)   |
+| assetIds         | Query            | true     | String Array   | 一组资产ID （assetId），最多100个。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)   |
 | projection         | Query            | false    | String Array   | 用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection) |
 
 

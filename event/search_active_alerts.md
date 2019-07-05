@@ -12,14 +12,14 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
                                                                  
 
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
 | modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)  |
-| assetIds        | false     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs#assetid-assetid)    |
+| assetIds        | false     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
 | measurepointsId     | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
 | startOccurTime        | false     | String  | 告警触发时间的起始时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)  |
 | endOccurTime        | false     | String     | 告警触发时间的结束时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)   |
@@ -100,7 +100,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search &org
 	"requestId": "a9689b9f-0cb6-4e47-a41c-bd459b687309",
 	"data": [{
 		"eventId": "20190531b83331a8549e1e956f2413552eda1ec9",
-		"orgId": "1c499110e8800000",
+		"orgId": "yourOrgId",
 		"assetId": "qu5TmJRj",
 		"modelId": "Inverter_Model",
 		"modelIdPath": "/Inverter_Model",
