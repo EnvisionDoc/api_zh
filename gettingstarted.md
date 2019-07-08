@@ -19,7 +19,7 @@
 安装EnOS提供的SDK，准备调用API的基础环境。参考以下详细介绍：
 
 ### 使用Java调用SDK
-使用Java调用SDK，需要安装Java core SDK（Poseidon）。Poseidon支持Java 7及以上版本。
+使用Java调用SDK，需要安装Java core SDK（Poseidon）V0.1.7及以上版本。Poseidon支持Java 7及以上版本。
 
 #### 安装方法
 访问[Maven仓库](https://mvnrepository.com/artifact/com.envisioniot/apim-poseidon/0.1.7)，下载Poseidon Jar安装包，在应用中引入Jar安装包。如果应用使用`pom`工程，则在`pom.xml`文件中加入以下依赖：
@@ -39,7 +39,7 @@
 
    ```
    Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
-           .url("https://{apigw-address}/fire/1.0.0/getNews?page=1&count=10")
+           .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
            .method("GET")
            .sync();
    ```
@@ -48,7 +48,7 @@
 
    ```
    Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
-           .url("https://{apigw-address}/fire/1.0.0/getNews?page=1&count=10")
+           .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
            .method("GET")
            .sync();
    ```
@@ -57,7 +57,7 @@
 
    ```
    Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
-               .url("https://{apigw-address}/lily/0.0.1/getPublic")
+               .url("https://{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
                .method("POST")
                .header("Content-Type", "application/json")
                .header("Cookie", "global_id=IAM_S_S7Yd5WXssqEBCququgzeR9JLNBnWr99S")
@@ -72,7 +72,7 @@
 
 ```java
 Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
-        .url("https://{apigw-address}/fire/1.0.0/getNews?page=1&count=10")
+        .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
         .method("GET").async( new PoseidonListener() {
               @Override
               public void onFailure(String errorMessage) {
@@ -94,7 +94,7 @@ Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
 UserRequest userRequest = new UserRequest();
 userRequest.setAge("12");
 userRequest.setQueryPath("1234");
-userRequest.setX_custom_header("ni hao shanghai");
+userRequest.setX_custom_header("hello world");
 
 UserResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
             .url("https://{apigw-address}")
@@ -103,7 +103,7 @@ UserResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(
 .. note:: Request内置支持Header，Query，RequestBody，Path参数；异常情况需捕获PoseidonException异常查看具体问题。
 
 ### 使用Python调用SDK
-使用Python调用SDK，需要安装Python core SDK（Athena）。
+使用Python调用SDK，需要安装Python core SDK（Athena）V0.1.1及以上版本。Athena支持Python 3.6及以上版本。
 
 #### 安装方法
 
@@ -123,7 +123,7 @@ from poseidon import poseidon
 appkey = 'appKey'
 appsecret = 'appSecret'
 
-url = 'https://{apigw-address}/tttttttt/v1/tyy?sid=28654780'
+url = 'https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}'
 
 req = poseidon.urlopen(appkey, appsecret, url)
 print(req)
@@ -136,7 +136,7 @@ from poseidon import poseidon
 appkey = 'appKey'
 appsecret = 'appSecret'
 
-url = 'https://{apigw-address}/tttttttt/v1/tyy?sid=28654780'
+url = '{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}'
 
 header={}
 
@@ -153,9 +153,9 @@ from poseidon import poseidon
 appkey = 'appKey'
 appsecret = 'appSecret'
 
-url = 'https://{apigw-address}/tttttttt/v1/tyy?sid=28654780'
+url = 'https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}'
 
-data = {"username": "11111", "password": "11111"}
+data = {"username": "abc", "password": "123"}
 
 req = poseidon.urlopen(appkey, appsecret, url, data)
 print(req)
