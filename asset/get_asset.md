@@ -88,8 +88,8 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get&orgId=1c499110e8800
 
 ```java
 public class GetAsset {
-    private static String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";
-    private static String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";
+    private static String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";
+    private static String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";
     private static String orgId = "1c499110e8800000";
     private static String url = "https://{apigw-address}";
 
@@ -98,8 +98,8 @@ public class GetAsset {
         request.setOrgId(orgId);
         request.setAssetId("XBOBqC1O");
 
-        GetAssetResponse response = Poseidon.config(PConfig.init().appKey(appKey)
-                .appSecret(appSecret).debug())
+        GetAssetResponse response = Poseidon.config(PConfig.init().accessKey(accessKey)
+                .secretKey(secretKey).debug())
                 .url(url)
                 .getResponse(request, request.getResponseClass());
         System.out.println(response.getCode());

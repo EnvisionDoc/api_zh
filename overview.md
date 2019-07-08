@@ -255,16 +255,16 @@ EnOS API身份验证采用服务账号SA（service account）作为应用或者�
 
 | 接口名称                       | 所需授权              | 所需操作权限 |
 | ------------------------------ | --------------------- | ------------ |
-| Get Electric Power             | Asset                 | read         |
-| Get Current Day Electric Power | Asset                 | read         |
-| Filter Latest Data             | Asset                 | read         |
-| Get Latest Data                | Asset                 | read         |
-| Get Generic Data               | Asset                 | read         |
-| Get DI Data                    | Asset                 | read         |
-| Get AI Normalized Data         | Asset                 | read         |
-| Get AI Data                    | Asset                 | read         |
-| Get Raw Data                   | Asset                 | read         |
-| Get TSDB Storage Policy        | Asset                 | read         |
+| Get Electric Power             | Asset                 | Read         |
+| Get Current Day Electric Power | Asset                 | Read         |
+| Filter Latest Data             | Asset                 | Read         |
+| Get Latest Data                | Asset                 | Read         |
+| Get Generic Data               | Asset                 | Read         |
+| Get DI Data                    | Asset                 | Read         |
+| Get AI Normalized Data         | Asset                 | Read         |
+| Get AI Data                    | Asset                 | Read         |
+| Get Raw Data                   | Asset                 | Read         |
+| Get TSDB Storage Policy        | Asset                 | Read         |
 | UpdateAsset                    | Asset                 | Write        |
 | AssociateAssetNode             | Asset Tree Management | Full-Access  |
 | DeleteAssetNode                | Asset Tree Management | Full-Access  |

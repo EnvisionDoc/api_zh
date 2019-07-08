@@ -180,8 +180,8 @@ GET https://{apigw-address}/model-service/v2.1/thing-models?action=get&orgId=1c4
 
 ```java
 public class GetThingModel {
-    private static String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";
-    private static String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";
+    private static String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";
+    private static String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";
     private static String orgId = "1c499110e8800000";
     private static String url = "https://{apigw-address}";
     public static void main(String[] args) {
@@ -189,7 +189,7 @@ public class GetThingModel {
         request.setOrgId(orgId);
         request.setModelId("planet");
         request.setScope(1);
-        GetThingModelResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        GetThingModelResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
                 .url(url)
                 .getResponse(request, request.getResponseClass());
         System.out.println(response.getData());

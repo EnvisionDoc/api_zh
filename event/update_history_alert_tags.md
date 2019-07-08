@@ -63,8 +63,8 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=updateTags
 
 ```java
 public void testUpdateHistoryAlertTags(){  
-    String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
-    String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
+    String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
+    String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";  
     UpdateHistoryAlertTagsRequest request = new UpdateHistoryAlertTagsRequest();  
     request.setOrgId("1c499110e8800000");  
     request.setEventId("20190612cf89cd96b0be4cafcc342d0dc2ac75a4");  
@@ -74,7 +74,7 @@ public void testUpdateHistoryAlertTags(){
 	    request.setIsPatchUpdate(true);  
 	    request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	    try {  
-	        UpdateHistoryAlertTagsResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	        UpdateHistoryAlertTagsResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
 	                .url("https://{apigw-address}")  
 	                .getResponse(request, UpdateHistoryAlertTagsResponse.class);
 	        System.out.println(response);  

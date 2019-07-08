@@ -143,8 +143,8 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search &org
 
 ```java
 public void testSearchActiveAlerts(){  
-        String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
-        String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
+        String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
+        String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";  
         SearchActiveAlertRequest request = new SearchActiveAlertRequest();  
         request.setOrgId("1c499110e8800000");  
         request.setExpression("eventId='20190531b83331a8549e1e956f2413552eda1ec9'");  
@@ -154,7 +154,7 @@ public void testSearchActiveAlerts(){
 	        request.setPagination(pagination);  
 	        request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	        try {  
-	            SearchActiveAlertResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	            SearchActiveAlertResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
 	                    .url("https://{apigw-address}")  
 	                    .getResponse(request, SearchActiveAlertResponse.class);  
 	            Gson gson = new Gson();  

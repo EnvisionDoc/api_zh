@@ -70,14 +70,14 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate&o
 
 ```java
 public void testAggregateActiveAlert(){  
-       String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
-       String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
+       String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
+       String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";  
        AggregateActiveAlertRequest request = new AggregateActiveAlertRequest();  
        request.setOrgId("1c499110e8800000");  
        request.setGroupByField("assetId");  
        request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	       try {  
-	           AggregateActiveAlertResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	           AggregateActiveAlertResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
 	                   .url("https://{apigw-address}")  
 	                   .getResponse(request, AggregateActiveAlertResponse.class);  
 	           Gson gson = new Gson();  

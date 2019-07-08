@@ -330,8 +330,8 @@ POST https://{apigw-address}/model-service/v2.1/thing-models?action=search
 
 ```java
 public class SearchThingModel {
-    private static String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";
-    private static String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";
+    private static String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";
+    private static String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";
     private static String orgId = "1c499110e8800000";
     private static String url = "https://{apigw-address}";
     public static void main(String[] args) {
@@ -342,7 +342,7 @@ public class SearchThingModel {
         projection.add("modelId");
         projection.add("name.defaultValue");
         request.setProjection(projection);
-        SearchThingModelResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        SearchThingModelResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
                 .url(url)
                 .getResponse(request, request.getResponseClass());
         System.out.println(response.getData());

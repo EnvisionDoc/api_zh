@@ -138,7 +138,7 @@ public void testSearchAlertContent() {
 	        pagination.setSorters(sorterList);  
 	        request.setPagination(pagination);  
 	        try {  
-	            SearchAlertContentResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	            SearchAlertContentResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
 	                    .url("https://{apigw-address}")  
 	                    .getResponse(request, SearchAlertContentResponse.class);  
 	            Gson gson = new Gson();  

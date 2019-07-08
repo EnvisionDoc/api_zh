@@ -103,7 +103,7 @@ public void testGetAlertContent() {
         request.setOrgId(orgId);  
         request.setContentId(contentId);  
         try {  
-            GetAlertContentResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+            GetAlertContentResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
                     .url("https://{apigw-address}")  
 	                    .getResponse(request, GetAlertContentResponse.class);  
 	            Gson gson = new Gson();  

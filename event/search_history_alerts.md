@@ -156,8 +156,8 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search&org
 
 ```java
 public void testSearchHistoryAlerts(){  
-        String appKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
-        String appSecret = "0a446215-a602-4307-9ff2-3feed3e983ce";  
+        String accessKey = "4ced4f38-1ced-476e0a446215-a602-4307";  
+        String secretKey = "0a446215-a602-4307-9ff2-3feed3e983ce";  
         SearchHistoryAlertRequest request = new SearchHistoryAlertRequest();  
         request.setOrgId("1c499110e8800000");  
         request.setStartOccurTime("2019-05-20T00:00:00Z");  
@@ -169,7 +169,7 @@ public void testSearchHistoryAlerts(){
 	        request.setExpression("eventId='20190612cf89cd96b0be4cafcc342d0dc2ac75a4' ");  
 	        request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	        try {  
-	            SearchHistoryAlertResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())  
+	            SearchHistoryAlertResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
 	                    .url("https://{apigw-address}")  
 	                    .getResponse(request, SearchHistoryAlertResponse.class);  
 	            Gson gson = new Gson();  

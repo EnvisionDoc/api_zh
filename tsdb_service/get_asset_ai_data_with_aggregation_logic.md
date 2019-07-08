@@ -156,9 +156,9 @@ private static class Request extends PoseidonRequest{
 @Test
 public void getAssetsAINormalizedDataTest(){
     
-    //appKey and appSecret correspond to AccessKey and SecretKey in EnOS
-    String appKey = "29b8d283-dddd-4c31f0e3a356-0f80-4fdf";
-    String appSecret = "f0e3a856-0fc0-4fdf-b1e5-b34da152879c";
+    //accessKey and secretKey correspond to AccessKey and SecretKey in EnOS
+    String accessKey = "29b8d283-dddd-4c31f0e3a356-0f80-4fdf";
+    String secretKey = "f0e3a856-0fc0-4fdf-b1e5-b34da152879c";
 
     // Create a new request and pass the required parameters into the Query map.
     // The key is the parameter name and the value is the parameter value.
@@ -171,12 +171,12 @@ public void getAssetsAINormalizedDataTest(){
     request.setQueryParam("startTime", "2019-06-01 00:00:00"); //or in UTC format：2019-06-01T00:00:00+08:00
     request.setQueryParam("endTime", "2019-06-11 23:00:00");  //or in UTC format：2019-06-11T23:00:00+08:00
     request.setQueryParam("pageSize" , 10);
-    request.setQueryParam("accessKey", appKey);
+    request.setQueryParam("accessKey", accessKey);
     
     request.setMethod("GET");
 
     try {
-        JSONObject response =  Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/ai-normalized")
                 .getResponse(request, JSONObject.class);
         System.out.println(response);

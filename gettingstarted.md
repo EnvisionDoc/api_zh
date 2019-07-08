@@ -38,7 +38,7 @@
 1. API无校验，示例代码如下：
 
    ```
-   Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
+   Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey))
            .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
            .method("GET")
            .sync();
@@ -47,7 +47,7 @@
 2. 开启API日志，示例代码如下：
 
    ```
-   Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+   Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
            .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
            .method("GET")
            .sync();
@@ -56,7 +56,7 @@
 3. Post请求，示例代码如下：
 
    ```
-   Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+   Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
                .url("https://{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
                .method("POST")
                .header("Content-Type", "application/json")
@@ -71,7 +71,7 @@
 示例代码如下：
 
 ```java
-Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
+Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey))
         .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
         .method("GET").async( new PoseidonListener() {
               @Override
@@ -96,7 +96,7 @@ userRequest.setAge("12");
 userRequest.setQueryPath("1234");
 userRequest.setX_custom_header("hello world");
 
-UserResponse response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret).debug())
+UserResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
             .url("https://{apigw-address}")
             .getResponse(userRequest, UserResponse.class);
 ```
@@ -120,12 +120,12 @@ pip install aphrodite
 ```python
 from poseidon import poseidon
 
-appkey = 'appKey'
-appsecret = 'appSecret'
+accessKey = 'accessKey'
+secretKey = 'secretKey'
 
 url = 'https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}'
 
-req = poseidon.urlopen(appkey, appsecret, url)
+req = poseidon.urlopen(accessKey, secretKey, url)
 print(req)
 ```
 **Header**
@@ -133,14 +133,14 @@ print(req)
 ```python
 from poseidon import poseidon
 
-appkey = 'appKey'
-appsecret = 'appSecret'
+accessKey = 'accessKey'
+secretKey = 'secretKey'
 
 url = '{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}'
 
 header={}
 
-req = poseidon.urlopen(appkey, appsecret, url, None, header)
+req = poseidon.urlopen(accessKey, secretKey, url, None, header)
 print(req)
 
 ```
@@ -150,14 +150,14 @@ print(req)
 ```python
 from poseidon import poseidon
 
-appkey = 'appKey'
-appsecret = 'appSecret'
+accessKey = 'accessKey'
+secretKey = 'secretKey'
 
 url = 'https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}'
 
 data = {"username": "abc", "password": "123"}
 
-req = poseidon.urlopen(appkey, appsecret, url, data)
+req = poseidon.urlopen(accesskey, secretkey, url, data)
 print(req)
 
 ```
@@ -177,10 +177,10 @@ import com.envision.apim.poseidon.core.Poseidon;
 public class demo {
     public static void main(String[] args) {
 
-        String appKey = "app_Key";
-        String appSecret = "app_Secret";
+        String accessKey = "app_Key";
+        String secretKey = "app_Secret";
 
-        String response = Poseidon.config(PConfig.init().appKey(appKey).appSecret(appSecret))
+        String response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey))
                 .url("https://{apigw-address}/asset-service/v2.1/assets?action=get&orgId={org_id}&assetId={asset_id}")
                 .method("GET")
                 .sync();
