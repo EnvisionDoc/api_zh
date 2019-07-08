@@ -21,7 +21,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 |------------------|---------------|----------|---|
 | productKey  | False         | String| productKey|
 | deviceKey   | False         | String| deviceKey|
-| assetId  | False  | String | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
+| assetId  | False  | String | 资产ID。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | tslEventKey | False         | String| 事件key|
 | tslEventType | False         | String| 事件类型|
 | startTime   | False         | String | 开始时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间,yyyy-MM-ddTHH:mm:ssZ代表utc时间，如果不填，默认最近一周的数据|

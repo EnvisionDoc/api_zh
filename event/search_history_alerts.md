@@ -17,17 +17,15 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search
 
 ## 请求参数（Body）
 
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
-|------|----------|--------------------|----|------|
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
 | modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)  |
-| assetIds        | false     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
+| assetId       | false     | String    | 资产ID。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
 | measurepointsId     | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
-| startOccurTime        | false     | String，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)   | 告警触发时间的起始时间。 |
-| endOccurTime        | false     | String，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)       | 告警触发时间的结束时间。 |
-| recoverStartTime        | false     | String，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)       | 告警的恢复时间的起始时间，如果不填，默认最近一周的数据。 |
-| recoverEndTime        | false     | String，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)       | 告警的恢复时间的结束时间，如果不填，默认最近一周的数据 |
+| startOccurTime        | false     | String   | 告警触发时间的起始时间。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| endOccurTime        | false     | String       | 告警触发时间的结束时间。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| recoverStartTime        | false     | String  | 告警的恢复时间的起始时间，如果不填，默认最近一周的数据。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| recoverEndTime        | false     | String  | 告警的恢复时间的结束时间，如果不填，默认最近一周的数据。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
 | expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
 | pagination     | false     |  Pagination请求结构体   | 随机分页，默认就是按照`occurTime`倒序排列，用户不能指定排序字段。默认分页大小是10。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
