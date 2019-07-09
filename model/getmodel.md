@@ -189,7 +189,7 @@ public class GetThingModel {
         request.setOrgId(orgId);
         request.setModelId("planet");
         request.setScope(1);
-        GetThingModelResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
+        GetThingModelResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
                 .url(url)
                 .getResponse(request, request.getResponseClass());
         System.out.println(response.getData());

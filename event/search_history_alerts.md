@@ -169,7 +169,7 @@ public void testSearchHistoryAlerts(){
 	        request.setExpression("eventId='20190612cf89cd96b0be4cafcc342d0dc2ac75a4' ");  
 	        request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	        try {  
-	            SearchHistoryAlertResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
+	            SearchHistoryAlertResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())  
 	                    .url("https://{apigw-address}")  
 	                    .getResponse(request, SearchHistoryAlertResponse.class);  
 	            Gson gson = new Gson();  

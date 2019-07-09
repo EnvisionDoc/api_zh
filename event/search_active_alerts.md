@@ -154,7 +154,7 @@ public void testSearchActiveAlerts(){
 	        request.setPagination(pagination);  
 	        request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	        try {  
-	            SearchActiveAlertResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
+	            SearchActiveAlertResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())  
 	                    .url("https://{apigw-address}")  
 	                    .getResponse(request, SearchActiveAlertResponse.class);  
 	            Gson gson = new Gson();  

@@ -74,7 +74,7 @@ public void testUpdateHistoryAlertTags(){
 	    request.setIsPatchUpdate(true);  
 	    request.headerParams().put("apim-accesskey","4ced4f38-1ced-476e0a446215-a602-4307");  
 	    try {  
-	        UpdateHistoryAlertTagsResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
+	        UpdateHistoryAlertTagsResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())  
 	                .url("https://{apigw-address}")  
 	                .getResponse(request, UpdateHistoryAlertTagsResponse.class);
 	        System.out.println(response);  

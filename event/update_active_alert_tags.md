@@ -75,7 +75,7 @@ public void testUpdateActiveAlertTags(){
 	  
 	  
 	       try {  
-	           UpdateActiveAlertTagsResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())  
+	           UpdateActiveAlertTagsResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())  
 	                   .url("https://{apigw-address}")  
 	                   .getResponse(request, UpdateActiveAlertTagsResponse.class);  
 	           System.out.println(new Gson().toJson(response));  

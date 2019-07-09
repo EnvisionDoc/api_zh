@@ -38,7 +38,7 @@
 1. API无校验，示例代码如下：
 
    ```
-   Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey))
+   Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey))
            .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
            .method("GET")
            .sync();
@@ -47,7 +47,7 @@
 2. 开启API日志，示例代码如下：
 
    ```
-   Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
+   Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
            .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
            .method("GET")
            .sync();
@@ -56,7 +56,7 @@
 3. Post请求，示例代码如下：
 
    ```
-   Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
+   Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
                .url("https://{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
                .method("POST")
                .header("Content-Type", "application/json")
@@ -66,12 +66,14 @@
                .sync();
    ```
 
+.. note:: SDK代码中的 `appKey` 和 `appSecret` 即代表应用注册后生成的 Access Key 和 Secret Key。
+
 **异步请求**
 
 示例代码如下：
 
 ```java
-Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey))
+Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey))
         .url("https://{apigw-address}/{service-name}/{api-version}/{api_name}?{param1=value1&param2=value2}")
         .method("GET").async( new PoseidonListener() {
               @Override
@@ -96,7 +98,7 @@ userRequest.setAge("12");
 userRequest.setQueryPath("1234");
 userRequest.setX_custom_header("hello world");
 
-UserResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
+UserResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
             .url("https://{apigw-address}")
             .getResponse(userRequest, UserResponse.class);
 ```
@@ -177,10 +179,10 @@ import com.envision.apim.poseidon.core.Poseidon;
 public class demo {
     public static void main(String[] args) {
 
-        String accessKey = "app_Key";
-        String secretKey = "app_Secret";
+        String accessKey = "{access_key_of_the_application}";
+        String secretKey = "{secret_key_of_the_application}";
 
-        String response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey))
+        String response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey))
                 .url("https://{apigw-address}/asset-service/v2.1/assets?action=get&orgId={org_id}&assetId={asset_id}")
                 .method("GET")
                 .sync();

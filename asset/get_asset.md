@@ -98,8 +98,8 @@ public class GetAsset {
         request.setOrgId(orgId);
         request.setAssetId("XBOBqC1O");
 
-        GetAssetResponse response = Poseidon.config(PConfig.init().accessKey(accessKey)
-                .secretKey(secretKey).debug())
+        GetAssetResponse response = Poseidon.config(PConfig.init().appKey(accessKey)
+                .appSecret(secretKey).debug())
                 .url(url)
                 .getResponse(request, request.getResponseClass());
         System.out.println(response.getCode());

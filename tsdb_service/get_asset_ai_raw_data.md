@@ -174,7 +174,7 @@ public void getAssetsAIRawDataTest(){
     request.setMethod("GET");
 
     try {
-        JSONObject response =  Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
+        JSONObject response =  Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/ai")
                 .getResponse(request, JSONObject.class);
         System.out.println(response);

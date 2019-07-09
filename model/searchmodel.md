@@ -342,7 +342,7 @@ public class SearchThingModel {
         projection.add("modelId");
         projection.add("name.defaultValue");
         request.setProjection(projection);
-        SearchThingModelResponse response = Poseidon.config(PConfig.init().accessKey(accessKey).secretKey(secretKey).debug())
+        SearchThingModelResponse response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
                 .url(url)
                 .getResponse(request, request.getResponseClass());
         System.out.println(response.getData());
