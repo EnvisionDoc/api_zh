@@ -19,7 +19,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |----------------|---------------|--------------------------|---|
-| expression| False         | String               | 查询表达式，目前支持的字段有`productKey`、`deviceKey`、`assetId`、`productType`、`deviceName`和`status`。支持的算术运算符是in，=，逻辑运算符是and。<br>`productKey`、`deviceKey`、`assetId`支持in和=算术运算符；<br>`productType`支持=运算符，取值[Device/Gateway]；<br>`deviceName`支持指定语言模糊查询，`deviceName like ‘xxx’`模糊查询default、中文和英文名称，`deviceName.default like ‘xxx’`模糊查询默认名称，`deviceName.zh_CN like ‘xxx’`模糊查询中文名称，不存在中文名称时模糊查询default名称，`deviceName.en_US like ‘xxx’`模糊查询英文名称，不存在英文名称时模糊查询default名称；<br>status支持=运算符，取值inactive、online、offline和disable。<br>[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| expression| False         | String               | 查询表达式，目前支持的字段有`productKey`、`deviceKey`、`assetId`、`productType`、`deviceName`和`status`。<br>`productKey`、`deviceKey`、`assetId`支持in和=算术运算符；<br>`productType`支持=运算符，取值[Device/Gateway]；<br>`deviceName`支持指定语言模糊查询，`deviceName like ‘xxx’`模糊查询default、中文和英文名称，`deviceName.default like ‘xxx’`模糊查询默认名称，`deviceName.zh_CN like ‘xxx’`模糊查询中文名称，不存在中文名称时模糊查询default名称，`deviceName.en_US like ‘xxx’`模糊查询英文名称，不存在英文名称时模糊查询default名称；<br>`status`支持=运算符，取值inactive、online、offline和disable。<br>[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | pagination| False         | pagination请求结构体 | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 | projection| False         | Projection结构体    |用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)  |
 
