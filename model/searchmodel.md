@@ -14,7 +14,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 |:-----------|:-----------------|:---------|:----------|:-----------------------------------------------------------------------------------------|
 | orgId      | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
 | scope      | Query            | False    | Integer   | 查询范围。 0：只从指定orgId查寻找； 1：从指定orgId和公共orgId查寻。默认为1               |
-| expression | Query            | False    | String    | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`、`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| expression | Query            | False    | String    | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`（支持算术运算符in）、`tag`（支持算术运算符=）。支持的逻辑运算符为and、or、not。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | projection | Query            | False    | String Array     | 对结果进行projection，对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fields。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
 | pagination | Query            | False    | Pagination请求结构体       | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
