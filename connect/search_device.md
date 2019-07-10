@@ -17,12 +17,60 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 
 ## 请求参数（Body）
 
+
+
+<table>
+            <tr align="left">
+                <th>名称</th>
+                <th>是否必须</th>
+                <th>数据类型</th>
+				<th>描述</th>
+            </tr>
+            <tr>
+                <td>expression</td>
+                <td>False</td>
+                <td>String</td>
+				<td>查询表达式，目前支持的字段有<code>productKey</code>、<code>deviceKey</code>、<code>assetId</code>、<code>productType</code>、<code>deviceName</code>和<code>status</code>。
+				<ul>
+				<li><code>productKey</code>、<code>deviceKey</code>、<code>assetId</code>支持in和=算术运算符；</li>
+            	<li><code>productType</code>支持=运算符，有效取值为：Device、Gateway；</li>
+            	<li><code>deviceName</code>支持指定语言模糊查询：
+					<ul>
+						<li><code>deviceName like ‘xxx’</code>模糊查询default、中文和英文名称</li>
+						<li><code>deviceName.default like ‘xxx’</code>模糊查询默认名称</li>
+						<li><code>deviceName.zh_CN like ‘xxx’</code>模糊查询中文名称，不存在中文名称时模糊查询default名称</li>
+						<li><code>deviceName.en_US like ‘xxx’</code>模糊查询英文名称，不存在英文名称时模糊查询default名称</li>
+					</ul>
+				</li>
+				<li><code>status</code>支持=运算符，取值inactive、online、offline和disable。</li>
+				</ul>
+<a href="/docs/api/zh_CN/latest/api_faqs.html#id1">如何使用查询表达式</a></td>
+            </tr>
+            <tr>
+                <td>pagination</td>
+                <td>False</td>
+                <td>pagination请求结构体</td>
+				<td>随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。<a href="/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination">Pagination请求结构体</a></td>
+            </tr>
+            <tr>
+                <td>projection</td>
+                <td>False</td>
+                <td>Projection结构体</td>
+				<td>用于在接口请求中描述待返回的对象projection。详见<a href="/docs/api/zh_CN/latest/api_faqs.html#projection">projection参数如何对结果集做裁剪</a></td>
+            </tr>
+
+</table>
+
+
+<!--
+
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |----------------|---------------|--------------------------|---|
 | expression| False         | String               | 查询表达式，目前支持的字段有`productKey`、`deviceKey`、`assetId`、`productType`、`deviceName`和`status`。<br>`productKey`、`deviceKey`、`assetId`支持in和=算术运算符；<br>`productType`支持=运算符，取值[Device/Gateway]；<br>`deviceName`支持指定语言模糊查询，`deviceName like ‘xxx’`模糊查询default、中文和英文名称，`deviceName.default like ‘xxx’`模糊查询默认名称，`deviceName.zh_CN like ‘xxx’`模糊查询中文名称，不存在中文名称时模糊查询default名称，`deviceName.en_US like ‘xxx’`模糊查询英文名称，不存在英文名称时模糊查询default名称；<br>`status`支持=运算符，取值inactive、online、offline和disable。<br>[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | pagination| False         | pagination请求结构体 | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 | projection| False         | Projection结构体    |用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)  |
 
+-->
 
 
 ## 响应参数

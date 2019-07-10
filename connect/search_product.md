@@ -13,7 +13,6 @@ https://{apigw-address}/connect-service/v2.1/products?action=search
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| productKey        | Query            | true    | String    | Product Key|
 
 
 ## 请求参数（Body）
