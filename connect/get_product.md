@@ -1,6 +1,6 @@
 # Get Product
 
-通过`productKey`获取product的详细信息。
+通过`productKey`获取产品的详细信息。
 
 ## 请求格式
 
@@ -20,7 +20,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Product结构体                           | Product的具体信息，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)                |
+| data| Product结构体                           | 产品的具体信息，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)                |
 
 
 ### Product结构体<productstruc>
@@ -28,9 +28,8 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 | 名称  |  数据类型      | 描述               |
 |-------|-------|---------------------------|
 | orgId |  String | 资产所属的组织ID |
-| productKey          | String| 产品名称                                             |
-| productName         | StringI18n |  产品名称。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)
-                                            |
+| productKey          | String| 产品名称|
+| productName         | StringI18n |  产品名称。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)|
 | productSecret       | String                          | 产品私钥                                             |
 | productDesc         | String                          | 产品描述                                             |
 | productType         | Sting                           | 产品类型，Device代表普通类型，Gateway代表网关类型    |

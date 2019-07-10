@@ -7,4 +7,4 @@
 | 操作名称     | 描述                |
 |--------------|---------------------|
 | [Update Asset](update_asset) | 全量或部分更新资产信息  |
-| [Get Asset](get_asset)    | 根据资产id获取资产数据 |
+| [Get Asset](get_asset)    | 根据资产ID获取资产数据 |

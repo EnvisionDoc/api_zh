@@ -26,7 +26,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 | tslEventType | False         | String| 事件类型|
 | startTime   | False         | String | 开始时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间,yyyy-MM-ddTHH:mm:ssZ代表utc时间，如果不填，默认最近一周的数据|
 | endTime  | False         | String    | 结束时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间,yyyy-MM-ddTHH:mm:ssZ代表UTC时间，如果不填，默认最近一周的数据|
-| expression  | False         | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`productKey`、`deviceKey`、`assetId`、`tslEventKey`、`tslEventType`。支持的算术运算符是=，in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| expression  | False         | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`productKey`、`deviceKey`、`assetId`、`tslEventKey`、`tslEventType`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | pagination  | False  |Pagination请求结构体 | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。参见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)  |
 
 

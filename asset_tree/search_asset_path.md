@@ -43,7 +43,7 @@ paths?action=search
 | 名称 |数据类型  | 描述 |
 |-----------|------------------|------------------|
 | assets     | Map（Key为String，Value为Asset） | 路径上的资产数据  |
-| assetPaths | String Array Array             | 当`pathProjection`参数为COMPLETE时，其中每一个String Array为路径上起始到终止节点的每个资产Id，长度大于等于2。 当`pathProjection`参数为END_NODE_ONLY时，其中每一个String Array为路径的起始与终止节点的资产Id，长度固定为2。 |
+| assetPaths | String Array Array             | 当`pathProjection`参数为COMPLETE时，其中每一个String Array为路径上起始到终止节点的每个资产ID，长度大于等于2。 当`pathProjection`参数为END_NODE_ONLY时，其中每一个String Array为路径的起始与终止节点的资产ID，长度固定为2。 |
 
 
 ### Asset结构体

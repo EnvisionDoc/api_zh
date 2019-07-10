@@ -32,7 +32,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=get
 | eventId         | String    |事件ID |
 | productKey   | String         | productKey              |
 | deviceKey    | String         | deviceKey               |
-| assetId     | String         | 资产id                  |
+| assetId     | String         | 资产ID                  |
 | tslEventKey  | String         | TSL模型中的事件Key      |
 | tslEventType | String         | TSL模型中定义的事件类型 |
 | output      | String         | 事件的输出              |

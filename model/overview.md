@@ -7,4 +7,4 @@
 | 操作名称     | 描述                |
 |--------------|---------------------|
 | [Get Thing Model](getmodel)    | 根据modelId获取模型 |
-| [Search Thing Model](searchmodel) | 根据组织id搜索模型  |
+| [Search Thing Model](searchmodel) | 根据组织ID搜索模型  |

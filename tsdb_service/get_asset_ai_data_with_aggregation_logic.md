@@ -38,7 +38,7 @@ https://{apigw-address}/tsdb-service/v2.0/ai-normalized?orgId={}&modelId={}&asse
 
 ```
 {
-        "assetId": "4DXYH7nS",  			  //资产id
+        "assetId": "4DXYH7nS",  			  //资产ID
         "timestamp": 1560249312446,			  //UNIX数据时间戳
         "opentsdb_ai_point_xxx": "1.1236", 	 //测点标识符与测点数据
         "localtime": "2019-06-11 18:35:12"	 //数据本地时间标记

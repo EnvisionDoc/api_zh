@@ -1,6 +1,6 @@
 # Search Thing Model
 
-根据组织id搜索物模型。
+根据组织ID搜索物模型。
 
 ## 请求格式
 

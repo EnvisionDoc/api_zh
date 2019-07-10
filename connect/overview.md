@@ -4,7 +4,7 @@
 
 | 操作名称     | 描述                |
 |--------------|---------------------|
-| [Get Product](get_product) | 获取product的详细信息 |
+| [Get Product](get_product) | 获取产品的详细信息 |
 | [Search Product](search_product)    | 搜索满足条件的产品 |
 |[Create Product](create_product) |创建产品|
 |[Update Product](update_product)  |更新产品|
