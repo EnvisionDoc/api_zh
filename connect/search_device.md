@@ -32,17 +32,17 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
                 <td>String</td>
 				<td>查询表达式，目前支持的字段有<code>productKey</code>、<code>deviceKey</code>、<code>assetId</code>、<code>productType</code>、<code>deviceName</code>和<code>status</code>。
 				<ul>
-				<li><code>productKey</code>、<code>deviceKey</code>、<code>assetId</code>支持in和=算术运算符；</li>
-            	<li><code>productType</code>支持=运算符，有效取值为：Device、Gateway；</li>
-            	<li><code>deviceName</code>支持指定语言模糊查询：
+				<li><code>productKey</code>、<code>deviceKey</code>、<code>assetId</code>：支持in和=算术运算符；</li>
+            	<li><code>productType</code>：支持=运算符，有效取值为：Device、Gateway；</li>
+            	<li><code>deviceName</code>：支持指定语言模糊查询：
 					<ul>
-						<li><code>deviceName like ‘xxx’</code>模糊查询default、中文和英文名称</li>
-						<li><code>deviceName.default like ‘xxx’</code>模糊查询默认名称</li>
-						<li><code>deviceName.zh_CN like ‘xxx’</code>模糊查询中文名称，不存在中文名称时模糊查询default名称</li>
-						<li><code>deviceName.en_US like ‘xxx’</code>模糊查询英文名称，不存在英文名称时模糊查询default名称</li>
+						<li><code>deviceName like ‘xxx’</code>：模糊查询default、中文和英文名称</li>
+						<li><code>deviceName.default like ‘xxx’</code>：模糊查询默认名称</li>
+						<li><code>deviceName.zh_CN like ‘xxx’</code>：模糊查询中文名称，不存在中文名称时模糊查询default名称</li>
+						<li><code>deviceName.en_US like ‘xxx’</code>：模糊查询英文名称，不存在英文名称时模糊查询default名称</li>
 					</ul>
 				</li>
-				<li><code>status</code>支持=运算符，取值inactive、online、offline和disable。</li>
+				<li><code>status</code>：支持=运算符，取值inactive、online、offline和disable。</li>
 				</ul>
 <a href="/docs/api/zh_CN/latest/api_faqs.html#id1">如何使用查询表达式</a></td>
             </tr>

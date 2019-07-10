@@ -13,6 +13,8 @@ EnOS提供以下API服务：
 - [资产树服务](/docs/api/zh_CN/latest/asset_tree/overview.html)：提供组织内资产树的创建、管理、更新、查询等服务。
 - [TSDB数据服务](/docs/api/zh_CN/latest/tsdb_service/overview.html)：提供获取已存储的资产数据服务。
 - [TSDB策略服务](/docs/api/zh_CN/latest/tsdb_policy/overview.html)：提供获取TSDB存储策略配置信息的服务。
+- [通用文件服务](/docs/api/zh_CN/latest/common_file/overview.html)：如需查看通用文件服务的API文档，点击右上角**返回旧版EnOS API文档**，在目录树中选择**Common File Service**。
+。
 
 ## API Request结构
 
