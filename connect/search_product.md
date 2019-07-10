@@ -20,7 +20,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=search
 
 | 名称         | 是否必须 | 数据类型 | 描述      |
 |-------------------|----------|-----------|--------------|
-| expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`productKey`、`modelId`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
 | pagination     | false     | String   | 分页参数，如果不填，默认每页10条。目前，不支持排序（忽略排序字段）。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
 
 

@@ -23,7 +23,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 | measurepointsId     | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
 | startOccurTime        | false     | String  | 告警触发时间的起始时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)  |
 | endOccurTime        | false     | String     | 告警触发时间的结束时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)   |
-| expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`、`assetId`、`measurepointId`、`hitRuleId`、`severityId`、`typeId`、`subTypeId`、`contentId`、`eventType`、`eventId`、`tag`。支持的算术运算符是=、in和!=，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
 | pagination     | false     |  Pagination请求结构体   | 随机分页，默认就是按照`occurTime`倒序排列，用户不能指定排序字段。默认分页大小是10。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
 ## 响应参数

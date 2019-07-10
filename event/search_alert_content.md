@@ -22,7 +22,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&org
 | modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)  |
 | alertTypeId  | false    | String               | 告警类型ID   |
 | subAlertTypeId    | false    | String   | 告警子类型ID  |                       
-| expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`contentId`、`modelId`、`alertTypeId`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
 | pagination     | false     | Pagination请求结构体    | 分页的参数。如果不填，默认每页10条。默认按照`updateTime`降序排序，支持用户指定以下字段排序：`contentId`，`modelId`，`updatePerson`，`updateTime`。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
 ## 响应参数

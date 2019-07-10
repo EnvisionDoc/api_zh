@@ -18,7 +18,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-types/search?action=search
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
-| expression         | false    | String   | 查询表达式，查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=，in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`typeId`、`parentTypeId`。支持的算术运算符是=、in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
 | pagination     | false     |Pagination请求结构体 | 分页的参数。如果不填，默认每页10条。默认按照`updateTime`降序排序。支持用户使用`AlertType`结构体中的字段指定排序。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
 
 ## 响应参数
