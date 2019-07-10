@@ -94,7 +94,7 @@ EnOS API的返回为以下格式的JSON结构体：
 
 ## 公共参数说明
 
-对各API服务的公共参数说明如下：
+对各API服务的公共参数说明如下。其他通用参数的获取和描述，详见[API FAQs](/docs/api/zh_CN/latest/api_faqs.html)
 
 ### 公共请求参数（接入服务等）
 
