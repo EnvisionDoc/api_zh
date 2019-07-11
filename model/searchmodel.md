@@ -37,7 +37,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | desc          | String| 模型描述|
 | tags          | Map (Key为String，Value为String)| 用户自定义标签|
 | attributes    | Map (Key为String，Value为`ThingAttribute`结构体)| 静态属性定义的map类型值，key为静态属性id，value为属性定义，属性定义的结构请见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
-| measurepoints | Map (Key为String，Value为`ThingMeasurepoint`结构体)| 静态属性定义的map类型值，key为测点id，value为测点定义，测点定义的结构请见[ThingMeasurepoint结构体](searchmodel.html#thingteasurepoint-thingteasurepoint)|
+| measurepoints | Map (Key为String，Value为`ThingMeasurepoint`结构体)| 静态属性定义的map类型值，key为测点id，value为测点定义，测点定义的结构请见[ThingMeasurepoint结构体](searchmodel.html#thingmeasurepoint-thingmeasurepoint)|
 | services      | Map (Key为String，Value为`ThingService`结构体)     | 服务定义的map类型值，key为服务id，value为服务定义，服务定义的结构请见[ThingService结构体](searchmodel.html#thingservice-thingservice)|
 | events        | Map (Key为String，Value为`ThingEvent`结构体)       | 事件定义的map类型值，key为事件id，value为事件定义，事件定义的结构请见[ThingEvent结构体](searchmodel.html#thingevent-thingevent)|
 
@@ -55,7 +55,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | unit       | Unit结构体| 单位。见[Unit结构体](/docs/api/zh_CN/latest/model/searchmodel.html#unit-unit)|
 
 
-### ThingMeasurepoint结构体<thingteasurepoint>
+### ThingMeasurepoint结构体<thingmeasurepoint>
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
