@@ -65,7 +65,7 @@
     "timezone": "+00:00",
     "name": {
       "i18nValue": {
-"en_US": "English name ",
+        "en_US": "English name ",
         "zh_CN": "Chinese name"
 },
       "defaultValue": "mars!"
