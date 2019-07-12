@@ -13,7 +13,7 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| assetId       | Query            | true    | String    | 资产ID。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)        |
+| assetId       | Query            | true    | String    | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)        |
 
 
 ## 响应参数

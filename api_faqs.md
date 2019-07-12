@@ -4,7 +4,7 @@
 
 在EnOS Console左边导航栏中点击**身份与授权 > 组织信息**。组织ID即为orgId。
 
-## 如何获取模型标识符（`modeId`）信息<modeid>
+## 如何获取模型标识符（`modelId`）信息<modelid>
 
 1. 在EnOS Console左边导航栏中点击资产树，选择目标资产树，搜索想要查询的设备名称。
 2. 选择设备，点击右侧概要信息中模型名称后的“查看”，模型标识符即为`modelId`。
@@ -227,4 +227,4 @@ EnOS服务支持使用标签来管理对象，可以基于标签对对象进行�
 
 ## 如何获取资产树ID
 
-每一棵资产树都有一个资产树ID。用户可以在控制台“设备与资产"下的资产树管理页面，查看每棵资产树的资产树ID。用户也可以通过Search Asset Tree接口获取OU下的所有资产树。有关资产树的详细信息，请查看[资产树](/docs/device-connection/zh_CN/latest/howto/asset_tree/assettree_overview.html)。
+每一棵资产树都有一个资产树ID。用户可以在控制台**设备与资产**下的资产树管理页面，查看每棵资产树的资产树ID。用户也可以通过Search Asset Tree接口获取OU下的所有资产树。有关资产树的详细信息，请查看[资产树](/docs/device-connection/zh_CN/latest/howto/asset_tree/assettree_overview.html)。

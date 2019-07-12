@@ -19,7 +19,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&org
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
-| modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)  |
+| modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
 | alertTypeId  | false    | String               | 告警类型ID   |
 | subAlertTypeId    | false    | String   | 告警子类型ID  |                       
 | expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`contentId`、`modelId`、`alertTypeId`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|

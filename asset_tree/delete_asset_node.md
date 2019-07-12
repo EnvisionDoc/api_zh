@@ -15,7 +15,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=delete
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID](/docs/api/zh_CN/latest/api_faqs#id)        |
-| assetId  | Query            | false    | String    | 待移除的资产ID（用于识别逻辑资产）。当存在`assetId`时，以`assetId`为准，当`assetId`不存在时，则看`productKey`，`deviceKey`。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)  |
+| assetId  | Query            | false    | String    | 待移除的资产ID（用于识别逻辑资产）。当存在`assetId`时，以`assetId`为准，当`assetId`不存在时，则看`productKey`，`deviceKey`。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)  |
 | productKey  | Query            | false    | String    | 待移除的设备ProductKey（用于识别设备资产）。 |
 | deviceKey  | Query            | false    | String    | 待移除的设备DeviceKey（用于识别设备资产）。 |
 

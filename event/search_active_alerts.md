@@ -18,8 +18,8 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
-| modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)  |
-| assetId        | false     | String    | 资产ID。[如何获取assetId信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
+| modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
+| assetId        | false     | String    | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
 | measurepointsId     | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
 | startOccurTime        | false     | String  | 告警触发时间的起始时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)  |
 | endOccurTime        | false     | String     | 告警触发时间的结束时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)   |

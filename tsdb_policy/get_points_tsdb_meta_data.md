@@ -13,7 +13,7 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&assetIds=
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
-| modelIds       | Query            | false    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modeid-modeid)|
+| modelIds       | Query            | false    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)|
 | measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
                                               
 
