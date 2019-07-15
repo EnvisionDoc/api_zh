@@ -29,7 +29,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchRelated
 
 | 名称      | 是否必须  | 数据类型 | 描述      |
 |-----------|---------|--------|-----------------------|
-| assetIds                   | String Array   | false    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
+| assetIds                   | String Array   | false    | 资产ID，如果想查询多个资产，就提供多个资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | modelIds            | String Array   | false    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid) |
 | rootModelIds         | String Array   | False    | 资产所属的根模型ID。如果想查询多个根模型，就提供多个根模型ID              |
 | isParentOfAssetId     | String         | false    | 待查询的资产是指定资产的直接父节点  值为指定资产的资产ID<br>[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)  |

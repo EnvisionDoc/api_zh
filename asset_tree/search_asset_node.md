@@ -28,11 +28,11 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 
 | 名称      | 是否必须  | 数据类型 | 描述      |
 |-----------|---------------|----|--------------|
-| assetIds| False | String Array | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
+| assetIds| False | String Array | 资产ID。如果想查询多个资产，就提供多个资产ID组成的List。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | modelIds | False | String Array | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid) |
 | rootModelIds | False | String Array | 资产所属的根模型ID。如果想查询多个根模型，就提供多个根模型ID。|
 | nameLike | False | nameLike结构体 | 用于描述对国际化名称的查询条件，见[nameLike结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_node.html#namelike-namelikestruc) |
-| attributes  | False|Map |资产所属的模型属性。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
+| attributes  | False|Map |一组属性值。键即属性名，统一为String类型，值即属性值，类型依据具体模型的定义。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
 | tags | False | Tag结构体 | 用户自定义的一组标签 |
 | treeId | False | String | 资产关联的资产树ID |
 

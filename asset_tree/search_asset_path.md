@@ -34,7 +34,7 @@ paths?action=search
 |-----------|---------------|----|-----------------------|
 | rootModelIds| false   | String Array         | 根模型id，如果希望查询多个根模型就提供多个根模型id  |
 | modelIds   | false   | String Array         | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid)  |
-| assetIds    | false          | Array          | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| assetIds    | false          | Array          | 资产ID，如果希望查询多个资产就提供多个资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 
 
 

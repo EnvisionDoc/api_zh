@@ -29,7 +29,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | String         | Product Key      |
 | deviceKey | String         | 设备key          |
 
