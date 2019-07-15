@@ -16,7 +16,7 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&me
 | modelId       | Query            | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)                                                                                                                                                                                                                           |
 | assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)                                                                                                                                                                                |
 | measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
-| startTime     | Query            | true     | String    | 采样数据开始时间，支持UTC时间格式和local时间格式。 local时间格式为YYYY-MM-DD HH:MM:SS。当格式为本地时间时，应用按照设备所在地的当地时间进行查询。 UTC时间格式需要加入时区信息，例如：2019-06-01T00:00:00+08:00；当格式为UTC格式时，应用对所有资产按照统一的开始时间戳和结束时间戳进行查询。 |
+| startTime     | Query            | true     | String    | 采样数据开始时间，支持UTC时间格式和local时间格式。 local时间格式为YYYY-MM-DD HH:MM:SS。当格式为本地时间时，应用按照设备所在地的当地时间进行查询。UTC时间格式需要加入时区信息，例如：2019-06-01T00:00:00+08:00；当格式为UTC格式时，应用对所有资产按照统一的开始时间戳和结束时间戳进行查询。 |
 | endTime       | Query            | true     | String    | 采样数据结束时间，格式必须与开始时间保持一致                                                                                                                                                                                                                                              |
 | pageSize      | Query            | false    | Integer   | 单设备单测点单页返回记录条数的上限，默认为1000。对于单次查询，返回总数据量遵循约束: （设备数 * 点数 * pagesize）≤ 640000。                                                                                                                                                                      |
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey-accesskey)                                                                     
@@ -37,10 +37,10 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&me
 例子：
 ```json
 {
-        "assetId": "4DXYH7nS",  			       
-        "timestamp": 1560249312446,			    
-        "opentsdb_ai_point_xxx": "1.1236", 	 
-        "localtime": "2019-06-11 18:35:12"	 
+        "assetId": "4DXYH7nS",  			 //资产ID      
+        "timestamp": 1560249312446,			 //数据时间戳   
+        "opentsdb_ai_point_xxx": "1.1236", 	 //测点标识符与测点数据
+        "localtime": "2019-06-11 18:35:12"	 //数据本地时间标记
 }
 ```
 
@@ -59,7 +59,7 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId={}&modelId={}&assetIds={}&me
 ### 请求示例
 Local时间格式：
 ```
-https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_di_point_xxx,opentsdb_ai_point_xxx,opentsdb_generic_point_xxx&startTime=2019-06-01%2010:00:00&endTime=2019-06-11%2023:00:00&pageSize=&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&modelId=&assetIds=4DXYH7nS&measurepoints=opentsdb_ai_point_xxx&startTime=2019-05-26%2010:00:00&endTime=2019-06-28%2023:00:00&pageSize=&accessKey=accessKey
 ```
 
 ### 返回示例
@@ -73,17 +73,17 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&modelId=&ass
   "data": {
     "items": [
       {
-            "localtime": "2019-06-11 18:35:12",
-            "assetId": "4DXYH7nS",
-            "opentsdb_ai_point_xxx": "1.1236",
-            "timestamp": 1560249312446
-        },
+        "assetId": "4DXYH7nS",
+        "timestamp": 1560249312446,
+        "opentsdb_ai_point_xxx": "1.1236",
+        "localtime": "2019-06-11 18:35:12"
+      },
       {
-            "localtime": "2019-06-12 16:49:29",
-            "opentsdb_di_point_xxx": "0",
-            "assetId": "4DXYH7nS",
-            "timestamp": 1560329369735
-        }
+        "localtime": null,
+        "opentsdb_di": "0",
+        "assetId": "4DXYH7nS",
+        "timestamp": 1560329369735
+      }
     ]
   }
 }
@@ -131,7 +131,7 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&accessKey=ac
 private static class Request extends PoseidonRequest{
 
     public void setQueryParam(String key, Object value){
-        queryEncodeParams().put(key, value);
+        queryParams().put(key, value);
     }
 
     public void setMethod(String method) {

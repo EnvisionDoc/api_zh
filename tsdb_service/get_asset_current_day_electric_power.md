@@ -29,10 +29,9 @@ https://{apigw-address}/tsdb-service/v2.0/electric-power/current-day?orgId={}&mo
 例子：
 ```json
 {
-        "assetId": "4DXYH7nS", 						
-        "timestamp": 1560329220000,				        
-        "opentsdb_pi_point_xxx": "10.615000000000002" 
-        "localtime": "2019-06-12 16:47:00"
+        "assetId": "4DXYH7nS", 			//资产ID			
+        "timestamp": 1560329220000,	 //UNIX数据时间戳	        
+        "opentsdb_pi_point_xxx": "10.615000000000002"  //电量的sum当天聚合与数据
 }
 ```
 
@@ -41,7 +40,7 @@ https://{apigw-address}/tsdb-service/v2.0/electric-power/current-day?orgId={}&mo
 | assetId       | Object    | 资产ID。                                             |
 | pointId | Object    | 此参数是变量，表示测点的标识符与数据。 此处数据是电量pi的sum当天聚合。                                  |
 | timestamp     | Object    | 数据时间戳，UNIX时间，精确到秒。                                    |
-| localtime     | Object    | 数据本地时间标记，精确到秒。                                     |
+
 
 ## 错误码
 有关错误码的描述，参见[通用错误码](overview#errorcode)。
@@ -67,7 +66,6 @@ https://{apigw-address}/tsdb-service/v2.0/electric-power/current-day?orgId=o1550
         "assetId": "4DXYH7nS",
         "timestamp": 1560329220000,
         "sum(opentsdb_pi_point_xxx)": "10.615000000000002"
-        "localtime": "2019-06-12 16:47:00"
       }
     ]
   }
@@ -80,7 +78,7 @@ https://{apigw-address}/tsdb-service/v2.0/electric-power/current-day?orgId=o1550
 private static class Request extends PoseidonRequest{
 
     public void setQueryParam(String key, Object value){
-        queryEncodeParams().put(key, value);
+        queryParams().put(key, value);
     }
 
     public void setMethod(String method) {
@@ -104,12 +102,12 @@ private static class Request extends PoseidonRequest{
 @Test
 public void getAssetsCurrentDayElectricPowerTest(){
     
-    //accessKey and secretKey correspond to AccessKey and SecretKey in EnOS
+    //1.在EnOS Console的左边导航栏中点击应用注册。
+    //2.点击需调用API的应用，查看基本信息中的AccessKey即为appKey、SecretKey即为appSecret
     String accessKey = "29b8d283-dddd-4c31f0e3a356-0f80-4fdf";
     String secretKey = "f0e3a856-0fc0-4fdf-b1e5-b34da152879c";
 
-    // Create a new request and pass the required parameters into the Query map.
-    // The key is the parameter name and the value is the parameter value.
+    //新建一个request 然后把需要的参数传进去存在query的map中，key是参数名字，value是参数值
     Request request = new Request();
     request.setQueryParam("orgId", "o15504745674071");
     request.setQueryParam("modelId", "model_xxx");
@@ -120,9 +118,9 @@ public void getAssetsCurrentDayElectricPowerTest(){
     request.setMethod("GET");
 
     try {
-        JSONObject response =  Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
+        EnOSResponse<JSONObject> response = Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/electric-power/current-day")
-                .getResponse(request, JSONObject.class);
+                .getResponse(request, EnOSResponse.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();

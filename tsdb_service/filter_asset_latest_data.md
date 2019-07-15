@@ -32,9 +32,9 @@ https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetI
 例子：
 ```json
 {
-    "assetId": "FGqRJKPM", 		
-    "pointId": 1.5,   			
-    "timestamp": 1559570160000	
+    "assetId": "FGqRJKPM", 		//资产ID
+    "pointId": 1.5,   			//测点标识符与测点数据
+    "timestamp": 1559570160000	//UNIX数据时间戳
 }
 ```
 
@@ -81,7 +81,7 @@ https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId=o15528761854851&as
 private static class Request extends PoseidonRequest{
 
     public void setQueryParam(String key, Object value){
-        queryEncodeParams().put(key, value);
+        queryParams().put(key, value);
     }
 
     public void setMethod(String method) {
@@ -104,12 +104,12 @@ private static class Request extends PoseidonRequest{
 @Test
 public void filterAssetsLatestDataTest(){
     
-    //accessKey and secretKey correspond to AccessKey and SecretKey in EnOS
+    //1.在EnOS Console的左边导航栏中点击应用注册。
+    //2.点击需调用API的应用，查看基本信息中的AccessKey即为appKey、SecretKey即为appSecret
     String accessKey = "29b8d283-dddd-4c31f0e3a356-0f80-4fdf";
     String secretKey = "f0e3a856-0fc0-4fdf-b1e5-b34da152879c";
 
-    // Create a new request and pass the required parameters into the Query map.
-    // The key is the parameter name and the value is the parameter value.
+    //新建一个request 然后把需要的参数传进去存在query的map中，key是参数名字，value是参数值
     Request request = new Request();
     request.setQueryParam("orgId", "o15504745674071");
     request.setQueryParam("timeWindow", 10);
@@ -123,9 +123,9 @@ public void filterAssetsLatestDataTest(){
     request.setMethod("GET");
 
     try {
-        JSONObject response =  Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
+        EnOSResponse<JSONObject> response =  Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
                 .url("http://apim-gateway/tsdb-service/v2.0/latest/filter")
-                .getResponse(request, JSONObject.class);
+                .getResponse(request, EnOSResponse.class);
         System.out.println(response);
     } catch (Exception e) {
         e.printStackTrace();
