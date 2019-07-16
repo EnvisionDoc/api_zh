@@ -29,8 +29,9 @@ https://{apigw-address}/asset-service/v2.1/assets?action=update
 | assetId |   true   | String | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | name | false| StringI18n |该资产的各语言名称。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3) |
 | description | false     | String | 资产描述|
-|attributes  | false<br>(如果`isPatchUpdate`为false，`attributes`必填) |Map  |资产所属的模型属性。<br>`Key`为属性id，String类型。Value的类型取决于模型中这个属性的定义。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
+|attributes  | false<br>(如果`isPatchUpdate`为false，`attributes`必填) |Map  |资产所属的模型属性。<br>`Key`为属性ID，String类型。Value的类型取决于模型中这个属性的定义。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
 |timezone  |  false    |String  |时区。详情请见[时区表示方法](http://www.envisioniot.com/docs/api/zh_CN/latest/api_faqs.html#id4) |
+|modelId|false（如果isPatchUpdate为false，modelId必填）|String|模型ID|
 |tags|false|Map<br>（Key为String, Value为String）|用户自定义标签，详情请见[标签的作用与表示方法](http://www.envisioniot.com/docs/api/zh_CN/latest/api_faqs.html#id6) |
 
 

@@ -31,7 +31,7 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get
 | orgId      | String    | 资产所属的组织ID|
 | name | StringI18n |该资产的各语言名称|
 | description   | String | 资产描述|
-|attributes   |Map  |资产所属的模型属性。<br>`Key`为属性id，String类型。Value的类型取决于模型中这个属性的定义|
+|attributes   |Map  |资产所属的模型属性。<br>`Key`为属性ID，String类型。Value的类型取决于模型中这个属性的定义|
 |timezone  |  String  |时区|
 |modelId|String|资产所属模型ID|
 |modelIdPath|String|模型继承路径。<br>例如：/Turbine/Double_Feed_Turbine|

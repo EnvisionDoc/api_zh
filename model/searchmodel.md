@@ -13,10 +13,10 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |:-----------|:-----------------|:---------|:----------|:-----------------------------------------------------------------------------------------|
 | orgId      | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
-| scope      | Query            | False    | Integer   | 查询范围。 0：只从指定orgId查寻找； 1：从指定orgId和公共orgId查寻。默认为1               |
+| scope      | Query            | False    | Integer   | 查询范围。 0：只从`orgId`指定的组织搜索； 1：从`orgId`指定的组织和公有模型所在的组织搜索。默认为1               |
 | expression | Query            | False    | String    | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`（支持算术运算符in）、`tags`（支持算术运算符=）。支持的逻辑运算符为and、or、not。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
-| projection | Query            | False    | String Array     | 对结果进行projection，对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fields。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
-| pagination | Query            | False    | Pagination请求结构体       | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
+| projection | Query            | False    | String Array     | 对返回结果进行裁剪。对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部字段。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
+| pagination | Query            | False    | Pagination请求结构体       | 分页参数。不能指定排序字段。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
 
 
@@ -33,21 +33,21 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 | modelId       | String| 资产所属模型ID|
 | modelIdPath   | String| 模型继承路径|
 | orgId         | String| 资产所属的组织ID|
-| name          | StringI18n | 模型名字|
+| name          | StringI18n | 模型名称|
 | desc          | String| 模型描述|
 | tags          | Map (Key为String，Value为String)| 用户自定义标签|
-| attributes    | Map (Key为String，Value为`ThingAttribute`结构体)| 静态属性定义的map类型值，key为静态属性id，value为属性定义，属性定义的结构请见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
-| measurepoints | Map (Key为String，Value为`ThingMeasurepoint`结构体)| 静态属性定义的map类型值，key为测点id，value为测点定义，测点定义的结构请见[ThingMeasurepoint结构体](searchmodel.html#thingmeasurepoint-thingmeasurepoint)|
-| services      | Map (Key为String，Value为`ThingService`结构体)     | 服务定义的map类型值，key为服务id，value为服务定义，服务定义的结构请见[ThingService结构体](searchmodel.html#thingservice-thingservice)|
-| events        | Map (Key为String，Value为`ThingEvent`结构体)       | 事件定义的map类型值，key为事件id，value为事件定义，事件定义的结构请见[ThingEvent结构体](searchmodel.html#thingevent-thingevent)|
+| attributes    | Map (Key为String，Value为`ThingAttribute`结构体)| 静态属性定义的map类型值，key为静态属性ID，value为属性定义，属性定义的结构请见[ThingAttribute结构体](searchmodel.html#thingattribute-thingattribute)|
+| measurepoints | Map (Key为String，Value为`ThingMeasurepoint`结构体)| 静态属性定义的map类型值，key为测点ID，value为测点定义，测点定义的结构请见[ThingMeasurepoint结构体](searchmodel.html#thingmeasurepoint-thingmeasurepoint)|
+| services      | Map (Key为String，Value为`ThingService`结构体)     | 服务定义的map类型值，key为服务ID，value为服务定义，服务定义的结构请见[ThingService结构体](searchmodel.html#thingservice-thingservice)|
+| events        | Map (Key为String，Value为`ThingEvent`结构体)       | 事件定义的map类型值，key为事件ID，value为事件定义，事件定义的结构请见[ThingEvent结构体](searchmodel.html#thingevent-thingevent)|
 
 
 ### ThingAttribute结构体<thingattribute>
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| identifier | String| 属性id|
-| dataType   | String| 数据类型。比如：ARRAY，BOOL，DATE，ENUM，INT，FLOAT，DOUBLE，STRUCT，STRING，TIMESTAMP，FILE|
+| identifier | String| 属性ID|
+| dataType   | String| 数据类型。比如：ARRAY、BOOL、DATE、ENUM、INT、FLOAT、DOUBLE、STRUCT、STRING、TIMESTAMP、FILE|
 | isRequired | Boolean| 是否是必须的属性。如果为true，则要求资产在实例化的时候必须设置该属性的值，否则资产在创建的时候会返回校验失败的错误|
 | name       | StringI18n| 支持国际化的资产名称|
 | desc       | String| 模型描述|
@@ -59,8 +59,8 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| identifier | String| 测点id|
-| dataType   | String| 数据类型。比如：ARRAY，BOOL，DATE，ENUM，INT，FLOAT，DOUBLE，STRUCT，STRING，TIMESTAMP，FILE|
+| identifier | String| 测点ID|
+| dataType   | String| 数据类型。比如：ARRAY、BOOL、DATE、ENUM、INT、FLOAT、DOUBLE、STRUCT、STRING、TIMESTAMP、FILE|
 | name       | StringI18n| 支持国际化的资产名称|
 | desc       | String| 模型描述|
 | tags       | Map (Key为String，Value为String)| 用户自定义标签|
@@ -72,7 +72,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| identifier | String| 服务id|
+| identifier | String| 服务ID|
 | name       | StringI18n| 支持国际化的资产名称|
 | desc       | String| 模型描述|
 | tags       | Map (Key为String，Value为String)| 用户自定义标签|
@@ -85,7 +85,7 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| identifier | String| 事件id|
+| identifier | String| 事件ID|
 | name       | StringI18n| 支持国际化的资产名称|
 | desc       | String| 模型描述|
 | tags       | Map (Key为String，Value为String)| 用户自定义标签|
@@ -97,13 +97,11 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| identifier | String| 点id|
-| dataType   | String| 数据类型。比如：ARRAY，BOOL，DATE，ENUM，INT，FLOAT，DOUBLE，STRUCT，STRING，TIMESTAMP，FILE|
+| identifier | String| 点ID|
+| dataType   | String| 数据类型。比如：ARRAY、BOOL、DATE、ENUM、INT、FLOAT、DOUBLE、STRUCT、STRING、TIMESTAMP、FILE|
 | name       | StringI18n| 支持国际化的资产名称|
 | desc       | String| 模型描述|
 | tags       | Map (Key为String，Value为String)| 用户自定义标签|
-|hasQuality|Boolean|是否有质量位|
-|signalType|String|信号类型。有如下类型：Generic、AI、PI、DI|
 | unit       | Unit结构体| 单位。见[Unit结构体](/docs/api/zh_CN/latest/model/searchmodel.html#unit-unit)|
 
 
