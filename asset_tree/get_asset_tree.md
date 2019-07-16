@@ -1,6 +1,6 @@
 # Get Asset Tree
 
-获取指定OU下的一棵资产树。
+获取指定组织下的一棵资产树。
 
 ## 请求格式
 
@@ -32,7 +32,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 |modelId|String|资产所属模型ID|
 |modelIdPath|String|模型ID的路径。|
 | name | StringI18n |支持国际化的资产名称|
-|timezone  |  String  |资产所属时区|
+|timezone  |  String  |资产所属时区<br>使用+08:00格式表示不支持夏令时的时区<br>使用Asia/Shanghai格式表示支持夏令时的时区|
 | description | String | 资产描述|
 | label  | String | 资产类型：“0”表示设备资产，“1”表示逻辑资产|
 | inValid  | Boolean | true为无效节点，false为有效节点|

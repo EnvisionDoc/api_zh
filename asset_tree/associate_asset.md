@@ -1,6 +1,6 @@
 # Associate Asset
 
-将指定已有资产节点关联到资产树上。待关联的资产可以是一个设备资产，也可以是一个逻辑资产。如果待关联的资产节点是一个设备资产，可使用设备资产的`ProductKey`、`DeviceKey`来描述，如果待关联的资产节点是一个逻辑资产，可使用逻辑资产的ID来描述。
+将指定已有资产节点关联到资产树上。待关联的资产可以是一个设备资产，也可以是一个逻辑资产。如果待关联的资产节点是一个设备资产，可使用设备资产的Product Key、 Device Key来描述，如果待关联的资产节点是一个逻辑资产，可使用逻辑资产的ID来描述。
 
 ## 请求格式
 
@@ -16,8 +16,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=associateAsse
 | treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID](/docs/api/zh_CN/latest/api_faqs#id)        |
 | parentAssetId | Query            | true    | String    | 待关联资产的父资产ID。 |
 | assetId  | Query            | false    | String    | 待关联的资产ID，当存在`assetId`时，以`assetId`为准，当`assetId`不存在时，则看`productKey`，`deviceKey`。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)  |
-| productKey  | Query            | false    | String    | 待关联的设备ProductKey。 |
-| deviceKey  | Query            | false    | String    | 待关联的设备DeviceKey。 |
+| productKey  | Query            | false    | String    | 待关联设备的Product Key标识符。 |
+| deviceKey  | Query            | false    | String    | 待关联设备的Device Key标识符。 |
 
 
 

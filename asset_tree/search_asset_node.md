@@ -1,6 +1,6 @@
 # Search Asset Node
 
-查询OU下满足条件的资产。
+查询组织下满足条件的资产。
 
 ## 请求格式
 
@@ -30,7 +30,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 |-----------|---------------|----|--------------|
 | assetIds| False | String Array | 资产ID，如果想查询多个资产，就提供多个资产ID组成的List。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | modelIds | False | String Array | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid) |
-| rootModelIds | False | String Array | 资产所属的根模型ID。如果想查询多个根模型，就提供多个根模型ID。|
+| rootModelIds | False | String Array | 资产所属的根模型ID。如果想查询多个根模型，就提供多个根模型ID组成的List。|
 | nameLike | False | nameLike结构体 | 用于描述对国际化名称的查询条件，见[nameLike结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_node.html#namelike-namelikestruc) |
 | attributes  | False|Map |一组属性值。键即属性名，统一为String类型，值即属性值，类型依据具体模型的定义。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
 | tags | False | Tag结构体 | 用户自定义的一组标签 |

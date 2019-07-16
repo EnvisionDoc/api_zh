@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds={}measurepoints={}timeWindow={}operator={}valueFilter={}accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds={}measurepoint={}timeWindow={}operator={}valueFilter={}accessKey={}
 ```
 
 ## 请求参数（URI）
@@ -13,9 +13,9 @@ https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetI
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                                                                                                                                                                                                                            |
-| modelId       | Query            | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)                                                                                                                                                                                                                           |
+| modelId       | Query            | true    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)                                                                                                                                                                                                                           |
 | assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)                                                                                                                                                                                |
-| measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
+| measurepoint | Query            | true     | String    | 资产测点。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
 | timeWindow     | Query            | false     | Integer  | 返回数据时间窗口设定，单位是分钟，最小值为0，不传则不过滤。|
 | operator       | Query            | false     | String    | 运算符，支持eq：等于；nq：不等于；gt：大于；lt：小于；ge：大于等于；le：小于等于；between：2个值的区间；in：属于多个值之一。                                                                                                                                     |
 | valueFilter      | Query            | false    | String   | 范围值，需与运算符配套使用，eq、nq、gt、ge、lt、le对应单值；between对应2个值；in对应多个值，多个值之间用逗号隔开，且数据类型必须与测点数据类型一致。如：operator=betwteen&valueFilter=a, b表示过滤a与b之间的数值。                                                                   |
@@ -117,7 +117,7 @@ public void filterAssetsLatestDataTest(){
     request.setQueryParam("modelId", "model_xxx");
     request.setQueryParam("valueFilter", 666.6);
     request.setQueryParam("assetIds","4DXYH7nS");
-    request.setQueryParam("measurepoints", "opentsdb_pi_point_xxx");
+    request.setQueryParam("measurepoint", "opentsdb_pi_point_xxx");
     request.setQueryParam("accessKey", accessKey);
     
     request.setMethod("GET");

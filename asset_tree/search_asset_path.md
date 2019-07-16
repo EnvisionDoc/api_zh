@@ -32,7 +32,7 @@ paths?action=search
 
 | 名称       | 是否必须  | 数据类型 | 描述      |
 |-----------|---------------|----|-----------------------|
-| rootModelIds| false   | String Array         | 根模型id，如果希望查询多个根模型就提供多个根模型id  |
+| rootModelIds| false   | String Array         | 根模型ID，如果希望查询多个根模型就提供多个根模型id  |
 | modelIds   | false   | String Array         | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid)  |
 | assetIds    | false          | Array          | 资产ID，如果希望查询多个资产就提供多个资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 
@@ -56,7 +56,7 @@ paths?action=search
 | attributes  | Map               | 资产所属的模型属性                  |
 | timezone   | String            | 时区                                   |
 | modelId    | String            | 资产所属模型ID |
-| modelIdPath | String            | 模型id路径                             |
+| modelIdPath | String            | 模型ID路径                             |
 | tags        | Tag结构体         | 用户自定义标签                         |
 
 

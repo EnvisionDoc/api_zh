@@ -41,7 +41,6 @@ https://{apigw-address}/tsdb-service/v2.0/di?orgId={}&modelId={}&assetIds={}&mea
 | measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取pointId信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
 | startTime     | Query            | true     | String    | 采样数据开始时间，支持UTC时间格式和local时间格式。 local时间格式为YYYY-MM-DD HH:MM:SS。当格式为本地时间时，应用按照设备所在地的当地时间进行查询。 UTC时间格式需要加入时区信息，例如：2019-06-01T00:00:00+08:00；当格式为UTC格式时，应用对所有资产按照统一的开始时间戳和结束时间戳进行查询。 |
 | endTime       | Query            | true     | String    | 采样数据结束时间，格式必须与开始时间保持一致|
-
 | accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey-accesskey)                                                                     
 
 
@@ -58,7 +57,7 @@ https://{apigw-address}/tsdb-service/v2.0/di?orgId={}&modelId={}&assetIds={}&mea
 {
         "assetId": "4DXYH7nS",  			   //资产ID   
         "timestamp": 1560249312446,			   //数据时间戳
-        "opentsdb_ai_point_xxx": "1.1236", 	   //测点标识符与测点数据
+        "opentsdb_di_point_xxx": "1", 	   //测点标识符与测点数据
         "localtime": "2019-06-11 18:35:12"	  //数据本地时间标记
 }
 ```
@@ -174,7 +173,7 @@ public void getAssetsStatusDataTest(){
     request.setQueryParam("orgId", "o15504745674071");
     request.setQueryParam("modelId", "opentsdb_model_xxx");
     request.setQueryParam("assetIds","4DXYH7nS");
-    request.setQueryParam("measurepoints", "opentsdb_di_point_xxx");   //sum为聚合逻辑函数
+    request.setQueryParam("measurepoints", "opentsdb_di_point_xxx");
     request.setQueryParam("startTime", "2019-06-01 00:00:00"); //UTC时间格式为：2019-06-01T00:00:00%2B08:00
     request.setQueryParam("endTime", "2019-06-11 23:00:00");  //UTC时间格式为：2019-06-11T23:00:00%2B08:00
     request.setQueryParam("accessKey", accessKey);

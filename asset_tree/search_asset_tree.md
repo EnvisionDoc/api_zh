@@ -18,7 +18,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=search
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |-----------------|---------------|-------------------|-----|
-| filter| false         | Filter结构体          | 资产树需要满足的条件。支持对tags的搜索。"filter": {  "tags": { "foo": "bar", "hello": "world" }  }  缺省则返回OU下所有的资产树，见[Filter结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_tree.html#filter-filterstruc)   |
+| filter| false         | Filter结构体          | 资产树需要满足的条件。支持对tags的搜索。"filter": {  "tags": { "foo": "bar", "hello": "world" }  }  缺省则返回组织下所有的资产树，见[Filter结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_tree.html#filter-filterstruc)   |
 | pagination| false         |  Pagination请求结构体 | 用于在接口请求中描述分页要求。默认第一页，分页大小100。[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)                               |
 | projection| false         | String Array          | 详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
 

@@ -1,6 +1,6 @@
 # Get Asset Trees
 
-根据一组`assetId`搜索资产所在的资产树，若`assetId`不在树上，则`data`中无该key。
+根据一组`assetId`搜索资产所在的资产树。若`assetId`不在树上，则`data`中无该key。
 
 ## 请求格式
 
@@ -18,7 +18,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| assetIds         | Query            | true     | String Array   | 一组资产ID （assetId），最多100个。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)   |
+| assetIds         | Query            | true     | String Array   | 一组资产ID，最多100个。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)   |
 | projection         | Query            | false    | String Array   | 用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection) |
 
 
@@ -34,7 +34,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 | 名称  |  数据类型      | 描述               |
 |-------|-------|---------------------------|
 | treeId  |  String | 资产树ID |
-|tags|Map<String, String>|资产树上的根资产|
+|tags|Map<String, String>|用户自定义的一组资产树标签|
+|asset|asset 结构体 |资产树上的根资产|
 
 
 

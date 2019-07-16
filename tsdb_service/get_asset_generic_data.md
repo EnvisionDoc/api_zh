@@ -161,7 +161,7 @@ public void getAssetsGenericDataTest(){
     request.setQueryParam("orgId", "o15504745674071");
     request.setQueryParam("modelId", "opentsdb_model_xxx");
     request.setQueryParam("assetIds","4DXYH7nS");
-    request.setQueryParam("measurepoints", "opentsdb_generic_point_xxx");  //sum为聚合逻辑函数
+    request.setQueryParam("measurepoints", "opentsdb_generic_point_xxx"); 
     request.setQueryParam("startTime", "2019-06-01 00:00:00"); //UTC时间格式为：2019-06-01T00:00:00%2B08:00
     request.setQueryParam("endTime", "2019-06-11 23:00:00");  //UTC时间格式为：2019-06-11T23:00:00%2B08:00
     request.setQueryParam("accessKey", accessKey);

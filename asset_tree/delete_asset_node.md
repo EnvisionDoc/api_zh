@@ -1,6 +1,6 @@
 # Delete Asset Node
 
-从资产树上移除一个资产节点。待移除的资产可以是一个设备资产，也可以是一个逻辑资产。如果待移除的资产节点是一个设备资产，可使用设备资产的`ProductKey`、`DeviceKey`来描述。如果待移除的资产节点是一个逻辑资产，可使用逻辑资产的ID来描述。
+从资产树上移除一个资产节点。待移除的资产可以是一个设备资产，也可以是一个逻辑资产。如果待移除的资产节点是一个设备资产，可使用设备资产的Product Key、Device Key来描述。如果待移除的资产节点是一个逻辑资产，可使用逻辑资产的ID来描述。
 
 ## 请求格式
 
@@ -16,8 +16,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=delete
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID](/docs/api/zh_CN/latest/api_faqs#id)        |
 | assetId  | Query            | false    | String    | 待移除的资产ID（用于识别逻辑资产）。当存在`assetId`时，以`assetId`为准，当`assetId`不存在时，则看`productKey`，`deviceKey`。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)  |
-| productKey  | Query            | false    | String    | 待移除的设备ProductKey（用于识别设备资产）。 |
-| deviceKey  | Query            | false    | String    | 待移除的设备DeviceKey（用于识别设备资产）。 |
+| productKey  | Query            | false    | String    | 待移除设备的Product Key标识符（用于识别设备资产）。 |
+| deviceKey  | Query            | false    | String    | 待移除设备的Device Key标识符（用于识别设备资产）。 |
 
 
 ##错误码
@@ -38,16 +38,17 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=delete
 ### 请求示例
 
 ```
-https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?treeId=BRIt3ee3&assetId=AdqP8rZ0&action=delete&orgId=o15541858646501
+https://apigw-address/asset-tree-service/v2.1/asset-nodes/delete?treeId=BRIt3ee3&action=delete&orgId=o15541858646501 
+{"assetId":"AdqP8rZ0"} 
 ```
 
 ### 返回示例
 
 ```json
 { 
-    "code": 0, 
-    "msg": "ok", 
-"requestId": "01b5477a-374e-49a0-8b68-7dbfe8f0b74f" ,
+  "code": 0, 
+  "msg": "ok", 
+  "requestId": "01b5477a-374e-49a0-8b68-7dbfe8f0b74f",
   "data": null
 } 
 ```

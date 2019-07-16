@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepoints={}&accessKey={}
+https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepoints={}
 ```
 
 ## 请求参数（URI）
@@ -13,8 +13,8 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepo
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
-| modelIds       | Query            | false    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)|
-| measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
+| modelIds       | Query            | true    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)|
+| measurepoints | Query            | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
                                               
 
 
@@ -22,7 +22,7 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepo
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| items | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id3)。|
+| data | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id3)。|
 
 
 ### items
@@ -38,8 +38,8 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepo
 以下示例展示了一个测点opentsdb_ai_point_xxx具有AI_RAW（AI原始数据）与AI_NORMALIZED（AI分钟级归一化数据）的存储策略：
 
 ```json
-"opentsdb_ai_point_xxx": [         //测点              				
-          "AI_RAW", 			         //储存策略						
+"opentsdb_ai_point_xxx": [                         				
+          "AI_RAW", 			        					
           "AI_NORMALIZED"  
         ]
 ```
@@ -150,12 +150,12 @@ private static class Request extends PoseidonRequest{
   @Test
   public void getPointsTSDBMetaDataTest(){
       
-      //1.在EnOS Console的左边导航栏中点击应用注册。
-      //2.点击需调用API的应用，查看基本信息中的AccessKey即为appKey、SecretKey即为appSecret
+      //accessKey and secretKey correspond to AccessKey and SecretKey in EnOS
       String accessKey = "29b8d283-dddd-4c31f0e3a356-0f80-4fdf";
       String secretKey = "f0e3a856-0fc0-4fdf-b1e5-b34da152879c";
 
-      //新建一个request 然后把需要的参数传进去存在query的map中，key是参数名字，value是参数值
+      // Create a new request and pass the required parameters into the Query map.
+      // The key is the parameter name and the value is the parameter value.
       Request request = new Request();
       request.setQueryParam("orgId", "o15504745674071");
       request.setQueryParam("modelIds", "model_xxx");
