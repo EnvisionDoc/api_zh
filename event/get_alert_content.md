@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-GET https://{apigw-address}/event-service/v2.1/alert-contents action=get&orgId=1c499110e8800000
+GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get&orgId=1c499110e8800000
 ```
 
 ## 请求参数（URI）
@@ -43,7 +43,7 @@ GET https://{apigw-address}/event-service/v2.1/alert-contents action=get&orgId=1
 ### 请求示例
 
 ```json
-GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get &contentId=doubleContentuid&orgId=1c499110e8800000
+GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get&contentId=doubleContentuid&orgId=1c499110e8800000
 ```
 
 ### 返回示例
