@@ -30,8 +30,8 @@ https://{apigw-address}/connect-service/v2.1/events?action=get
 |-------------|-------------------|-----------------------------|
 | orgId         | String    | 资产所属的组织ID。|
 | eventId         | String    |事件ID |
-| productKey   | String         | productKey              |
-| deviceKey    | String         | deviceKey               |
+| productKey   | String         | Product Key标识符              |
+| deviceKey    | String         | Device Key标识符               |
 | assetId     | String         | 资产ID                  |
 | tslEventKey  | String         | TSL模型中的事件Key      |
 | tslEventType | String         | TSL模型中定义的事件类型 |

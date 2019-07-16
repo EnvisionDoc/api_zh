@@ -30,8 +30,8 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
 | assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | String         | Product Key      |
-| deviceKey | String         | 设备key          |
+| productKey | String         | Product Key标识符      |
+| deviceKey | String         | Device Key标识符          |
 
 
 ## 响应参数
@@ -49,11 +49,11 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 | assetId  | String         | 资产ID|
 | modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
-| productKey       | String                            | Product Key                                                                |
-| productName      | StringI18n                        | product名称                                                                |
+| productKey       | String                            | Product Key标识符                                                                |
+| productName      | StringI18n                        | 产品名称                                                                |
 | productType      | String                            | 产品类型                                                                   |
 | dataFormat       | String                            | 数据格式。Custom表示支持用户自定义数据格式，Json表示只支持EnOS设备协议格式 |
-| deviceKey        | String                            | 设备key                                                                    |
+| deviceKey        | String                            | Device Key标识符                                                                    |
 | deviceName       | StringI18n                        | 设备名称                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | deviceDesc       | String                            | 设备描述                                                                   |
@@ -61,7 +61,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 | deviceAttributes | Map（Key为String，Value为String） | 设备的属性                                                                 |
 | deviceTags       | Map（Key为String，Value为String） | 设备的标志                                                                 |
 | createTime       | Long                              | 设备的创建时间                                                             |
-| status           | String                            | 设备的状态（online, offline, inactive 或 disable）                         |
+| status           | String                            | 设备的状态（online，offline，inactive或disable）                         |
 | activeTime       | Long                              | 设备的激活时间                                                             |
 | lastOnlineTime   | Long                              | 设备最后一次上线时间                                                       |
 | lastOfflineTime  | Long                              | 设备最后一次离线时间                                                       |

@@ -62,16 +62,6 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 </table>
 
 
-<!--
-
-| 名称          | 是否必须 | 数据类型 | 描述      |
-|----------------|---------------|--------------------------|---|
-| expression| False         | String               | 查询表达式，目前支持的字段有`productKey`、`deviceKey`、`assetId`、`productType`、`deviceName`和`status`。<br>`productKey`、`deviceKey`、`assetId`支持in和=算术运算符；<br>`productType`支持=运算符，取值[Device/Gateway]；<br>`deviceName`支持指定语言模糊查询，`deviceName like ‘xxx’`模糊查询default、中文和英文名称，`deviceName.default like ‘xxx’`模糊查询默认名称，`deviceName.zh_CN like ‘xxx’`模糊查询中文名称，不存在中文名称时模糊查询default名称，`deviceName.en_US like ‘xxx’`模糊查询英文名称，不存在英文名称时模糊查询default名称；<br>`status`支持=运算符，取值inactive、online、offline和disable。<br>[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
-| pagination| False         | pagination请求结构体 | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
-| projection| False         | Projection结构体    |用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)  |
-
--->
-
 
 ## 响应参数
 
@@ -88,11 +78,11 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 | assetId  | String         | 资产ID|
 | modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
-| productKey       | String                            | Product Key                                                                |
-| productName      | StringI18n                        | product名称                                                                |
+| productKey       | String                            | Product Key标识符                                                                |
+| productName      | StringI18n                        | 产品名称                                                                |
 | productType      | String                            | 产品类型                                                                   |
 | dataFormat       | String                            | 数据格式。Custom表示支持用户自定义数据格式，Json表示只支持EnOS设备协议格式 |
-| deviceKey        | String                            | 设备key                                                                    |
+| deviceKey        | String                            | Device Key标识符                                                                   |
 | deviceName       | StringI18n                        | 设备名称                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | deviceDesc       | String                            | 设备描述                                                                   |

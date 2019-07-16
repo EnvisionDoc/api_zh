@@ -16,8 +16,8 @@ https://{apigw-address}/connect-service/v2.1/devices?action=get
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query          | False       | String       | Product Key      |
-| deviceKey | Query           | False      | String       | 设备key          |
+| productKey | Query          | False       | String       | Product Key标识符      |
+| deviceKey | Query           | False      | String       | Device Key标识符          |
     
 
 ## 响应参数
@@ -35,11 +35,11 @@ https://{apigw-address}/connect-service/v2.1/devices?action=get
 | assetId  | String         | 资产ID|
 | modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
-| productKey       | String                            | Product Key                                                                |
-| productName      | StringI18n                        | product名称                                                                |
+| productKey       | String                            | Product Key标识符                                                                |
+| productName      | StringI18n                        | 产品名称                                                                |
 | productType      | String                            | 产品类型                                                                   |
 | dataFormat       | String                            | 数据格式。Custom表示支持用户自定义数据格式，Json表示只支持EnOS设备协议格式 |
-| deviceKey        | String                            | 设备key                                                                    |
+| deviceKey        | String                            | Device Key标识符                                                                    |
 | deviceName       | StringI18n                        | 设备名称                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | deviceDesc       | String                            | 设备描述                                                                   |

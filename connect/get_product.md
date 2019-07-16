@@ -13,7 +13,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| productKey        | Query            | true    | String    | Product Key|
+| productKey        | Query            | true    | String    | Product Key标识符|
 
 
 ## 响应参数
@@ -28,7 +28,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 | 名称  |  数据类型      | 描述               |
 |-------|-------|---------------------------|
 | orgId |  String | 资产所属的组织ID |
-| productKey          | String| 产品名称|
+| productKey          | String| Product Key标识符|
 | productName         | StringI18n |  产品名称。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)|
 | productSecret       | String                          | 产品私钥                                             |
 | productDesc         | String                          | 产品描述                                             |

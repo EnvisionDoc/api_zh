@@ -24,5 +24,5 @@
 |[Cancel Command](cancel_command)|取消缓存命令的接口|
 |[Invoke Service](invoke_service)|向设备下发服务调用接口|
 |[Set Measurepoint](set_measurepoint)|测点设置接口|
-|[Get Event](get_event)|通eventId获取Event的详细信息|
+|[Get Event](get_event)|通`eventId`获取Event的详细信息|
 |[Search Event](search_event)|按条件分页搜索事件|

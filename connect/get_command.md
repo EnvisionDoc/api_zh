@@ -14,9 +14,9 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query          | False       | String       | Product Key      |
-| deviceKey | Query           | False      | String       | 设备key          |
-| commandId | Query            | False    | String        | 命令key          |
+| productKey | Query          | False       | String       | Product Key标识符      |
+| deviceKey | Query           | False      | String       | Device Key标识符          |
+| commandId | Query            | False    | String        | 命令ID          |
 
 ## 响应参数
 
@@ -30,7 +30,7 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 |-----------------|---------------------------|----------------|
 | commandId       | String| 命令ID|
 | orgId          | String    | 资产所属的组织ID  |
-| productKey | String          | Product Key      |
+| productKey | String          | Product Key标识符      |
 | deviceKey  | String     | 设备key          |
 | assetId   | String      | 资产ID|
 | createTime      | Long| 创建时间|

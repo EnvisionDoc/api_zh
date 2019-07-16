@@ -16,8 +16,8 @@ https://{apigw-address}/connect-service/v2.1/devices?action=update
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | assetId  | Query          | False      | String        | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query         | False      | String         | Product Key      |
-| deviceKey | Query         | False     | String          | 设备key          |
+| productKey | Query         | False      | String         | Product Key标识符      |
+| deviceKey | Query         | False     | String          | Device Key标识符          |
 
 
 ## 请求参数（Body）
@@ -25,7 +25,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=update
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |----------------|---------------|--------------------------|---|
 |timezone | True          | String         | 欲更新的设备所在时区     |
-| deviceName | True          | StringI18n | 欲更新的设备名称         |
+| deviceName | True          | StringI18n | 欲更新的设备名称，见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)         |
 | deviceAttributes | False         | Map       | 欲更新的设备属性         |
 | deviceTags   | False         | Map（key为String，value为String）    | 欲更新的设备tags |
 | deviceDesc  | False         | String    | 欲更新的设备描述信息     |

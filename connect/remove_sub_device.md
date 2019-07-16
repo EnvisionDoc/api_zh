@@ -19,8 +19,8 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=removeSubDevice
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      |DeviceIdentfier结构体  | 需要添加子设备的网关信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
-| subDevices           | True      | DeviceIdentfier结构体  | 需要添加到指定网关的子设备列表信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
+| gateway | True      |DeviceIdentfier结构体  | 需要移除子设备的网关信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
+| subDevices           | True      | DeviceIdentfier结构体  | 需要从指定网关移除的子设备列表信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
 
 
 ### DeviceIdentifier结构体
@@ -30,8 +30,8 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=removeSubDevice
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
 | assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
-| productKey | String         | Product Key      |
-| deviceKey | String         | 设备key          |
+| productKey | String         | Product Key标识符      |
+| deviceKey | String         | Device Key标识符          |
 
 
 
@@ -48,7 +48,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=removeSubDevice
 | 代码| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
 | 11738 |                | 参数gateway不是网关设备                |
-| 11795 |                | 提供的子设备存在已有拓扑或为网关      |
+| 11795 |                | 提供的至少一个子设备不在指定的网关下      |
 
 
 ## 示例 1

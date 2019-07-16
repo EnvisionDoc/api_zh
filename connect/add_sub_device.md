@@ -30,8 +30,8 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=addSubDevice
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
 | assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | String         | Product Key      |
-| deviceKey | String         | 设备key          |
+| productKey | String         | Product Key标识符      |
+| deviceKey | String         | Device Key标识符          |
 
 
 

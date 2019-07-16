@@ -19,8 +19,8 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |------------------|---------------|----------|---|
-| productKey  | False         | String| productKey|
-| deviceKey   | False         | String| deviceKey|
+| productKey  | False         | String| Product Key标识符|
+| deviceKey   | False         | String| Device Key标识符|
 | assetId  | False  | String | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | tslEventKey | False         | String| 事件key|
 | tslEventType | False         | String| 事件类型|

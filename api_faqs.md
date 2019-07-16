@@ -221,8 +221,8 @@ EnOS服务支持使用标签来管理对象，可以基于标签对对象进行�
 |名称|数据类型|是否必须|描述|
 |---------|--------|--------|-----------|
 |assetId|String|false|资产ID|
-|productKey|String|false|Product key|
-|deviceKey|String|false|Device key|
+|productKey|String|false|Product Key标识符|
+|deviceKey|String|false|Device Key标识符|
 
 
 ## 如何获取资产树ID

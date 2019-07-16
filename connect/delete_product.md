@@ -13,7 +13,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=delete
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| productKey         | Query            | true     | String    | Product Key |
+| productKey         | Query            | true     | String    | Product Key标识符 |
 
 
 
@@ -29,8 +29,8 @@ https://{apigw-address}/connect-service/v2.1/products?action=delete
 
 | 代码| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| 11651|                       |Productkey不存在              |
-| 11619|                       |删除的product下存在设备             |
+| 11651|                       |`productKey`不存在              |
+| 11619|                       |删除的产品下存在设备             |
 
 ## 示例 1
 

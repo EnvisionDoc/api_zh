@@ -18,8 +18,8 @@ https://{apigw-address}/connect-service/v2.1/commands?action=setMeasurepoint
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query          | False       | String       | Product Key      |
-| deviceKey | Query           | False      | String       | 设备key|
+| productKey | Query          | False       | String       | Product Key标识符      |
+| deviceKey | Query           | False      | String       | Device Key标识符|
 | measurepointId      | Query| True | String    | 资产测点。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)|
 | pendingTtl     | Query| False| Integer    | 缓存存储时间，单位为秒 范围[0 - 172800（即48小时）]，默认值为0。当pendingTtl为0时，表示命令即时执行。 |
 | timeout        | Query| False         | Integer    | 服务执行超时时间，单位为秒 范围[1 - 60]，默认值为30秒|
@@ -28,7 +28,7 @@ https://{apigw-address}/connect-service/v2.1/commands?action=setMeasurepoint
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |-----------|---------------|-------------------|----------|
-| value | True| String，Number，Array或Object | 测点设置的参数值，需要符合`ThingModel`的定义。 |
+| value | True| String、Number、Array或Object | 测点设置的参数值，需要符合`ThingModel`的定义。 |
 
 
 
