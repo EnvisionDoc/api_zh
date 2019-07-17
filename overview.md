@@ -237,7 +237,7 @@ TSDB数据服务API的公共返回码为：
 
 ## API鉴权<authentication>
 
-EnOS API身份验证采用服务账号SA（service account）作为应用或者开发者的身份，在REST API请求中将SA发送到EnOS服务，通过它验证用户身份并执行所需的授权访问。 
+EnOS API身份验证采用服务账号SA（service account）作为应用或者开发者的身份。在REST API请求中将SA发送到EnOS服务，通过它验证用户身份并执行所需的授权访问。 
 
 ### 获取服务账号
 

@@ -107,7 +107,7 @@ Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey))
 
 **支持Request和Response**
 
-Request内置支持Header，Query，RequestBody，Path参数。Request和Response的使用方法，参考以下API调用示例。
+Request内置支持Header，Query，RequestBody，Path参数。Request和Response的使用方法，参考[示例3 - 使用Request和Response](gettingstarted#requestresponse)。
 
 **异常处理**
 
@@ -240,7 +240,7 @@ public class GetAsset {
 
 以下示例为使用Java core SDK调用*Update Asset* API更新资产的名称、描述、属性、时区、标签信息（开启API日志功能）：
 
-```
+```java
 import com.envision.apim.poseidon.config.PConfig;
 import com.envision.apim.poseidon.core.Poseidon;
 
@@ -276,7 +276,7 @@ public class UpdateAsset {
 
 以下示例为使用Java core SDK和Device And Asset API Pojo SDK调用*Update Asset* API更新资产的描述、属性、时区信息（开启API日志功能）：
 
-```
+```java
 import com.envision.apim.poseidon.config.PConfig;
 import com.envision.apim.poseidon.core.Poseidon;
 import com.envisioniot.enos.asset_service.v2_1.UpdateAssetRequest;
