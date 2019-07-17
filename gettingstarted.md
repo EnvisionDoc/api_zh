@@ -107,7 +107,7 @@ Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey))
 
 **支持Request和Response**
 
-Request内置支持Header，Query，RequestBody，Path参数。Request和Response的使用方法，参考[示例3 - 使用Request和Response](gettingstarted#requestresponse)。
+Request内置支持Header，Query，RequestBody，Path参数。Request和Response的使用方法，参考[示例3 - 使用Request和Response](gettingstarted#id9)。
 
 **异常处理**
 
