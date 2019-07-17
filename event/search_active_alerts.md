@@ -45,7 +45,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 | hitRuleId      | String                | 匹配的规则编号|
 | value          | Integer/Double/Object | 测点值。参照[ThingModel结构体](/docs/api/zh_CN/latest/model/searchmodel.html#thingmodel-thingmodel)定义|
 | occurTime      | Long| 告警发生时间，UTC时间|
-| localOccur     | String| 告警发生时间，本地时间|
+|  localOccurTime    | String| 告警发生时间，本地时间|
 | createTime     | Long| 入库UTC时间|
 | updateTime     | Long| 更新UTC时间|
 | severityId     | String| 告警级别编号|

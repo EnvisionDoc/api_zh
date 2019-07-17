@@ -16,7 +16,7 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 | assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | Query          | False       | String       | Product Key标识符      |
 | deviceKey | Query           | False      | String       | Device Key标识符          |
-| commandId | Query            | False    | String        | 命令ID          |
+| commandId | Query            | True    | String        | 命令ID          |
 
 ## 响应参数
 

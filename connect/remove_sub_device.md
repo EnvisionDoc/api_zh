@@ -25,7 +25,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=removeSubDevice
 
 ### DeviceIdentifier结构体
 
-注：以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
+.. note:: 以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|

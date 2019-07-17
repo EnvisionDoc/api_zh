@@ -50,7 +50,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
                 <td>pagination</td>
                 <td>False</td>
                 <td>pagination请求结构体</td>
-				<td>随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。<a href="/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination">Pagination请求结构体</a></td>
+				<td>随机分页。用户不能指定排序字段。若不提供，默认分页大小是10。<a href="/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination">Pagination请求结构体</a></td>
             </tr>
             <tr>
                 <td>projection</td>

@@ -36,7 +36,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 | dataFormat         | String                          | 数据类型，Custom代表用户自定义类型，Json代表json类型 |
 | productTags         | Map（key为String，value为String） | 产品标签                                             |
 | modelId             | String                          | 资产所属模型ID|
-| dynamicActiveEnable | Boolean                         | 是否支持动态激活                                     |
+| dynamicActiveEnabled | Boolean                         | 是否支持动态激活                                     |
 | biDirectionalAuth   | Boolean                         | 是否支持双向认证                                     |
 | createTime      | Long                            | 创建时间                                             |
 | createBy        | String                          | 创建人                                               |
@@ -82,7 +82,7 @@ GET: /connect-service/v2.1/products?action=get&orgId=abc&productKey=def
 
 		},
 		"modelId":"AlterTest0615",
-		"dynamicActiveEnable":false,
+		"dynamicActiveEnabled":false,
 		"biDirectionalAuth":true
 	}
 }

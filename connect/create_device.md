@@ -41,7 +41,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 | 名称| 数据类型 | 描述         |
 |------------------|-----------------------|----------------------------|
 | productKey       | String                            | Product Key标识符                                                                |
-| deviceName       | StringI18n                        | 设备名称                                                                   |
+| deviceKey       | StringI18n                        | Device Key标识符                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | assetId  | String         | 资产ID|
 

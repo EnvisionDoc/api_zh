@@ -36,7 +36,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=search
 |-------------|-----------------------------------|-----------------------------|
 | treeId| String                            | 资产树ID                    |
 | tags| Tag结构体 | 用户自定义的一组资产树标签  |
-| asset| asset结构体                     | 资产树的根资产              |
+| asset| asset结构体                     | 资产树的根资产。参见[Asset结构体](/docs/api/zh_CN/latest/asset_tree/get_asset_tree.html#asset-assetstruc)              |
 
 
 

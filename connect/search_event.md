@@ -27,7 +27,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 | startTime   | False         | String | 开始时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间,yyyy-MM-ddTHH:mm:ssZ代表utc时间，如果不填，默认最近一周的数据|
 | endTime  | False         | String    | 结束时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间,yyyy-MM-ddTHH:mm:ssZ代表UTC时间，如果不填，默认最近一周的数据|
 | expression  | False         | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`productKey`、`deviceKey`、`assetId`、`tslEventKey`、`tslEventType`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
-| pagination  | False  |Pagination请求结构体 | 随机分页，默认就是按照occurTime倒序排列，用户不能指定排序字段。默认分页大小是10。参见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)  |
+| pagination  | False  |Pagination请求结构体 | 分页参数，如果不填，默认每页10条。目前，不支持排序（忽略排序字段）。参见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)  |
 
 
 
@@ -57,7 +57,7 @@ requestBody: {"pagination":{"pageNo":1,"pageSize":2},"action":"search"}
     "requestId":"aae68461-f211-406f-9959-d04af12f28b1",
     "data":[
         {
-            "id":"20190506587247156ca85be5e3422d30e2642dd1",
+            "eventId":"20190506587247156ca85be5e3422d30e2642dd1",
             "orgId":"yourOrgId",
             "productKey":"yourProductKey",
             "deviceKey":"yourDeviceKey",
@@ -66,7 +66,7 @@ requestBody: {"pagination":{"pageNo":1,"pageSize":2},"action":"search"}
             "tslEventType":"INFO",
             "output":"{"fioat":116}",
             "timestamp":1557113821000,
-            "localTime":"2019-05-06 11:37:01"
+            "localtime":"2019-05-06 11:37:01"
         }
     ],
     "pagination":{

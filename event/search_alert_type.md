@@ -35,7 +35,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-types/search?action=search
 | typeDesc   | StringI18n            | 告警类型描述|
 | orgId          | String                | 资产所属的组织ID|
 | parentTypeId        | String          | 父告警类型编号。如果为空，那么它本身就是父类型告警类型|
-| tag        | Tag结构体          | 标签|
+| tags        | Tag结构体          | 标签|
 | updatePerson        | String                | 更新人|
 | updateTime    | Long                | 更新的UTC时间|
 

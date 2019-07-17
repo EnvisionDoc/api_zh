@@ -20,12 +20,12 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| subDevices           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#deviceidentifier) |
+| subDevice           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#deviceidentifier) |
 
 
 ### DeviceIdentifier结构体
 
-注：以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
+.. note:: 以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|

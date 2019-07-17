@@ -21,7 +21,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchRelated
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |-----------------|---------------|-------------------|-----|
 | filter| false         |   Filter结构体       | 资产的查询条件<br>所有的条件都是可选的<br>所有指定的条件之间都是“与”关系，即待查询的资产必须同时满足所有指定的条件<br>4个关系查询条件至多提供一个，见[Filter结构体](/docs/api/zh_CN/latest/asset_tree/search_related_asset_node.html#filter-filterstruc)   |
-| pagination| false         | Pagination请求结构体  | 用于在接口请求中描述分页要求。默认第一页，分页大小100，见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)                               |
+| pagination| false         | Pagination请求结构体  | 用于在接口请求中描述分页要求。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)                               |
 | projection| false         | Projection结构体          | 用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
 
 
@@ -42,7 +42,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchRelated
 
 | 名称 |数据类型  | 描述 |
 |-----------|------------------|------------------|
-| data      | Asset结构体 |  asset的列表    |
+| data      | Asset结构体 |  asset的列表。参见[Asset结构体](/docs/api/zh_CN/latest/asset_tree/get_asset_tree.html#asset-assetstruc)    |
 
 
 

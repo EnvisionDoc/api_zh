@@ -49,9 +49,9 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search
 | hitRuleId      | String                | 匹配的规则编号|
 | value          | Integer/Double/Object | 测点值|
 | occurTime      | Long                  | 告警发生时间，UTC时间|
-| localOccur     | String                | 告警发生时间，本地时间|
+| localOccurTime     | String                | 告警发生时间，本地时间|
 | recoverTime     | Long                | 告警恢复时间|
-| recoverLocaltime     | String                  | 告警恢复本地时间 |
+| recoverLocalTime     | String                  | 告警恢复本地时间 |
 | recoverReason     | String                | 恢复原因|
 | createTime     | Long                | 入库UTC时间|
 | updateTime     | Long                  | 更新UTC时间|
@@ -109,7 +109,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search&org
 	"requestId": "dac2a872-b9b7-460c-992d-0a0c14ea36e9",
 	"data": [{
 		"recoverTime": 1560382560000,
-		"recoverLocaltime": "2019-06-13 07:36:00",
+		"recoverLocalTime": "2019-06-13 07:36:00",
 		"recoverReason": "rule-recover",
 		"eventId": "20190612cf89cd96b0be4cafcc342d0dc2ac75a4",
 		"orgId": "yourOrgId",
