@@ -60,7 +60,7 @@ requestBody: {
 	"deviceName": {
 		"defaultValue": "testforname",
 		"i18nValue": {}
-	}
+	},
 	"deviceDesc": "test for updatedevice"
 }
 ```
