@@ -59,7 +59,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=addSubDevice
 ```
 url:https://{apigw-address}/connect-service/v2.1/device-topos?action=addSubDevice&orgId=o15475450989191
 method: POST
-{"subDevices":[{"assetId":"mAEsF3sm"}],"gateway":{"assetId":"J1Rqyaqz"}}
+requestBody: {"subDevices":[{"assetId":"mAEsF3sm"}],"gateway":{"assetId":"J1Rqyaqz"}}
 ```
 
 ### 返回示例

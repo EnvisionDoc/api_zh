@@ -14,6 +14,8 @@ https://{apigw-address}/connect-service/v2.1/commands?action=setMeasurepoint
 
 ## 请求参数（URI）
 
+.. note:: 以下非必须字段中，必须提供`assetId`或`productKey`与`deviceKey`的组合，用于指定设备。
+
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
@@ -63,9 +65,9 @@ https://{apigw-address}/connect-service/v2.1/commands?action=setMeasurepoint
 ### 请求示例
 
 ```
-https://{apigw-address}/connect-service/v2.1/commands?measurepointId=measurepoint1&action=setMeasurepoint&deviceKey=zBAofs6D4s&pendingTtl=1000&productKey=6Bt59ySj&orgId=o15535059999891&timeout=30
-
-{"value":1.0}
+url:https://{apigw-address}/connect-service/v2.1/commands?measurepointId=measurepoint1&action=setMeasurepoint&deviceKey=zBAofs6D4s&pendingTtl=1000&productKey=6Bt59ySj&orgId=o15535059999891&timeout=30
+method: POST
+requestBody: {"value":1.0}
 ```
 
 ### 返回示例

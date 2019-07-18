@@ -10,6 +10,8 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 
 ## 请求参数（URI）
 
+.. note:: 以下非必须字段中，必须提供`assetId`或`productKey`与`deviceKey`的组合，用于指定设备。
+
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
