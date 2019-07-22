@@ -131,7 +131,7 @@ https://{apigw-address}/tsdb-service/v2.0/raw?orgId=o15504722874071&accessKey=ac
 private static class Request extends PoseidonRequest{
 
     public void setQueryParam(String key, Object value){
-        queryParams().put(key, value);
+        queryEncodeParams().put(key, value);
     }
 
     public void setMethod(String method) {
