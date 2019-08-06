@@ -13,7 +13,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-                                                                 
+
 
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
@@ -24,7 +24,28 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 | startOccurTime        | false     | String  | 告警触发时间的起始时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)  |
 | endOccurTime        | false     | String     | 告警触发时间的结束时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)   |
 | expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`、`assetId`、`measurepointId`、`hitRuleId`、`severityId`、`typeId`、`subTypeId`、`contentId`、`eventType`、`eventId`、`tag`。支持的算术运算符是=、in和!=，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| scope |  false   | Scope结构体 | 查询指定资产树或资产树上某资产节点下的告警，并指定是否返回被屏蔽的衍生告警。**该参数不可与rootAlert参数同时使用**。见[Scope结构体](search_active_alerts#scope-scope) |
+|  rootAlert  |   false  | RootAlert结构体 | 查询被指定根源告警屏蔽的衍生告警。**该参数不可与scope参数同时使用**。见[RootAlert结构体](search_active_alerts#rootalert-rootalert)|
 | pagination     | false     |  Pagination请求结构体   | 随机分页，默认就是按照`occurTime`倒序排列，用户不能指定排序字段。默认分页大小是10。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
+
+
+### Scope结构体 <scope>
+
+| 名称        | 是否必须 | 数据类型| 描述|
+|------------|--------------|--------------|-----------|
+| treeId            | true         | String       | 资产树ID|
+| fromAssetId       | false        | String       | 资产ID。可选。<br>当未指定时，返回`treeId`指定的资产树内所有节点的告警；<br>当指定时，返回该资产节点下（包含该节点）的所有告警|
+| includeDerivative | false        | Boolean      | 是否返回衍生告警，默认为false，不返回衍生告警|
+
+
+
+### RootAlert结构体 <rootalert>
+
+| 名称   | 是否必须 | 数据类型 | 描述   |
+|-------------|--------------|--------------|------------|
+| treeId      | false        | String       | 资产树ID   |
+| rootAlertId | true         | String       | 根源告警ID |
+
 
 ## 响应参数
 
@@ -40,25 +61,27 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 | orgId          | String                | 资产所属的组织ID。|
 | assetId        | String                | 资产ID。|
 | modelId        | String                | 资产所属模型ID。|
-| modelIdPath    | String                | 模型ID路径|
+| modelIdPath    | String                | 模型所属路径|
 | measurepointId | String| 资产测点|
-| hitRuleId      | String                | 匹配的规则编号|
+| hitRuleId      | String                | 触发的告警规则的编号|
 | value          | Integer/Double/Object | 测点值。参照[ThingModel结构体](/docs/api/zh_CN/latest/model/searchmodel.html#thingmodel-thingmodel)定义|
-| occurTime      | Long| 告警发生时间，UTC时间|
-|  localOccurTime    | String| 告警发生时间，本地时间|
-| createTime     | Long| 入库UTC时间|
-| updateTime     | Long| 更新UTC时间|
-| severityId     | String| 告警级别编号|
+| occurTime      | Long| 告警发生时间（UTC时间）|
+|  localOccurTime    | String| 告警发生时间（本地时间）|
+| createTime     | Long| 该告警记录的入库时间（UTC时间）|
+| updateTime     | Long| 该告警记录的更新时间（UTC时间） |
+| severityId     | String| 告警级别标识符|
 | severityDesc   | StringI18n            | 告警级别描述|
-| typeId         | String                | 告警类别编号|
+| typeId         | String                | 告警类别标识符|
 | typeDesc       | StringI18n            | 告警类型的具体描述|
 | subTypeId      | String                | 告警子类型|
 | subTypeDesc    | StringI18n            | 告警子类型描述|
-| contentId      | String                | 告警内容编号|
-| contentDesc    | StringI18n            | 告警描述|
+| contentId      | String                | 告警内容标识符|
+| contentDesc    | StringI18n            | 告警内容描述|
 | eventType      | Integer               | 事件类型:0：系统恢复的告警；1：系统触发的告警；2：手动恢复的告警；3：手动插入的告警 |
 | tag            | Tag结构体             | 告警标签|
 | ruleDesc       | StringI18n            | 规则描述|
+| assetPaths  |  String Array     | 根据告警规则的作用域，返回告警资产在资产树上的路径列表。<br>返回格式为：["treeId1:/assetId1/assetId2/assetIdx", "treeId2:/assetId3/assetIdx"]|
+| maskedBy  |  String Array     |如果该告警条目是衍生告警，返回导致该告警被屏蔽的根源告警信息。<br>返回格式为：["treeId1:eventId1", "treeId1:eventId2"]|
 
 
 
@@ -67,7 +90,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search
 ### 请求示例
 
 ```json
-POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search &orgId=1c499110e8800000 
+POST https://{apigw-address}/event-service/v2.1/active-alerts?action=search&orgId=1c499110e8800000 
 {
 	"expression": "eventId='20190531b83331a8549e1e956f2413552eda1ec9'",
 	"pagination": {

@@ -20,6 +20,7 @@
 |[Delete Device](delete_device)|删除设备|
 |[Create Device](create_device)|创建设备|
 |[Update Device](update_device)|更新设备|
+|[Replace Device](replace_device)|更换设备|
 |[Get Command](get_command)|获取单个命令信息|
 |[Cancel Command](cancel_command)|取消缓存命令的接口|
 |[Invoke Service](invoke_service)|向设备下发服务调用接口|

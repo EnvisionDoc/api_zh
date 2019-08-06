@@ -25,6 +25,8 @@ https://{apigw-address}/connect-service/v2.1/products?action=create
 | dataFormat        | True      | String      | 数据类型。枚举，Custom代表用户自定义数据类型，Json代表json数据类型。|
 | productName       | True      | StringI18n | 产品名称，见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)|
 | productType       | True      | String      | 产品类型。枚举，Device代表普通产品类型，Gateway代表网关类型。|
+|dynamicActivateEnabled|False|Boolean|是否允许动态激活|
+|productTags|False|Map|产品标签|
 
 
 

@@ -5,7 +5,7 @@
 ## 请求格式
 
 ```
-GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get&orgId=1c499110e8800000
+GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get
 ```
 
 ## 请求参数（URI）
@@ -14,7 +14,7 @@ GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get&orgId=1
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | contentId         | Query            | true     | String    | 告警内容ID。                |
-                                                                 
+
 
 ## 响应参数
 
@@ -30,8 +30,8 @@ GET https://{apigw-address}/event-service/v2.1/alert-contents?action=get&orgId=1
 | contentDesc | StringI18n | 告警内容描述         |
 | modelId| String           | 模型ID                 |
 | orgId          | String                | 资产所属的组织ID|
-| alertType  | AlertType结构体  | 告警类型，见[AlertType结构体](/docs/api/zh_CN/latest/event/search_alert_type.html#id4)               |
-| subAlertType| AlertType结构体  | 子告警类型，见[AlertType结构体](/docs/api/zh_CN/latest/event/search_alert_type.html#id4)             |
+| alertType  | AlertType结构体  | 告警类型，见 [AlertType结构体](/docs/api/zh_CN/latest/event/search_alert_type.html#id4)              |
+| subAlertType | AlertType结构体 | 子告警类型，见 [AlertType结构体](/docs/api/zh_CN/latest/event/search_alert_type.html#id4) |
 | tags| Tag结构体        | 用户自定义告警内容标签 |
 | updatePerson| String           | 更新人员名称           |
 | updateTime| Long             | 最后一次更新时间       |

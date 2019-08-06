@@ -1,4 +1,4 @@
-# Update Asset
+# Update Asset v2.2
 
 全量或部分更新资产信息。
 

@@ -5,8 +5,7 @@
 ## 请求格式
 
 ```
-POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000 
-{}
+POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search
 ```
 
 ## 请求参数（URI）
@@ -14,14 +13,14 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&org
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-                                                                 
+
 
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
 | modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
 | alertTypeId  | false    | String               | 告警类型ID   |
-| subAlertTypeId    | false    | String   | 告警子类型ID  |                       
+| subAlertTypeId | false | String | 告警子类型ID |
 | expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`contentId`、`modelId`、`alertTypeId`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
 | pagination     | false     | Pagination请求结构体    | 分页的参数。如果不填，默认每页10条。默认按照`updateTime`降序排序，支持用户指定以下字段排序：`contentId`、`modelId`、`updatePerson`、`updateTime`。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
@@ -40,7 +39,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&org
 | modelId| String           | 模型ID                 |
 | orgId          | String| 资产所属的组织ID|
 | alertType  | AlertType结构体  | 告警类型               |
-| subAlertType| AlertType结构体  | 子告警类型             |
+| subAlertType | AlertType结构体 | 子告警类型 |
 | tags| Tag结构体        | 用户自定义告警内容标签 |
 | updatePerson| String           | 更新人员名称           |
 | updateTime| Long             | 最后一次更新时间       |
@@ -52,7 +51,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=search&org
 ### 请求示例
 
 ```json
-https://{apigw-address}/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000 
+https://{apigw-address}/event-service/v2.1/alert-contents?action=search&orgId=1c499110e8800000
 {
 	"pagination": {
 		"pageNo": 1,
@@ -142,7 +141,7 @@ public void testSearchAlertContent() {
 	                    .url("https://{apigw-address}")  
 	                    .getResponse(request, SearchAlertContentResponse.class);  
 	            Gson gson = new Gson();  
-	            System.out.println(gson.toJson(response)); 
+	            System.out.println(gson.toJson(response));
 	        } catch (Exception e) {  
 	            e.printStackTrace();  
 	        }   

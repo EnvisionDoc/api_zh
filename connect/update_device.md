@@ -20,6 +20,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=update
 | deviceKey | Query         | False     | String          | Device Key标识符          |
 
 
+
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
@@ -29,6 +30,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=update
 | deviceAttributes | False         | Map       | 欲更新的设备属性         |
 | deviceTags   | False         | Map（key为String，value为String）    | 欲更新的设备tags |
 | deviceDesc  | False         | String    | 欲更新的设备描述信息     |
+
 
 
 

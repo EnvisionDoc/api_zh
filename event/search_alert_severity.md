@@ -13,7 +13,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-severities?action=search
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
 | orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-                                                                 
+
 
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
@@ -51,7 +51,7 @@ POST  https://{apigw-address}/event-service/v2.1/alert-severities?action=search&
 		"pageNo": 1,
 		"pageSize": 1,
 		"sorters": [{
-			"field": "severityID",
+			"field": "severityId",
 			"order": "ASC"
 		}]
 	}

@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'EnOS API'
-copyright = u'2018, EnOS'
+copyright = u'2019, EnOS'
 author = u'Envision Digital'
 
 # The version info for the project you're documenting, acts as replacement for

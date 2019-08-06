@@ -25,6 +25,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 | deviceAttributes | False         | Map       | 设备属性         |
 | deviceKey   | False         | String    | Device Key标识符          |
 | deviceDesc  | False         | String    | 设备描述信息     |
+|deviceTags|False|Map|设备标签|
 
 
 
@@ -69,7 +70,6 @@ requestBody: {
         "test":"test for tags"
     },
     "timezone":"+08:00",
-    "source":0,
     "productKey":"yourProductKey",
     "deviceAttributes":{
         "testatt":111111

@@ -22,8 +22,9 @@ https://{apigw-address}/connect-service/v2.1/products?action=update
 |-------------------|----------|-----------|--------------|
 | productDesc       | False     | String       | 产品的描述                                                         |
 | biDirectionalAuth | True      | Boolean      | 是否支持双向认证                                                   |
-| dynamicActivateEnabled           | False      | String      | 是否支持动态激活|
+| dynamicActivateEnabled           | False      | Boolean      | 是否支持动态激活|
 | productName       | True      | StringI18n | 产品名称，见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)                                                           |
+|productTags|False|Map|产品标签|
 
 
 

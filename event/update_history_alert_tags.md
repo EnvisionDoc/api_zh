@@ -21,7 +21,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=updateTags
 |------|----------|--------------------|----|------|
 | eventId       | Query            | true     | String     | 告警ID  |
 | tags          | Query            | true     | Tags结构体 | 想要修改的tag map|
-| isPatchUpdate | Query            | true     | Boolean    | 是否全量更新，false为全量修改，true为非全量修改。 |
+| isPatchUpdate | Query            | true     | Boolean    | 是否全量更新，false为全量更新，true为部分更新。 |
 
 
 ## 响应参数

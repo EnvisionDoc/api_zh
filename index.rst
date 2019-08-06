@@ -6,13 +6,14 @@ EnOS API
    :caption: Overview
 
    overview
+   releasenote/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Get Started
 
    gettingstarted
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Reference
