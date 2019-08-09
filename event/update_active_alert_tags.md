@@ -1,6 +1,6 @@
 # Update Active Alert Tags
 
-更新实时告警的tag。
+更新实时告警的标签内容。
 
 ## 请求格式
 
@@ -19,7 +19,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=updateTags
 | 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述 |
 |------|----------|--------------------|----|------|
 | eventId       | Query            | true     | String     | 告警ID  |
-| tags          | Query            | true     | Tags结构体 | 想要修改的tag map|
+| tags          | Query            | true     | Tags结构体 | 想要修改的标签内容|
 | isPatchUpdate | Query            | true     | Boolean    | 是否全量更新，false为全量更新，true为部分更新。 |
 
 

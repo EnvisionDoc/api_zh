@@ -28,7 +28,7 @@ EnOS API请求包含以下组成部分：
 其中：
 
 - `URI-sheme`：协议，支持HTTPS协议。
-- `apigw-address`：该EnOS环境API服务的地址，其范式为`apim-{enos-environment}.envisioniot.com`，其中`enos-environment`为EnOS的部署环境名称。
+- `apigw-address`：API服务的网关地址。其范式为`apim-{enos-environment}.{abc}.com`，其中`enos-environment`为EnOS的部署环境名称。
 - `service-name`：服务名称，如`asset-service`。
 - `version`：API版本，如`v2.0`。
 - `endpoint-URL`：资源及对资源的操作，如`assets/update`。
@@ -107,7 +107,7 @@ Pagination参数表示随机分页。默认分页大小是10。
 | -------- | ----------------- | -------- | --------------------- |
 | pageNo   | Integer           | true     | 请求页数，从1开始     |
 | pageSize | Integer           | true     | 每页记录数，必须大于0 |
-| sorters  | Sorter结构体Array | false    | 分页排序方式          |
+| sorters  | Sorter结构体 | false    | 分页排序方式          |
 
 **Sorter结构体**
 

@@ -196,7 +196,7 @@ latex_elements = {
         %\fancyhead[RO]{\small \nouppercase{\rightmark}}
         %\fancyhead[LE]{\small \nouppercase{\leftmark}}
 
-        \fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{{\tiny EnOS API} }{\href{https://www.envisioniot.com}{\tiny Envision digital}}}
+        \fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{{\tiny EnOS 设备管理} }{\href{https://www.envisioniot.com}{\tiny Envision digital}}}
 
         %%% page number
         \fancyfoot[CO, CE]{\thepage}

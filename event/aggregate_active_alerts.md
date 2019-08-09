@@ -29,7 +29,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| data | Map（Key为String，Value为Integer） | Key为分组字段的取值，value为对应对象在指定时间段内对象发生告警的数量|
+| data | Map（Key为String，Value为Integer） | Key为分组字段的取值，value为对应对象在指定时间段内发生告警的数量|
 
 
 ## 输入输出示例

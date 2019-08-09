@@ -26,16 +26,16 @@
 #### 安装方法
 **Java core SDK（Poseidon）**
 
-访问 [Maven仓库](https://mvnrepository.com/artifact/com.envisioniot/apim-poseidon/0.1.7)，下载Poseidon Jar安装包，在应用中引入Jar安装包。如果应用使用 `pom` 工程，则在 `pom.xml` 文件中加入以下依赖：
+访问 [Maven仓库](https://mvnrepository.com/artifact/com.envisioniot/apim-poseidon/0.1.8)，下载Poseidon Jar安装包，在应用中引入Jar安装包。如果应用使用 `pom` 工程，则在 `pom.xml` 文件中加入以下依赖：
 
 ```xml
 <dependency>
   <groupId>com.envisioniot</groupId>
   <artifactId>apim-poseidon</artifactId>
-  <version>0.1.7</version>
+  <version>0.1.8</version>
 </dependency>
 ```
-**Device And Asset API Pojo SDK**
+**Device and Asset API Pojo SDK**
 
 访问 [Maven仓库](https://search.maven.org/artifact/com.envisioniot/enos-dm-api-pojo/0.2.0/jar)，下载Jar安装包，在应用中引入Jar安装包。如果应用使用 `pom` 工程，则在 `pom.xml` 文件中加入以下依赖：
 
