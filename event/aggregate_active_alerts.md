@@ -1,6 +1,6 @@
 # Aggregate Active Alerts
 
-对实时告警进行统计。
+对当前告警进行统计。
 
 ## 请求格式
 
@@ -12,16 +12,16 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |---------------|--------|----------|-----------|
-| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
                                                                  
 
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |----------------|----------|--------------------|----|
-| expression     | false    | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`、`assetId`、`measurepointId`、`hitRuleId`、`severityId`、`typeId`、`subTypeId`、`contentId`、`eventType`、`eventId`、`tag`。支持的算术运算符是=、in和!=，逻辑运算符是and和or。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| expression     | false    | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`、`assetId`、`measurepointId`、`hitRuleId`、`severityId`、`typeId`、`subTypeId`、`contentId`、`eventType`、`eventId`、`tag`。支持的算术运算符为=和in，逻辑运算符是and和or。[如何使用查询表达式>>](/docs/api/zh_CN/latest/api_faqs.html#id1) |
 | groupByField   | true     | String             | 分组字段：`contentId`、`assetId`、`modelId`、`measurepointId`、`severityId`、`typeId`、`subTypeId` |
-| startOccurTime | false    | String| 告警触发时间的起始时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5)    |
-| endOccurTime   | false    | String| 告警触发时间的结束时间，见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| startOccurTime | false    | String| 查询起始时间，与`endOccurTime`配合使用，表示查询该时段内被触发的告警。见[API在使用的时间参数>>](/docs/api/zh_CN/latest/api_faqs.html#id5)    |
+| endOccurTime   | false    | String| 查询结束时间，与`startOccurTime`配合使用，表示查询该时段内被触发的告警。见[API在使用的时间参数>>](/docs/api/zh_CN/latest/api_faqs.html#id5) |
 
 
 
@@ -29,7 +29,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=aggregate
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| data | Map（Key为String，Value为Integer） | Key为分组字段的取值，value为对应对象在指定时间段内发生告警的数量|
+| data | Map（Key为String，Value为Integer） | Key为分组字段的取值，value为对应对象在指定时间段内发生告警的数量。|
 
 
 ## 输入输出示例

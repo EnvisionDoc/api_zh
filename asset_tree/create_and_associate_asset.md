@@ -1,4 +1,4 @@
-# Create Asset and Associate Node
+# Create and Associate Asset
 
 创建一个逻辑资产，并关联到资产树上。
 
@@ -12,28 +12,28 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=createAsset
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID](/docs/api/zh_CN/latest/api_faqs#id)        |
-| parentAssetId | Query            | true    | String    | 待关联资产的父节点的资产ID。 |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID>>](/docs/api/zh_CN/latest/api_faqs#id)        |
+| parentAssetId | Query            | true    | String    | 待关联资产的父节点的资产ID |
 
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |------------|---------------|----------------|--------------------------------|
-| asset| true          | Asset结构体    | 创建资产时需要提供的资产详情，见[Asset结构体](/docs/api/zh_CN/latest/asset_tree/create_asset_and_associate_node.html#asset-assetstruc)   |
+| asset| true          | Asset结构体    | 创建资产时需要提供的资产详情，见[Asset结构体](/docs/api/zh_CN/latest/asset_tree/create_asset_and_associate_node.html#asset-assetstruc)。   |
 
 
 ### Asset结构体<assetstruc>
 
 | 名称  | 是否必须  |  数据类型      | 描述    |
 |-------|-------|-------------|--------------|
-|modelId|true|String|资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid)|
-| name |true| StringI18n |支持国际化的资产名称。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3) |
-|timezone  |true|  String  |资产所属时区。<br>使用+08:00格式表示不支持夏令时的时区。<br>使用Asia/Shanghai格式表示支持夏令时的时区。<br>详情请见[时区表示方法](http://docs.eniot.io/docs/api/zh_CN/latest/api_faqs.html#id4) |
+|modelId|true|String|资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid)|
+| name |true| StringI18n |支持国际化的资产名称。结构请见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3) |
+|timezone  |true|  String  |资产所属时区。<br>使用+08:00格式表示不支持夏令时的时区。<br>使用Asia/Shanghai格式表示支持夏令时的时区。<br>详情请见[时区表示方法>>](/docs/api/zh_CN/latest/api_faqs.html#id4) |
 |description |false|String|资产描述 |
-|attributes  |false  |Map（Key为String，Value为Object）  |资产所属的模型属性。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
-|tags |false|Tag结构体|用户自定义标签，详情请见[标签的作用与表示方法](http://docs.eniot.io/docs/api/zh_CN/latest/api_faqs.html#id6)|
+|attributes  |false  |Map（Key为String，Value为Object）  |资产所属的模型属性。详情请见 [attributes的表示方法>>](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
+|tags |false|Tag结构体|用户自定义标签，详情请见[标签的作用与表示方法>>](/docs/api/zh_CN/latest/api_faqs.html#id6)|
 
 
 

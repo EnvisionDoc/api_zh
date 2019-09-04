@@ -12,18 +12,18 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |----------------|---------------|--------------------------|---|
-|productKey    | True          | String       | Product Key标识符      |
+|productKey    | True          | String       | Product Key      |
 |timezone | True          | String         | 设备所在时区     |
-| deviceName | True          | StringI18n | 设备名称，见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)         |
+| deviceName | True          | StringI18n | 设备名称，见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3)         |
 | deviceAttributes | False         | Map       | 设备属性         |
-| deviceKey   | False         | String    | Device Key标识符          |
+| deviceKey   | False         | String    | Device Key          |
 | deviceDesc  | False         | String    | 设备描述信息     |
 |deviceTags|False|Map|设备标签|
 
@@ -41,8 +41,8 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 
 | 名称| 数据类型 | 描述         |
 |------------------|-----------------------|----------------------------|
-| productKey       | String                            | Product Key标识符                                                                |
-| deviceKey       | StringI18n                        | Device Key标识符                                                                   |
+| productKey       | String                            | Product Key                                                                |
+| deviceKey       | StringI18n                        | Device Key                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | assetId  | String         | 资产ID|
 
@@ -51,9 +51,9 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 
 | 代码| 数据类型 | 描述    |
 |-----------|----------------|----------------------|
-| 11702 |                | `deviceKey`在数据库中已存在（`deviceKey`提供的情况下）        |
-| 11714 |                | 暂时无法分配设备的key（`deviceKey`未提供的情况下），请重试 |
-| 11739 |                | 该操作将导致超过产品下限定的设备数量                      |
+| 11702 |                | `deviceKey`在数据库中已存在（`deviceKey`提供的情况下）。        |
+| 11714 |                | 暂时无法分配设备的key（`deviceKey`未提供的情况下），请重试。 |
+| 11739 |                | 该操作将导致超过产品下限定的设备数量。 |
 
 
 

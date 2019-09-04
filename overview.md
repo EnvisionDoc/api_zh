@@ -13,6 +13,7 @@ EnOS提供以下API服务：
 - [资产树服务](/docs/api/zh_CN/latest/asset_tree/overview.html)：提供组织内资产树的创建、管理、更新、查询等服务。
 - [TSDB数据服务](/docs/api/zh_CN/latest/tsdb_service/overview.html)：提供获取已存储的资产数据服务。
 - [TSDB策略服务](/docs/api/zh_CN/latest/tsdb_policy/overview.html)：提供获取TSDB存储策略配置信息的服务。
+- [IAM服务](/docs/api/zh_CN/latest/iam/overview.html)：提供用户帐户生命周期管理，用户身份验证以及EnOS资源访问权限控制等服务。
 - [通用文件服务](/docs/api/zh_CN/latest/common_file/overview.html)：如需查看通用文件服务的API文档，点击右上角**返回旧版EnOS API文档**，在目录树中选择**Common File Service**。
 
 ## API Request结构
@@ -93,7 +94,7 @@ EnOS API的返回为以下格式的JSON结构体：
 
 ## 公共参数说明
 
-对各API服务的公共参数说明如下。其他通用参数的获取和描述，详见[API FAQs](/docs/api/zh_CN/latest/api_faqs.html)
+对各API服务的公共参数说明如下。其他通用参数的获取和描述，详见[API FAQs](/docs/api/zh_CN/latest/api_faqs.html)。
 
 ### 公共请求参数（接入服务等）
 
@@ -233,55 +234,3 @@ TSDB数据服务API的公共返回码为：
 | 702  | is not a valid integer                                       | 参数不是一个有效的整数类型                                   |
 | 702  | assetIds or measurepoint does not   match the model          | 设备或测点与模型不匹配                                       |
 | 702  | Please config/check storage group for   org[] and model[]    | 未配置存储策略或modelId有误                                  |
-
-## API鉴权<authentication>
-
-EnOS API身份验证采用服务账号SA（service account）作为应用或者开发者的身份。在REST API请求中将SA发送到EnOS服务，通过它验证用户身份并执行所需的授权访问。 
-
-### 获取服务账号
-
-服务账号SA由应用的 `AccessKey` 和 `SecretKey` 组成，需要通过在EnOS控制台注册应用生成，具体步骤如下：
-
-1. 登录EnOS控制台，在左侧导航栏中选择 **应用注册**。
-2. 点击 **创建应用** 按钮，输入新应用的详细信息后，点击 **确认**。
-3. 应用注册完成之后，在 **组织应用** 标签下，点击应用名称，打开 **应用详情** 页面，查看应用的 `AccessKey` 和 `SecretKey` 。
-
-### 授权服务账号
-
-必须对服务账号进行授权之后，应用程序才有权访问EnOS上被授权的资源。对服务账号授权的详细步骤，请参考[管理服务账号](/docs/iam/zh_CN/latest/howto/service_account/managing_service_account.html)。
-
-### API操作权限
-
-在授权服务账号前，需创建相应的权限策略。各API接口需要访问的资源和相应的操作权限说明如下：
-
-| 接口名称                       | 所需授权              | 所需操作权限 |
-| ------------------------------ | --------------------- | ------------ |
-| Get Electric Power             | Asset                 | Read         |
-| Get Current Day Electric Power | Asset                 | Read         |
-| Filter Latest Data             | Asset                 | Read         |
-| Get Latest Data                | Asset                 | Read         |
-| Get Generic Data               | Asset                 | Read         |
-| Get DI Data                    | Asset                 | Read         |
-| Get AI Normalized Data         | Asset                 | Read         |
-| Get AI Data                    | Asset                 | Read         |
-| Get Raw Data                   | Asset                 | Read         |
-| Get TSDB Storage Policy        | Asset                 | Read         |
-| UpdateAsset                    | Asset                 | Write        |
-| AssociateAssetNode             | Asset Tree Management | Full-Access  |
-| DeleteAssetNode                | Asset Tree Management | Full-Access  |
-| CreateAssetNode                | Asset Tree Management | Full-Access  |
-| Cancel Command                 | Device Management     | Full-Access  |
-| Set Measurepoint               | Asset                 | Control      |
-| Invoke Service                 | Asset                 | Control      |
-| Create Product                 | Device Management     | Full-Access  |
-| Update Product                 | Device Management     | Full-Access  |
-| Delete Product                 | Device Management     | Full-Access  |
-| Disable Device                 | Device Management     | Full-Access  |
-| Enable Device                  | Device Management     | Full-Access  |
-| Delete Device                  | Device Management     | Full-Access  |
-| Create Device                  | Device Management     | Full-Access  |
-| Update Device                  | Device Management     | Full-Access  |
-| Add Sub-device                 | Device Management     | Full-Access  |
-| Remove Sub-device              | Device Management     | Full-Access  |
-
-创建权限策略的详细步骤，请参考[创建和管理策略](/docs/iam/zh_CN/latest/howto/managing_policies.html)。

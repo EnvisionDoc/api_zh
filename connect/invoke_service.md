@@ -14,23 +14,25 @@ https://{apigw-address}/connect-service/v2.1/commands?action=invokeService
 
 ## 请求参数（URI）
 
-.. note:: 以下非必须字段中，必须提供assetId或productKey与deviceKey的组合，用于指定设备。
+.. note:: 以下非必须字段中，必须提供 ``assetId`` 或 ``productKey`` + ``deviceKey`` 的组合，用于指定设备。
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query          | False       | String       | Product Key标识符      |
-| deviceKey | Query           | False      | String       | Device Key标识符|
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| productKey | Query          | False       | String       | Product Key      |
+| deviceKey | Query           | False      | String       | Device Key|
 | serviceId      | Query| True | String    | 被调用服务ID|
 | pendingTtl     | Query| False| Integer    | 缓存存储时间，单位为秒 范围[0 - 172800（即48小时）]，默认值为0。当pendingTtl为0时，表示命令即时执行。 |
-| timeout        | Query| False         | Integer    | 服务执行超时时间，单位为秒 范围[1 - 60]，默认值为30秒|
+| timeout        | Query| False         | Integer    | 服务执行超时时间，单位为秒 范围[1 - 60]，默认值为30秒。|
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |-----------|---------------|-------------------|----------|
-| inputData | True| Map（Key为String，Value为String，Number，Array或Object） | 服务调用的输入参数，key为参数标识符，value值类型需要符合`ThingModel`的定义 |
+| inputData | True| Map（Key为String，Value为String，Number，Array或Object） | 服务调用的输入参数，key为参数标识符，value值类型需要符合`ThingModel`的定义。 |
 
 
 

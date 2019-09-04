@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=updateTags
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |---------------|--------|----------|-----------|
-| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
                                                                  
 
 ## 请求参数（Body）
@@ -21,7 +21,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=updateTags
 |------|----------|--------------------|----|------|
 | eventId       | Query            | true     | String     | 告警ID  |
 | tags          | Query            | true     | Tags结构体 | 想要修改的标签内容|
-| isPatchUpdate | Query            | true     | Boolean    | 是否全量更新，false为全量更新，true为部分更新。 |
+| isPatchUpdate | Query            | true     | Boolean    | 是否全量更新。<br>当其值为true时，只更新参数中指定字段的值；<br>当其值为false时，更新所有字段的值，即未指定值的字段将被置空。 |
 
 
 ## 响应参数

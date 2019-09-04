@@ -1,6 +1,6 @@
 # Get Asset Tree
 
-获取指定组织下的一棵资产树。
+获取资产树信息。
 
 ## 请求格式
 
@@ -12,8 +12,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID](/docs/api/zh_CN/latest/api_faqs#id)        |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID>>](/docs/api/zh_CN/latest/api_faqs#id)        |
 
 
 ## 响应参数
@@ -22,7 +22,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 |-------------|-----------------------------------|-----------------------------|
 | treeId| String                            | 资产树ID                    |
 | tags| Map（Key为String，Value为String） | 用户自定义的一组资产树标签  |
-| asset| asset结构体                   | 资产树的根资产，见[asset结构体](/docs/api/zh_CN/latest/asset_tree/get_asset_tree.html#asset-assetstruc)              |
+| asset| asset结构体                   | 资产树的根资产，见[asset结构体>>](/docs/api/zh_CN/latest/asset_tree/get_asset_tree.html#asset-assetstruc)              |
 
 ### Asset结构体<assetstruc>
 
@@ -30,9 +30,9 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 |-------|-------|---------------------------|
 | assetId |  String | 资产ID|
 |modelId|String|资产所属模型ID|
-|modelIdPath|String|模型ID的路径。|
+|modelIdPath|String|模型ID的路径|
 | name | StringI18n |支持国际化的资产名称|
-|timezone  |  String  |资产所属时区<br>使用+08:00格式表示不支持夏令时的时区<br>使用Asia/Shanghai格式表示支持夏令时的时区|
+|timezone  |  String  |资产所属时区。<br>使用+08:00格式表示不支持夏令时的时区<br>使用Asia/Shanghai格式表示支持夏令时的时区。|
 | description | String | 资产描述|
 | label  | String | 资产类型：“0”表示设备资产，“1”表示逻辑资产|
 | inValid  | Boolean | true为无效节点，false为有效节点|

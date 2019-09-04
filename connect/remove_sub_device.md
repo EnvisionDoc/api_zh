@@ -12,15 +12,15 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=removeSubDevice
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      |DeviceIdentfier结构体  | 需要移除子设备的网关信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
-| subDevices           | True      | DeviceIdentfier结构体  | 需要从指定网关移除的子设备列表信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
+| gateway | True      |DeviceIdentfier结构体  | 需要移除子设备的网关信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
+| subDevices           | True      | DeviceIdentfier结构体  | 需要从指定网关移除的子设备列表信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/latest/connect/remove_sub_device.html#deviceidentifier) |
 
 
 ### DeviceIdentifier结构体
@@ -29,9 +29,9 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=removeSubDevice
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
-| productKey | String         | Product Key标识符      |
-| deviceKey | String         | Device Key标识符          |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
+| productKey | String         | Product Key      |
+| deviceKey | String         | Device Key          |
 
 
 

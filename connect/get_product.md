@@ -12,15 +12,15 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| productKey        | Query            | true    | String    | Product Key标识符|
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| productKey        | Query            | true    | String    | Product Key|
 
 
 ## 响应参数
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Product结构体                           | 产品的具体信息，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)                |
+| data| Product结构体                           | 产品的具体信息，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)。                |
 
 
 ### Product结构体<productstruc>
@@ -28,12 +28,12 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 | 名称  |  数据类型      | 描述               |
 |-------|-------|---------------------------|
 | orgId |  String | 资产所属的组织ID |
-| productKey          | String| Product Key标识符|
-| productName         | StringI18n |  产品名称。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)|
+| productKey          | String| Product Key|
+| productName         | StringI18n |  产品名称。结构请见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3)|
 | productSecret       | String                          | 产品私钥                                             |
 | productDesc         | String                          | 产品描述                                             |
-| productType         | Sting                           | 产品类型，Device代表普通类型，Gateway代表网关类型    |
-| dataFormat         | String                          | 数据类型，Custom代表用户自定义类型，Json代表json类型 |
+| productType         | Sting                           | 产品类型，Device代表普通类型，Gateway代表网关类型。    |
+| dataFormat         | String                          | 数据类型，Custom代表用户自定义类型，Json代表json类型。 |
 | productTags         | Map（key为String，value为String） | 产品标签                                             |
 | modelId             | String                          | 资产所属模型ID|
 | dynamicActiveEnabled | Boolean                         | 是否支持动态激活                                     |

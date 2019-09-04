@@ -12,14 +12,14 @@ POST https://{apigw-address}/event-service/v2.1/alert-types?action=update
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
-|isPatchUpdate	 | Query      | true |  Boolean  | 是否全量更新，false为全量更新，true为部分更新|
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
+|isPatchUpdate	 | Query      | true |  Boolean  | 是否全量更新。<br>当其值为true时，只更新参数中指定字段的值；<br>当其值为false时，更新所有字段的值，即未指定值的字段将被置空。|
 
 
 ## 请求参数（Body）
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
-| type          | true    | generateType结构体    | 告警类型[generateType结构体](update_alert_type#generatetype-generatetype) |
+| type          | true    | generateType结构体    | 告警类型[generateType结构体](update_alert_type#generatetype-generatetype)。 |
 
 
 
@@ -28,8 +28,9 @@ POST https://{apigw-address}/event-service/v2.1/alert-types?action=update
 | 名称| 是否必选| 数据类型| 描述                        |
 |----------|--------------|--------------|-------------------------------------|
 | typeId   |  true        | String       | 告警类型编号|
-| typeDesc | true         | StringI18n   | 国际化告警类型描述，其中default必填。结构请见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)|
-| tags     | false        | tags数据类型 | 标签                                |
+| typeDesc | true         | StringI18n   | 国际化告警类型描述，其中default必填。结构请见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3)|
+| tags     | false        | tags数据类型 | 标签 |
+| source  | false | String |自定义数据来源，用以表明告警类型适用的数据源。若适用于EnOS Cloud，则为空；若适用于EnOS Edge，则为edge。|
 
 
 ## 响应参数

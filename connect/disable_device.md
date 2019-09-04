@@ -10,14 +10,16 @@ https://{apigw-address}/connect-service/v2.1/devices?action=disable
 
 ## 请求参数（URI）
 
-.. note:: 以下非必须字段中，必须提供assetId或productKey与deviceKey的组合，用于指定设备。
+.. note:: 以下非必须字段中，必须提供 ``assetId`` 或 ``productKey`` + ``deviceKey`` 的组合，用于指定设备。
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| assetId  | Query          | False      | String        | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query         | False      | String         | Product Key标识符      |
-| deviceKey | Query         | False     | String          | Device Key标识符          |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query          | False      | String        | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| productKey | Query         | False      | String         | Product Key      |
+| deviceKey | Query         | False     | String          | Device Key          |
     
 
 

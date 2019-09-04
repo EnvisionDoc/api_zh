@@ -10,40 +10,42 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 
 ## 请求参数（URI）
 
-.. note:: 以下非必须字段中，必须提供assetId或productKey与deviceKey的组合，用于指定设备。
+.. note:: 以下非必须字段中，必须提供 ``assetId`` 或 ``productKey`` + ``deviceKey`` 的组合，用于指定设备。
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query          | False       | String       | Product Key标识符      |
-| deviceKey | Query           | False      | String       | Device Key标识符          |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| productKey | Query          | False       | String       | Product Key      |
+| deviceKey | Query           | False      | String       | Device Key          |
 | commandId | Query            | True    | String        | 命令ID          |
 
 ## 响应参数
 
 | 名称 | 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |    getCommand结构体        | 命令的相应信息，见[getCommand结构体](/docs/api/zh_CN/latest/connect/get_command.html#id3) |
+| data |    Command结构体        | 命令的相应信息，见[Command结构体](/docs/api/zh_CN/latest/connect/get_command.html#command-com)。 |
 
-### getCommand结构体
+### Command结构体 <com>
 
 | 名称 | 数据类型| 描述|
 |-----------------|---------------------------|----------------|
 | commandId       | String| 命令ID|
 | orgId          | String    | 资产所属的组织ID  |
-| productKey | String          | Product Key标识符      |
+| productKey | String          | Product Key      |
 | deviceKey  | String     | 设备key          |
 | assetId   | String      | 资产ID|
 | createTime      | Long| 创建时间|
 | createLocaltime | String| 本地创建时间|
 | commandType     | Integer| 命令类型。1. 测点设置 2. 服务调用|
 | commandName     | StringI18n| 命令的名称。对于测点设置来说，是测点名称。对于服务调用来说，是服务名称。|
-| timeout         | Integer| 命令超时时长，单位是秒 范围[1-60]，默认30|
-| pendingTtl      | Long| 命令缓存时长，单位是秒 范围[ 0 - 48 * 60 * 60 ]，默认0，表示即时命令|
+| timeout         | Integer| 命令超时时长，单位是秒 范围[1-60]，默认30。|
+| pendingTtl      | Long| 命令缓存时长，单位是秒 范围[ 0 - 48 * 60 * 60 ]，默认0，表示即时命令。|
 | state           | Integer| 命令状态，用1-7的整数表示。 1表示已创建；2表示已取消；3表示已过期；4表示已下发；5表示发送成功；6表示发送失败；7表示响应超时。|
-| tslIdentifier   | String| 物模型中的对应identifier。对于测点设置命令来说，是测点identifier。对于服务调用命令来说，是服务identifier。|
-| inputData       | Map（Key为String，Value为String，Number，Array或Object） | 输入数据。对于测点设置命令来说，key为测点identifier，value为需要设置的测点值。对于服务调用命令来说，为服务输入参数。value数据类型需要符合物模型的定义 |
+| tslIdentifier   | String| 物模型中的对应标识符。对于测点设置命令来说，是测点标识符。对于服务调用命令来说，是服务标识符。|
+| inputData       | Map（Key为String，Value为String，Number，Array或Object） | 输入数据。对于测点设置命令来说，key为测点标识符，value为需要设置的测点值。对于服务调用命令来说，为服务输入参数。value数据类型需要符合物模型的定义。 |
 | outputData      | Map（Key为String，Value为String，Number，Array或Object） | 输出数据。对于测点设置命令来说，该字段无返回。对于服务调用命令来说，该字段表示服务的输出结果。value数据类型需要符合物模型的定义。|
 
 
@@ -54,7 +56,7 @@ https://{apigw-address}/connect-service/v2.1/commands?action=get
 ### 请求示例
 
 ```
-https://{apigw-address}/connect-service/v2.1/commands?action=get&deviceKey=WRJ2c1yMa5&productKey=doxkidR0&commandId= 2242591201245044736&orgId=o15541858646501
+https://{apigw-address}/connect-service/v2.1/commands?action=get&deviceKey=yourDeviceKey&productKey=yourProductKey&commandId=2242591201245044736&orgId=yourOrgId
 ```
 
 ### 返回示例

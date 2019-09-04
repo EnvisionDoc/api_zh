@@ -12,9 +12,9 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepo
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
-| modelIds       | Query            | true    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)|
-| measurepoints | Query            | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
+| modelIds       | Query            | true    | String    | 资产所属模型ID。支持多model查询，多个modelId之间用英文逗号隔开。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)|
+| measurepoints | Query            | false     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
                                               
 
 
@@ -31,7 +31,7 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepo
 | 名称        | 数据类型 | 描述                           |
 |---------------|-----------|--------------------------------------|
 | modelId     | String    | 模型ID |
-| tsdb_metadata   |  `List<Object>`    | 模型测点存储策略集合，详见[policy](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id4)。 |
+| tsdb_metadata   |  `List<Object>`    | 模型测点存储策略集合，详见[policy>>](/docs/api/zh_CN/latest/tsdb_policy/get_points_tsdb_meta_data.html#id4)。 |
 
 ### policy
 
@@ -46,7 +46,7 @@ https://{apigw-address}/tsdb-policy/v2.0/policies?orgId={}&modelIds={}&measurepo
 
 | 名称        | 数据类型 | 描述                           |
 |---------------|-----------|--------------------------------------|
-| point     | Object    | 测点存储策略，一个测点可以有多个存储策略，策略用数组存储 |
+| point     | Object    | 测点存储策略，一个测点可以有多个存储策略，策略用数组存储。 |
 
 ## 错误码
 有关错误码的描述，参见[通用错误码](overview#errorcode)。

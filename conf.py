@@ -196,7 +196,7 @@ latex_elements = {
         %\fancyhead[RO]{\small \nouppercase{\rightmark}}
         %\fancyhead[LE]{\small \nouppercase{\leftmark}}
 
-        \fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{{\tiny EnOS 设备管理} }{\href{https://www.envisioniot.com}{\tiny Envision digital}}}
+        \fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{{\tiny EnOS API} }{\href{https://www.envisioniot.com}{\tiny Envision digital}}}
 
         %%% page number
         \fancyfoot[CO, CE]{\thepage}
@@ -244,25 +244,18 @@ latex_elements = {
         \begin{titlepage}
             \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{bg.png}}
 
-            \vspace*{15mm} %%% * is used to give space from top
-            \fontsize{40pt}{\baselineskip}\selectfont \textbf{EnOS}
+            \vspace*{170mm} %%% * is used to give space from top
+            \fontsize{30pt}{\baselineskip}\selectfont \textbf{EnOS}
 
             \vspace{5mm}
 
-            \fontsize{40pt}{\baselineskip}\selectfont \textbf{API}
+            \fontsize{30pt}{\baselineskip}\selectfont \textbf{API}
 
             \vspace{5mm}
 
             \huge \textmd{版本}\textbf{ latest}
             %% \vfill adds at the bottom
             \vfill
-                       \centering
-                       \fontsize{16pt}{\baselineskip}\selectfont \textbf{远景智能}
-
-                       \vspace{3mm}
-
-                       \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
-                       \today\\
         \end{titlepage}
 
         \clearpage

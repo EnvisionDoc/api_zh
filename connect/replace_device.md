@@ -10,14 +10,16 @@ POST https://{apigw-address}/connect-service/v2.1/devices?action=replaceDevice
 
 ## 请求参数（URI）
 
-.. note:: 以下非必须字段中，必须提供assetId或productKey与deviceKey的组合，用于指定设备。
+.. note:: 以下非必须字段中，必须提供 ``assetId`` 或 ``productKey`` + ``deviceKey`` 的组合，用于指定设备。
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| assetId  | Query          | False      | String        | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | Query         | False      | String         | Product Key标识符      |
-| deviceKey | Query         | False     | String          | Device Key标识符          |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query          | False      | String        | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| productKey | Query         | False      | String         | Product Key      |
+| deviceKey | Query         | False     | String          | Device Key          |
 
 
 
@@ -25,7 +27,7 @@ POST https://{apigw-address}/connect-service/v2.1/devices?action=replaceDevice
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |----------------|---------------|--------------------------|---|
-|newDeviceKey|True|String|新设备的Device Key标识符。支持英文字母、数字和特殊字符-_.:，长度限制4~64。|
+|newDeviceKey|True|String|新设备的Device Key。支持英文字母、数字和特殊字符-_.:，长度限制4~64。|
 
 
 
@@ -33,16 +35,16 @@ POST https://{apigw-address}/connect-service/v2.1/devices?action=replaceDevice
 
 | 名称 | 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |    DeviceReplaceResult结构体        | 设备替换结果信息，见[DeviceReplaceResult结构体](replace_device#devicereplaceresult-devicereplaceresult)|
+| data |    DeviceReplaceResult结构体        | 设备替换结果信息，见[DeviceReplaceResult结构体>>](replace_device#devicereplaceresult-devicereplaceresult)|
 
 
 ### DeviceReplaceResult结构体 <DeviceReplaceResult>
 
 | 名称           | 数据类型 | 描述      |
 |---------------|-----------|--------------|
-| assetId    | String        | 资产ID。|
-| productKey   | String         | Product Key标识符      |
-| deviceKey  | String          | Device Key标识符          |
+| assetId    | String        | 资产ID|
+| productKey   | String         | Product Key      |
+| deviceKey  | String          | Device Key          |
 | deviceSecret  | String          | 由系统分配的新设备的密钥          |
 
 

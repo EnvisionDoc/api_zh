@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 
@@ -20,7 +20,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| subDevice           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#deviceidentifier) |
+| subDevice           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#deviceidentifier)。 |
 
 
 ### DeviceIdentifier结构体
@@ -29,16 +29,16 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | String         | Product Key标识符      |
-| deviceKey | String         | Device Key标识符          |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| productKey | String         | Product Key      |
+| deviceKey | String         | Device Key          |
 
 
 ## 响应参数
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data | Device结构体                          | 网关设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#device-devicetstruc)               |
+| data | Device结构体                          | 网关设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#device-devicetstruc)。               |
 
 
 ### Device结构体<devicetstruc>
@@ -49,11 +49,11 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 | assetId  | String         | 资产ID|
 | modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
-| productKey       | String                            | Product Key标识符                                                                |
+| productKey       | String                            | Product Key                                                                |
 | productName      | StringI18n                        | 产品名称                                                                |
 | productType      | String                            | 产品类型                                                                   |
 | dataFormat       | String                            | 数据格式。Custom表示支持用户自定义数据格式，Json表示只支持EnOS设备协议格式 |
-| deviceKey        | String                            | Device Key标识符                                                                    |
+| deviceKey        | String                            | Device Key                                                                    |
 | deviceName       | StringI18n                        | 设备名称                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | deviceDesc       | String                            | 设备描述                                                                   |

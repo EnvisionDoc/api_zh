@@ -135,7 +135,7 @@ API接口中支持以类SQL条件语句方式，指定查询条件，这种语�
 |defaultValue|String |缺省的名称|
 |i18nValue |Map（Key为String，Value为String）| 各个Locale下的名称，key为locale，value为各个locale下的名称。|
 
-`defaultValue`指，当使用的`locale`未在`i18nValue`中指定时，应当采用的名称。`locale`格式遵循**Unicode locale identifier**，例如"en_US"。有关更多信息，请参阅[https://www.unicode.org/reports/tr35/tr35-55/tr35.html#BCP_47_Language_Tag_Conversion](https://www.unicode.org/reports/tr35/tr35-55/tr35.html#BCP_47_Language_Tag_Conversion).
+`defaultValue`指，当使用的`locale`未在`i18nValue`中指定时，应当采用的名称。`locale`格式遵循**Unicode locale identifier**，例如"en_US"。有关更多信息，请参阅[https://www.unicode.org/reports/tr35/tr35-55/tr35.html#BCP_47_Language_Tag_Conversion](https://www.unicode.org/reports/tr35/tr35-55/tr35.html#BCP_47_Language_Tag_Conversion)。
 
 示例：
 
@@ -221,8 +221,8 @@ EnOS服务支持使用标签来管理对象，可以基于标签对对象进行�
 |名称|数据类型|是否必须|描述|
 |---------|--------|--------|-----------|
 |assetId|String|false|资产ID|
-|productKey|String|false|Product Key标识符|
-|deviceKey|String|false|Device Key标识符|
+|productKey|String|false|Product Key|
+|deviceKey|String|false|Device Key|
 
 
 ## 如何获取资产树ID

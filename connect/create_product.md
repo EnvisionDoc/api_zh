@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=create
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -21,9 +21,9 @@ https://{apigw-address}/connect-service/v2.1/products?action=create
 |--------------------|----------|-----------|--------------|
 | productDesc       | False     | String       | 产品的描述                                                         |
 | biDirectionalAuth | True      | Boolean      | 是否支持双向认证                                                   |
-| modelId           | True      | String      | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)   |
+| modelId           | True      | String      | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)   |
 | dataFormat        | True      | String      | 数据类型。枚举，Custom代表用户自定义数据类型，Json代表json数据类型。|
-| productName       | True      | StringI18n | 产品名称，见[国际化名称结构体](/docs/api/zh_CN/latest/api_faqs.html#id3)|
+| productName       | True      | StringI18n | 产品名称，见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3)|
 | productType       | True      | String      | 产品类型。枚举，Device代表普通产品类型，Gateway代表网关类型。|
 |dynamicActivateEnabled|False|Boolean|是否允许动态激活|
 |productTags|False|Map|产品标签|

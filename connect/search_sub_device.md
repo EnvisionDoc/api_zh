@@ -12,15 +12,15 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      | DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/search_sub_device.html#deviceidentifier) |
-| pagination  | False      | Pagination请求结构体  | 分页参数，如果不填，默认每页10条。目前，不支持排序（忽略排序字段）。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
+| gateway | True      | DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/latest/connect/search_sub_device.html#deviceidentifier) |
+| pagination  | False      | Pagination请求结构体  | 分页参数。如未指定，默认每页10条。见[Pagination请求结构体>>](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
 
 
 ### DeviceIdentifier结构体
@@ -29,9 +29,9 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
-| productKey | String         | Product Key标识符      |
-| deviceKey | String         | Device Key标识符          |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| productKey | String         | Product Key      |
+| deviceKey | String         | Device Key          |
 
 
 
@@ -40,7 +40,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data | Device结构体                     | 网关下指定分页的一组子设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/search_sub_device.html#id3)    |
+| data | Device结构体                     | 网关下指定分页的一组子设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/search_sub_device.html#id3)。    |
 
 
 ### Device结构体
@@ -51,11 +51,11 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 | assetId  | String         | 资产ID|
 | modelId             | String                          | 资产所属模型ID|
 | modelIdPath      | String                            | 模型ID的路径                                                               |
-| productKey       | String                            | Product Key标识符                                                                |
+| productKey       | String                            | Product Key                                                                |
 | productName      | StringI18n                        | 产品名称                                                                |
 | productType      | String                            | 产品类型                                                                   |
-| dataFormat       | String                            | 数据格式。Custom表示支持用户自定义数据格式，Json表示只支持EnOS设备协议格式 |
-| deviceKey        | String                            | Device Key标识符                                                                    |
+| dataFormat       | String                            | 数据格式。Custom表示支持用户自定义数据格式，Json表示只支持EnOS设备协议格式。 |
+| deviceKey        | String                            | Device Key                                                                    |
 | deviceName       | StringI18n                        | 设备名称                                                                   |
 | deviceSecret     | String                            | 设备的连接秘钥                                                             |
 | deviceDesc       | String                            | 设备描述                                                                   |

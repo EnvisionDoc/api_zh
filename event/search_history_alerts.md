@@ -12,24 +12,24 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |---------------|--------|----------|-----------|
-| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
 
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
-| modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
-| assetId       | false     | String    | 资产ID。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
-| measurepointsId     | false     | String    | 资产测点。[如何获取测点（pointId）信息](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
-| startOccurTime        | false     | String   | 告警触发时间的起始时间。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
-| endOccurTime        | false     | String       | 告警触发时间的结束时间。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
-| recoverStartTime        | false     | String  | 告警的恢复时间的起始时间，如果不填，默认最近一周的数据。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
-| recoverEndTime        | false     | String  | 告警的恢复时间的结束时间，如果不填，默认最近一周的数据。见[API在使用的时间参数](/docs/api/zh_CN/latest/api_faqs.html#id5) |
-| expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=、in，逻辑运算符是and。[如何使用查询表达式](/docs/api/zh_CN/latest/api_faqs.html#id1)|
-| scope |  false   | Scope结构体 | 查询指定资产树或资产树上某资产节点下的告警，并指定是否返回被屏蔽的衍生告警。**该参数不可与rootAlert参数同时使用**。见[Scope结构体](search_history_alerts#scope-scope) |
-|  rootAlert  |   false  | RootAlert结构体 | 查询被指定根源告警屏蔽的衍生告警。**该参数不可与scope参数同时使用**。见[RootAlert结构体](search_history_alerts#rootalert-rootalert)|
-| pagination     | false     |  Pagination请求结构体   | 随机分页，默认就是按照`occurTime`倒序排列，用户不能指定排序字段。默认分页大小是10。见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
+| modelId          | false    | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
+| assetId       | false     | String    | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
+| measurepointsId     | false     | String    | 资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
+| startOccurTime        | false     | String   | 查询起始时间，与`endOccurTime`配合使用，表示查询该时段内被触发的告警。见[API在使用的时间参数>>](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| endOccurTime        | false     | String       | 查询结束时间，与`startOccurTime`配合使用，表示查询该时段内被触发的告警。见[API在使用的时间参数>>](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| recoverStartTime        | false     | String  | 查询起始时间，与`recoverEndTime`配合使用，表示查询在该时段内异常状态恢复正常的告警，若不指定，默认为最近一周的数据。见[API在使用的时间参数>>](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| recoverEndTime        | false     | String  | 查询起始时间，与`recoverStartTime`配合使用，表示查询在该时段内异常状态恢复正常的告警，若不指定，默认为最近一周的数据。见[API在使用的时间参数>>](/docs/api/zh_CN/latest/api_faqs.html#id5) |
+| expression         | false    | String   | 查询表达式，支持类sql的查询。目前支持查询的字段是`modelId`，`assetId`，`measurepointId`，`hitRuleId`，`severityId`，`typeId`，`subTypeId`，`contentId`，`eventType`，`eventId`，`tag`。支持的算术运算符是=、in，逻辑运算符是and。[如何使用查询表达式>>](/docs/api/zh_CN/latest/api_faqs.html#id1)|
+| scope |  false   | Scope结构体 | 查询指定资产树或资产树上某资产节点下的告警，并指定是否返回被屏蔽的衍生告警。**该参数不可与rootAlert参数同时使用**。见[Scope结构体](search_history_alerts#scope-scope)。 |
+|  rootAlert  |   false  | RootAlert结构体 | 查询被指定根源告警屏蔽的衍生告警。**该参数不可与scope参数同时使用**。见[RootAlert结构体](search_history_alerts#rootalert-rootalert)。|
+| pagination     | false     |  Pagination请求结构体   | 随机分页，默认按照`occurTime`倒序排列。如未指定，默认分页大小是10。见[Pagination请求结构体>>](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)|
 
 
 
@@ -39,7 +39,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search
 |------------|--------------|--------------|-----------|
 | treeId            | true         | String       | 资产树ID|
 | fromAssetId       | false        | String       | 资产ID。可选。<br>当未指定时，返回`treeId`指定的资产树内所有节点的告警；<br>当指定时，返回该资产节点下（包含该节点）的所有告警
-| includeDerivative | false        | Boolean      | 是否返回衍生告警，默认为false，不返回衍生告警。|
+| includeDerivative | false        | Boolean      | 是否返回衍生告警，默认为false，不返回衍生告警|
 
 
 
@@ -56,7 +56,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| data | HistoryAlert结构体| 历史告警信息数组，包含恢复时间，事件ID，恢复原因等信息。见[HistoryAlert结构体](/docs/api/zh_CN/latest/event/search_history_alerts.html#id7)|
+| data | HistoryAlert结构体| 历史告警信息数组，包含恢复时间，事件ID，恢复原因等信息。见[HistoryAlert结构体>>](/docs/api/zh_CN/latest/event/search_history_alerts.html#id7)|
 
 ### HistoryAlert结构体
 
@@ -70,13 +70,13 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=search
 | measurepointId | String                | 资产测点|
 | hitRuleId      | String                | 触发的告警规则编号|
 | value          | Integer/Double/Object | 测点值|
-| occurTime      | Long                  | 告警发生时间（UTC时间）|
-| localOccurTime     | String                | 告警发生时间（本地时间）|
-| recoverTime     | Long                | 告警恢复时间|
-| recoverLocalTime     | String                  | 告警恢复本地时间 |
-| recoverReason     | String                | 恢复原因|
-| createTime     | Long                | 该告警记录的入库时间（UTC时间）|
-| updateTime     | Long                  | 该告警记录的更新时间（UTC时间） |
+| occurTime      | Long                  | 告警发生的时间，以UTC时间表示|
+| localOccurTime     | String                | 告警发生的时间，以本地时间表示|
+| recoverTime     | Long                | 触发告警的异常状况恢复正常的时间，以UTC时间表示|
+| localRecoverTime     | String                  | 触发告警的异常状况恢复正常的时间，以本地时间表示 |
+| recoverReason     | String                | 异常状况恢复的原因|
+| createTime     | Long                | 该告警记录的入库时间，以UTC时间表示|
+| updateTime     | Long                  | 该告警记录的更新时间，以UTC时间表示 |
 | severityId     | String                | 告警级别标识符|
 | severityDesc   | StringI18n            | 告警级别描述|
 | typeId         | String                | 告警类别标识符|

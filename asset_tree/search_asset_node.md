@@ -1,6 +1,6 @@
 # Search Asset Node
 
-查询组织下满足条件的资产。
+查询满足条件的资产。
 
 ## 请求格式
 
@@ -12,37 +12,45 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
 
 
 ## 请求参数（Body）
 
-| 名称          | 是否必须 | 数据类型 | 描述      |
-|-----------------|---------------|-------------------|-----|
-| filter| false         |   Filter结构体        | 资产的查询条件，见[Filter结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_node.html#filter-filterstruc) |
-| pagination| false         | Pagination请求结构体  | 用于在接口请求中描述分页要求，见[Pagination请求结构体](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)  |
-| projection| false         | String Array          | 用于在接口请求中描述待返回的对象projection，见[projection参数如何对结果集做裁剪](/docs/api/zh_CN/latest/api_faqs.html#projection)|
 
+.. list-table::
+   :widths: auto
+   :header-rows: 1
 
-### Filter结构体<filterstruc>
+   * - 名称
+     - 是否必须
+     - 数据类型
+     - 描述
+   * - expression
+     - False
+     - String
+     - 查询表达式，目前支持的字段有 ``assetId``、``modelId``、``rootModelIds``、``name``、``attributes``、``tags``、``treeId``、``productKey``及``deviceKey``。
 
-| 名称      | 是否必须  | 数据类型 | 描述      |
-|-----------|---------------|----|--------------|
-| assetIds| False | String Array | 资产ID，如果想查询多个资产，就提供多个资产ID组成的List。[如何获取Asset ID信息](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
-| modelIds | False | String Array | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid) |
-| rootModelIds | False | String Array | 资产所属的根模型ID。如果想查询多个根模型，就提供多个根模型ID组成的List。|
-| nameLike | False | nameLike结构体 | 用于描述对国际化名称的查询条件，见[nameLike结构体](/docs/api/zh_CN/latest/asset_tree/search_asset_node.html#namelike-namelikestruc) |
-| attributes  | False|Map |一组属性值。键即属性名，统一为String类型，值即属性值，类型依据具体模型的定义。详情请见 [attributes的表示方法](/docs/api/zh_CN/latest/api_faqs.html#attributes) |
-| tags | False | Tag结构体 | 用户自定义的一组标签 |
-| treeId | False | String | 资产关联的资产树ID |
+       + ``assetId``、``modelId``、``rootModelIds``：支持in和=算术运算符；
+       + ``productKey`` 及 ``deviceKey``：支持like模糊查询，支持=运算符；
+       + ``name``：支持指定语言模糊查询：
 
+         * ``name like ‘xxx’``：模糊查询default、中文和英文名称
+         * ``name.default like ‘xxx’``：模糊查询默认名称
+         * ``name.zh_CN like ‘xxx’``：模糊查询中文名称，不存在中文名称时模糊查询default名称
+         * ``name.en_US like ‘xxx’``：模糊查询英文名称，不存在英文名称时模糊查询default名称
 
-### nameLike结构体<namelikestruc>
+       `如何使用查询表达式>> </docs/api/zh_CN/latest/api_faqs.html#id1>`__
 
-| 名称        | 数据类型 | 描述      |
-|-----------|---------------------|-----------------------|
-| value        | String     | 待查询的名称或名称片段|
-| locale         | String     | 指定的locale，如zh_CN|
+   * - pagination
+     - False
+     - pagination请求结构体
+     - 随机分页。如未指定，默认分页大小是10。`Pagination请求结构体>> </docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination>`__
+   * - projection
+     - False
+     - Projection结构体
+     - 用于在接口请求中描述待返回的对象projection。详见 `参数如何对结果集做裁剪>> </docs/api/zh_CN/latest/api_faqs.html#projection>`__
+
 
 
 ## 响应参数
@@ -61,11 +69,6 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 ```
 https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset&orgId=1c499110e8800000
 {
- "filter": {
-  "attributes": {
-   "starsystem": "Solar System"
-  }
- },
 "projection": ["attributes", "assetId", "name"]
 }
 ```

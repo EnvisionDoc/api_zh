@@ -12,8 +12,9 @@ POST https://{apigw-address}/event-service/v2.1/alert-types?action=delete
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 |alertTypeId    | Query  | true  |  String  |  告警类型编号  |
+| source  | Query  | false | String |自定义数据来源，用以表明告警类型适用的数据源。若适用于EnOS Cloud，则为空；若适用于EnOS Edge，则为edge。|
 
 
 

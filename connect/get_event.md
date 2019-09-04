@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 | eventId        | Query| True         | String    |事件ID |
 
 
@@ -21,17 +21,17 @@ https://{apigw-address}/connect-service/v2.1/events?action=get
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |  Event结构体      |Event的具体信息，见[Event结构体](/docs/api/zh_CN/latest/connect/get_event.html#id3) |
+| data |  Event结构体      |Event的具体信息，见[Event结构体>>](/docs/api/zh_CN/latest/connect/get_event.html#id3) |
 
 
 ### Event结构体
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| orgId         | String    | 资产所属的组织ID。|
+| orgId         | String    | 资产所属的组织ID|
 | eventId         | String    |事件ID |
-| productKey   | String         | Product Key标识符              |
-| deviceKey    | String         | Device Key标识符               |
+| productKey   | String         | Product Key              |
+| deviceKey    | String         | Device Key               |
 | assetId     | String         | 资产ID                  |
 | tslEventKey  | String         | TSL模型中的事件Key      |
 | tslEventType | String         | TSL模型中定义的事件类型 |
