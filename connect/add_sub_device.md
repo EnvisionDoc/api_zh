@@ -12,24 +12,27 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=addSubDevice
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      |DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/latest/connect/add_sub_device.html#deviceidentifier) |
-| subDevices           | True      | DeviceIdentfier结构体 | 需要添加到指定网关的子设备列表信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/latest/connect/add_sub_device.html#deviceidentifier)  |
+| gateway | True      |DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/2.0.9/connect/add_sub_device.html#deviceidentifier) |
+| subDevices           | True      | DeviceIdentfier结构体 | 需要添加到指定网关的子设备列表信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/2.0.9/connect/add_sub_device.html#deviceidentifier)  |
 
 
 ### DeviceIdentifier结构体
 
-.. note:: 以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
+.. note:: 以下非必须字段中，必须提供 ``assetId`` 或 ``productKey`` + ``deviceKey`` 的组合，用于指定设备。
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | String         | Product Key      |
 | deviceKey | String         | Device Key          |
 

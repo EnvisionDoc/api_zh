@@ -14,7 +14,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=batchUpdate
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 |isPatchUpdate|Query|true|Boolean|是否全量更新。<br>当其值为true时，只更新参数中指定字段的值；<br>当其值为false时，更新所有字段的值，即未指定值的字段将被置空。|
 
 

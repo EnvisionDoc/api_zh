@@ -12,24 +12,27 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| gateway | True      | DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/latest/connect/search_sub_device.html#deviceidentifier) |
-| pagination  | False      | Pagination请求结构体  | 分页参数。如未指定，默认每页10条。见[Pagination请求结构体>>](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
+| gateway | True      | DeviceIdentfier结构体 | 需要添加子设备的网关信息，见[DeviceIdentfier结构体>>](/docs/api/zh_CN/2.0.9/connect/search_sub_device.html#deviceidentifier) |
+| pagination  | False      | Pagination请求结构体  | 分页参数。如未指定，默认每页10条。见[Pagination请求结构体>>](/docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination) |
 
 
 ### DeviceIdentifier结构体
 
-.. note:: 以下字段必须提供`assetId`或者`(productKey, deviceKey)`。
+.. note:: 以下非必须字段中，必须提供 ``assetId`` 或 ``productKey`` + ``deviceKey`` 的组合，用于指定设备。
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | String         | Product Key      |
 | deviceKey | String         | Device Key          |
 
@@ -40,7 +43,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=searchSubDevice
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data | Device结构体                     | 网关下指定分页的一组子设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/search_sub_device.html#id3)。    |
+| data | Device结构体                     | 网关下指定分页的一组子设备信息，见[Device结构体](/docs/api/zh_CN/2.0.9/connect/search_sub_device.html#id3)。    |
 
 
 ### Device结构体

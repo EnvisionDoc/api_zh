@@ -12,7 +12,7 @@ EnOS API身份验证采用服务账号SA（service account）作为应用或者�
 
 ## 授权服务账号
 
-必须对服务账号进行授权之后，应用程序才有权访问EnOS上被授权的资源。对服务账号授权的详细步骤，请参考[管理服务账号](/docs/iam/zh_CN/latest/howto/service_account/managing_service_account.html)。
+必须对服务账号进行授权之后，应用程序才有权访问EnOS上被授权的资源。对服务账号授权的详细步骤，请参考[管理服务账号](/docs/iam/zh_CN/2.0.9/howto/service_account/managing_service_account.html)。
 
 ## API操作权限
 
@@ -48,4 +48,4 @@ EnOS API身份验证采用服务账号SA（service account）作为应用或者�
 | Add Sub-device                 | Device Management     | Full-Access  |
 | Remove Sub-device              | Device Management     | Full-Access  |
 
-创建权限策略的详细步骤，请参考[创建和管理策略](/docs/iam/zh_CN/latest/howto/managing_policies.html)。
+创建权限策略的详细步骤，请参考[创建和管理策略](/docs/iam/zh_CN/2.0.9/howto/managing_policies.html)。

@@ -1,6 +1,6 @@
 # 告警服务概述
 
-通过告警服务，你可以定义组织内资产的告警内容，类型，严重级别，及触发条件，并可接收资产告警上报和处理，以实现对资产的实时状态监控和故障分析等业务需求。有关告警管理的详细信息，参见[资产告警](/docs/device-connection/zh_CN/latest/howto/alert/alert_overview.html)。
+通过告警服务，你可以定义组织内资产的告警内容，类型，严重级别，及触发条件，并可接收资产告警上报和处理，以实现对资产的实时状态监控和故障分析等业务需求。有关告警管理的详细信息，参见[资产告警](/docs/device-connection/zh_CN/2.0.9/howto/alert/alert_overview.html)。
 
 | 操作名称     | 描述                |
 |--------------|---------------------|
@@ -24,7 +24,7 @@
 |[Search Alert Rule](search_alert_rule)|查询告警规则|
 |[Search Alert Severity](search_alert_severity)|分页查询告警级别|
 |[Search Alert Type](search_alert_type)|分页查询告警类型|
-|[Search History Alerts](search_history_alerts)|查询历史告警|
+|[Search History Alerts](search_history_alerts)|查询最近三个月内的历史告警|
 |[Update Active Alert Tags](update_active_alert_tags)|更新当前告警的tag|
 |  [Update Alert Content](update_alert_content)      |    更新告警内容           |
 |[Update Alert Rule](update_alert_rule)        |   更新告警规则 |

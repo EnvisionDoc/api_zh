@@ -13,8 +13,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=delete
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| treeId        | Query            | true    | String    | 需要删除的资产树ID。[如何获取资产树信息ID>>](/docs/api/zh_CN/latest/api_faqs#id)        |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| treeId        | Query            | true    | String    | 需要删除的资产树ID。[如何获取资产树信息ID>>](/docs/api/zh_CN/2.0.9/api_faqs#id)        |
 
 
 
@@ -32,7 +32,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=delete
 ### 请求示例
 
 ```
-https://apigw-address/asset-tree-service/v2.1 
+POST https://apigw-address/asset-tree-service/v2.1 
 /asset-trees?action=delete&orgId=yourOrgId&treeId=H4yVDl2U
 ```
 

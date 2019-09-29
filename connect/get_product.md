@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 | productKey        | Query            | true    | String    | Product Key|
 
 
@@ -20,7 +20,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Product结构体                           | 产品的具体信息，见[Product结构体](/docs/api/zh_CN/latest/connect/get_product.html#product-productstruc)。                |
+| data| Product结构体                           | 产品的具体信息，见[Product结构体](/docs/api/zh_CN/2.0.9/connect/get_product.html#product-productstruc)。                |
 
 
 ### Product结构体<productstruc>
@@ -29,7 +29,7 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 |-------|-------|---------------------------|
 | orgId |  String | 资产所属的组织ID |
 | productKey          | String| Product Key|
-| productName         | StringI18n |  产品名称。结构请见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3)|
+| productName         | StringI18n |  产品名称。结构请见[国际化名称结构体>>](/docs/api/zh_CN/2.0.9/api_faqs.html#id3)|
 | productSecret       | String                          | 产品私钥                                             |
 | productDesc         | String                          | 产品描述                                             |
 | productType         | Sting                           | 产品类型，Device代表普通类型，Gateway代表网关类型。    |
@@ -45,9 +45,9 @@ https://{apigw-address}/connect-service/v2.1/products?action=get
 
 ## 错误码
 
-| 代码  | 数据类型 | 描述 |
-|------------|----------------|-------------------|
-| 11611 |                | `productKey`不存在 |
+| 代码  | 描述 |
+|---------|-------------------|
+| 11611 |  `productKey`不存在 |
 
 
 

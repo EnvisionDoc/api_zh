@@ -12,8 +12,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
-| treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID>>](/docs/api/zh_CN/latest/api_faqs#id)        |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| treeId        | Query            | true    | String    | 需要获取的资产树ID。[如何获取资产树信息ID>>](/docs/api/zh_CN/2.0.9/api_faqs#id)        |
 
 
 ## 响应参数
@@ -22,7 +22,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=get
 |-------------|-----------------------------------|-----------------------------|
 | treeId| String                            | 资产树ID                    |
 | tags| Map（Key为String，Value为String） | 用户自定义的一组资产树标签  |
-| asset| asset结构体                   | 资产树的根资产，见[asset结构体>>](/docs/api/zh_CN/latest/asset_tree/get_asset_tree.html#asset-assetstruc)              |
+| asset| asset结构体                   | 资产树的根资产，见[asset结构体>>](/docs/api/zh_CN/2.0.9/asset_tree/get_asset_tree.html#asset-assetstruc)              |
 
 ### Asset结构体<assetstruc>
 

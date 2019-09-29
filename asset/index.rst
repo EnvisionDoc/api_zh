@@ -5,6 +5,7 @@
    :maxdepth: 1
 
    overview
-   update_asset
    get_asset
+   update_asset
+
 

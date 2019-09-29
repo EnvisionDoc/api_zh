@@ -31,11 +31,11 @@
 
 `projection`参数用于对`data`结果集的裁剪，数据类型为`String Array`。其中每个String表示返回结果中需要返回的一个结果字段。没有在`projection`中指定的字段，在结果集中不返回。在指定字段时，可以使用：
 
-|符号|描述|
-|------------|--------------|
-|`[*]`|	表示一个Array中的每一个对象|
-|`*`  |		表示任意字段值|
-|`.`	|	表示子字段|
+| 符号  | 描述                        |
+|:------|:----------------------------|
+| `[*]` | 表示一个Array中的每一个对象 |
+| `*`   | 表示任意字段值              |
+| `.`   | 表示子字段                  |
 
 例如有结果集：
 
@@ -111,15 +111,15 @@
 API接口中支持以类SQL条件语句方式，指定查询条件，这种语句称为查询表达式。
 查询表达式支持以下语法：
 
-|查询条件     |表达式样例        |   描述|
-|------------|--------------|------|
-|判断一个字段是否等于一个值|`modelId = 'planet'` |`modelId`字段的值为“planet”。|
-|判断一个字段的值，是否是一组值中的一个 |`modelId in ('planet', 'orbit')`| `modelId`字段的值为“planet”或“orbit”。|
-|判断一个字段是否不等于一个值|`state != 3`|`state`字段的值不等于“3”。       |
-|判断一个国际化名称字段是否模糊匹配一个值|`name like '逆变器'`|`name`字段中模糊匹配“逆变器”。“光伏逆变器”、“逆变器2A”都被认作是对“逆变器”的模糊匹配。|
-|     	|`name.en_US like 'capacity'`	   |name字段在en_US locale下模糊匹配 “capacity”。|
-|使用`and`关键字连接多个查询表达式，表示需要同时满足多个条件|`modelId = 'planet' and state = 2`|`modelId`字段的值为“planet”且`state`字段的值为“2”。 |
-|使用`or`关键字连接多个查询表达式，表示满足多个条件中的至少一个 |`modelId = 'planet' or state = 2`	   |`modelId`字段的值为“planet”或`state`字段的值为“2”。|
+| 查询条件                                                       | 表达式样例                         | 描述                                                                                   |
+|:---------------------------------------------------------------|:-----------------------------------|:---------------------------------------------------------------------------------------|
+| 判断一个字段是否等于一个值                                     | `modelId = 'planet'`               | `modelId`字段的值为“planet”。                                                          |
+| 判断一个字段的值，是否是一组值中的一个                         | `modelId in ('planet', 'orbit')`   | `modelId`字段的值为“planet”或“orbit”。                                                 |
+| 判断一个字段是否不等于一个值                                   | `state != 3`                       | `state`字段的值不等于“3”。                                                             |
+| 判断一个国际化名称字段是否模糊匹配一个值                       | `name like '逆变器'`               | `name`字段中模糊匹配“逆变器”。“光伏逆变器”、“逆变器2A”都被认作是对“逆变器”的模糊匹配。 |
+|                                                                | `name.en_US like 'capacity'`       | name字段在en_US locale下模糊匹配 “capacity”。                                          |
+| 使用`and`关键字连接多个查询表达式，表示需要同时满足多个条件    | `modelId = 'planet' and state = 2` | `modelId`字段的值为“planet”且`state`字段的值为“2”。                                    |
+| 使用`or`关键字连接多个查询表达式，表示满足多个条件中的至少一个 | `modelId = 'planet' or state = 2`  | `modelId`字段的值为“planet”或`state`字段的值为“2”。                                    |
 
 每个API在查询表达式中能够支持的字段不同，具体请遵照各个API请求参数的说明使用。
 
@@ -130,10 +130,10 @@ API接口中支持以类SQL条件语句方式，指定查询条件，这种语�
 
 ### 国际化名称结构体
 
-|名称     |数据类型      |   描述|
-|------------|--------------|------|
-|defaultValue|String |缺省的名称|
-|i18nValue |Map（Key为String，Value为String）| 各个Locale下的名称，key为locale，value为各个locale下的名称。|
+| 名称         | 数据类型                          | 描述                                                         |
+|:-------------|:----------------------------------|:-------------------------------------------------------------|
+| defaultValue | String                            | 缺省的名称                                                   |
+| i18nValue    | Map（Key为String，Value为String） | 各个Locale下的名称，key为locale，value为各个locale下的名称。 |
 
 `defaultValue`指，当使用的`locale`未在`i18nValue`中指定时，应当采用的名称。`locale`格式遵循**Unicode locale identifier**，例如"en_US"。有关更多信息，请参阅[https://www.unicode.org/reports/tr35/tr35-55/tr35.html#BCP_47_Language_Tag_Conversion](https://www.unicode.org/reports/tr35/tr35-55/tr35.html#BCP_47_Language_Tag_Conversion)。
 
@@ -167,10 +167,10 @@ API请求参数中，以字符串方式指定时间，兼容localtime和UTC两�
 
 ### localtime采用的日期时间格式
 
-|数据类型|示例值|说明|
-|----------|----------|---------------|
-|String<br>YYYY-MM-DD HH:mm:ss|2019-04-17 10:30:00|   |
-|String<br>YYYY-MM-DD HH:mm:ss.SSS|2019-04-17 10:30:00.000|仅当API支持时|
+| 数据类型                          | 示例值                  | 说明          |
+|:----------------------------------|:------------------------|:--------------|
+| String<br>YYYY-MM-DD HH:mm:ss     | 2019-04-17 10:30:00     |               |
+| String<br>YYYY-MM-DD HH:mm:ss.SSS | 2019-04-17 10:30:00.000 | 仅当API支持时 |
 
 EnOS服务会根据被查询的资产上所配置的时区信息进行转换，如资产时区为UTC+0800，则2019-04-17 10:30:00 = 2019-04-17T10:30:00+0800 =  UNIX时间戳1555468200。
 
@@ -181,9 +181,9 @@ EnOS服务会根据被查询的资产上所配置的时区信息进行转换，�
 
 ### UTC采用的ISO8601标准时间格式
 
-|数据类型|示例值|
-|----------|----------|
-|String<br>YYYY-MM-DD'T'HH:MM:ss'Z'|2019-04-17T02:30:00Z|
+| 数据类型                           | 示例值               |
+|:-----------------------------------|:---------------------|
+| String<br>YYYY-MM-DD'T'HH:MM:ss'Z' | 2019-04-17T02:30:00Z |
 
 请求格式为UTC格式时，EnOS服务将按照UTC不带时区进行查询，即2019-04-17T02:30:00Z= UNIX时间戳 1555468200000。
 
@@ -218,13 +218,13 @@ EnOS服务支持使用标签来管理对象，可以基于标签对对象进行�
 - 指定`assetId`
 - 同时指定`productKey`与`deviceKey`
 
-|名称|数据类型|是否必须|描述|
-|---------|--------|--------|-----------|
-|assetId|String|false|资产ID|
-|productKey|String|false|Product Key|
-|deviceKey|String|false|Device Key|
+| 名称       | 数据类型 | 是否必须 | 描述        |
+|:-----------|:---------|:---------|:------------|
+| assetId    | String   | false    | 资产ID      |
+| productKey | String   | false    | Product Key |
+| deviceKey  | String   | false    | Device Key  |
 
 
 ## 如何获取资产树ID
 
-每一棵资产树都有一个资产树ID。用户可以在控制台**设备与资产**下的资产树管理页面，查看每棵资产树的资产树ID。用户也可以通过Search Asset Tree接口获取OU下的所有资产树。有关资产树的详细信息，请查看[资产树](/docs/device-connection/zh_CN/latest/howto/asset_tree/assettree_overview.html)。
+每一棵资产树都有一个资产树ID。用户可以在控制台**设备与资产**下的资产树管理页面，查看每棵资产树的资产树ID。用户也可以通过Search Asset Tree接口获取OU下的所有资产树。有关资产树的详细信息，请查看[资产树](/docs/device-connection/zh_CN/2.0.9/howto/asset_tree/assettree_overview.html)。

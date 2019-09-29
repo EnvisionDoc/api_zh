@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=create
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -26,15 +26,15 @@ POST https://{apigw-address}/event-service/v2.1/history-alerts?action=create
 
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
-| assetId        | true     | String    | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)    |
-| modelId          | true    | String    | 告警适用的模型的ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
+| assetId        | true     | String    | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs#asset-id-assetid-assetid)    |
+| modelId          | true    | String    | 告警适用的模型的ID。[如何获取modelId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#modelid-modelid)  |
 | modelIdPath      | false        | String       | 模型路径                     |
-| measurepointId   | true         | String       |  资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)|
+| measurepointId   | true         | String       |  资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/2.0.9/api_faqs#pointid-pointid)|
 | value            | true         | Object       | 测点值                       |
-| occurTime        | true         | Long         | 告警发生的时间，以UTC时间表示，格式见[UTC采用的ISO8601标准时间格式>>](/docs/api/zh_CN/latest/api_faqs.html#utciso8601)    |
-| localOccurTime   | false        | String       | 告警发生的时间，以本地时间表示，格式见[localtime采用的日期时间格式>>](/docs/api/zh_CN/latest/api_faqs.html#localtime)|
-| recoverTime      | true         | Long         | 触发告警的异常状况恢复正常的时间，以UTC时间表示，格式见[UTC采用的ISO8601标准时间格式>>](/docs/api/zh_CN/latest/api_faqs.html#utciso8601)|
-| localRecoverTime | false        | String       | 触发告警的异常状况恢复正常的时间，以本地时间表示，格式见[localtime采用的日期时间格式>>](/docs/api/zh_CN/latest/api_faqs.html#localtime)|
+| occurTime        | true         | Long         | 告警发生的时间，以UTC时间表示，格式见[UTC采用的ISO8601标准时间格式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#utciso8601)    |
+| localOccurTime   | false        | String       | 告警发生的时间，以本地时间表示，格式见[localtime采用的日期时间格式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#localtime)|
+| recoverTime      | true         | Long         | 触发告警的异常状况恢复正常的时间，以UTC时间表示，格式见[UTC采用的ISO8601标准时间格式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#utciso8601)|
+| localRecoverTime | false        | String       | 触发告警的异常状况恢复正常的时间，以本地时间表示，格式见[localtime采用的日期时间格式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#localtime)|
 | recoverReason    | false        | String       |  异常状况恢复的原因|
 | severityId       | false        | String       | 告警级别编号|
 | severityDesc     | false        | StringI18n   | 告警级别描述|

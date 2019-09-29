@@ -14,19 +14,52 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=associate
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-| 名称 | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
-|---------------|------------------|----------|-----------|--------------|
-| orgId      | Query              | true     | String   | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)|
-| assetId    | Query              | false    | String   | 待关联的资产ID：<br>如指定`assetId`，则关联由`assetId`唯一识别的资产。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)<br>如未指定`assetId`，则关联以`productKey`与`deviceKey`组合唯一识别的资产。 |
-| productKey | Query              | false    | String   | 待关联设备的Product Key|
-| deviceKey  | Query              | false    | String   | 待关联设备的Device Key |
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - 名称
+     - 位置（Path/Query）
+     - 是否必须
+     - 数据类型
+     - 描述
+   * - orgId
+     - Query
+     - true
+     - String
+     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid>`__
+   * - assetId
+     - Query
+     - false
+     - String
+     - 待关联的资产ID，如指定 ``assetId``，则关联由 ``assetId`` 唯一识别的资产。`如何获取Asset ID信息>> </docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid>`__
+         如未指定 ``assetId``，则关联以 ``productKey`` 与 ``deviceKey`` 组合唯一识别的资产。
+   * - productKey
+     - Quer
+     - false
+     - String
+     - 待关联设备的Product Key
+   * - deviceKey
+     -  Query
+     - false
+     - String
+     - 待关联设备的Device Key
+
 
 
 ## 响应参数
 
-| 名称 | 数据类型 | 描述               |
-|:-----|:---------|:-------------------|
-| data | String   | 创建成功的资产树ID |
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - 名称
+     - 数据类型
+     - 描述
+   * - data
+     - String 
+     - 创建成功的资产树ID
+
 
 
 ## 示例 1
@@ -34,7 +67,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=associate
 ### 请求示例
 
 ```
-https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=associate&orgId=yourOrgId&assetId=N5VpI5f9
+POST https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=associate&orgId=yourOrgId&assetId=N5VpI5f9
 ```
 
 ### 返回示例
