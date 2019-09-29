@@ -12,7 +12,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=update
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 
 ## 请求参数（body）
 
@@ -26,8 +26,8 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=update
 | 名称   | 是否必须     | 数据类型 | 描述      |
 |-----------|-----------------|-------------------|-----------------------|
 | treeId   | true         | String       | 资产树ID。|
-| name     | true         | StringI18n   | 支持国际化的资产名称。结构请见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3) |
-| tags     | false        | Tag结构体    | 用户自定义标签，详情请见[标签的作用与表示方法>>](/docs/api/zh_CN/latest/api_faqs.html#id6) |
+| name     | true         | StringI18n   | 支持国际化的资产树名称。结构请见[国际化名称结构体>>](/docs/api/zh_CN/2.0.9/api_faqs.html#id3) |
+| tags     | false        | Tag结构体    | 用户自定义标签，详情请见[标签的作用与表示方法>>](/docs/api/zh_CN/2.0.9/api_faqs.html#id6) |
 
 
 
@@ -36,7 +36,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-trees?action=update
 ### 请求示例
 
 ```
-https://apigw-address/asset-tree-service/v2.1 
+POST https://apigw-address/asset-tree-service/v2.1 
 /asset-trees?action=update&orgId=yourOrgId
 {
 "treeUpdateInfo":{

@@ -5,15 +5,14 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/asset-tree-service/v2.1/asset-
-paths?action=search
+https://{apigw-address}/asset-tree-service/v2.1/asset-paths?action=search
 ```
 
 ## 请求参数（URI）
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)  |
 | treeId          | Query            | true     | String    | 资产树ID |
 
 
@@ -21,10 +20,10 @@ paths?action=search
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |-----------------|---------------|-------------------|-----|
-| pagination| false         |Pagination请求结构体  | 用于在接口请求中描述分页要求。默认第一页，分页大小为100条记录，见[Pagination请求结构体>>](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)   |
-| from | false         | From-to结构体       | 表示资产路径的起始点条件。如果不提供，则表示资产树的根节点。[参见From-to结构体>>](/docs/api/zh_CN/latest/asset_tree/search_asset_path.html#from-to-from-to-struc)                        |
-| to            | false         | From-to结构体         | 表示资产路径的终止点条件。如果不提供，则表示资产树的叶子节点。[参见From-to结构体>>](/docs/api/zh_CN/latest/asset_tree/search_asset_path.html#from-to-from-to-struc) |
-| projection| false         | String Array         | 用于在接口请求中描述待返回的对象projection。对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fields。详见[projection参数如何对结果集做裁剪>>](/docs/api/zh_CN/latest/api_faqs.html#projection)|
+| pagination| false         |Pagination请求结构体  | 用于在接口请求中描述分页要求。默认第一页，分页大小为100条记录，见[Pagination请求结构体>>](/docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination)   |
+| from | false         | From-to结构体       | 表示资产路径的起始点条件。如果不提供，则表示资产树的根节点。[参见From-to结构体>>](/docs/api/zh_CN/2.0.9/asset_tree/search_asset_path.html#from-to-from-to-struc)                        |
+| to            | false         | From-to结构体         | 表示资产路径的终止点条件。如果不提供，则表示资产树的叶子节点。[参见From-to结构体>>](/docs/api/zh_CN/2.0.9/asset_tree/search_asset_path.html#from-to-from-to-struc) |
+| projection| false         | String Array         | 用于在接口请求中描述待返回的对象projection。对于符合条件的搜索仅返回符合条件的字段，不设置则默认返回全部fields。详见[projection参数如何对结果集做裁剪>>](/docs/api/zh_CN/2.0.9/api_faqs.html#projection)|
 | pathProjection| false         | String                | 可填COMPLETE、END_NODE_ONLY。COMPLETE表示返回路径上的每个资产节点，默认为COMPLETE；END_NODE_ONLY表示只返回路径的起始点和终结点  |
 
 
@@ -33,8 +32,8 @@ paths?action=search
 | 名称       | 是否必须  | 数据类型 | 描述      |
 |-----------|---------------|----|-----------------------|
 | rootModelIds| false   | String Array         | 根模型ID，如果希望查询多个根模型就提供多个根模型id  |
-| modelIds   | false   | String Array         | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid)  |
-| assetIds    | false          | Array          | 资产ID，如果希望查询多个资产就提供多个资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
+| modelIds   | false   | String Array         | 资产所属模型ID。如果想查询多个模型，就提供多个模型ID组成的List。[如何获取modelId信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#modelid-modelid)  |
+| assetIds    | false          | Array          | 资产ID，如果希望查询多个资产就提供多个资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid) |
 
 
 

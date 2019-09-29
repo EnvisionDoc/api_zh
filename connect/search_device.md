@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -43,16 +43,16 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 
        + ``status``：支持=运算符，取值inactive、online、offline和disable。
 
-       `如何使用查询表达式>> </docs/api/zh_CN/latest/api_faqs.html#id1>`__
+       `如何使用查询表达式>> </docs/api/zh_CN/2.0.9/api_faqs.html#id1>`__
 
    * - pagination
      - False
      - pagination请求结构体
-     - 随机分页。如未指定，默认分页大小是10。`Pagination请求结构体>> </docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination>`__
+     - 随机分页。如未指定，默认分页大小是10。`Pagination请求结构体>> </docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination>`__
    * - projection
      - False
      - Projection结构体
-     - 用于在接口请求中描述待返回的对象projection。详见 `参数如何对结果集做裁剪>> </docs/api/zh_CN/latest/api_faqs.html#projection>`__
+     - 用于在接口请求中描述待返回的对象projection。详见 `参数如何对结果集做裁剪>> </docs/api/zh_CN/2.0.9/api_faqs.html#projection>`__
 
 
 
@@ -63,7 +63,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |    Device结构体        | 网关下指定分页的一组子设备信息，见[Device结构体>>](/docs/api/zh_CN/latest/connect/search_device.html#id4) |
+| data |    Device结构体        | 网关下指定分页的一组子设备信息，见[Device结构体>>](/docs/api/zh_CN/2.0.9/connect/search_device.html#id4) |
 
 
 ### Device结构体

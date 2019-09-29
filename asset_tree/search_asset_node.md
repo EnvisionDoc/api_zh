@@ -12,7 +12,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)  |
 
 
 ## 请求参数（Body）
@@ -40,16 +40,16 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
          * ``name.zh_CN like ‘xxx’``：模糊查询中文名称，不存在中文名称时模糊查询default名称
          * ``name.en_US like ‘xxx’``：模糊查询英文名称，不存在英文名称时模糊查询default名称
 
-       `如何使用查询表达式>> </docs/api/zh_CN/latest/api_faqs.html#id1>`__
+       `如何使用查询表达式>> </docs/api/zh_CN/2.0.9/api_faqs.html#id1>`__
 
    * - pagination
      - False
      - pagination请求结构体
-     - 随机分页。如未指定，默认分页大小是10。`Pagination请求结构体>> </docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination>`__
+     - 随机分页。如未指定，默认分页大小是10。`Pagination请求结构体>> </docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination>`__
    * - projection
      - False
      - Projection结构体
-     - 用于在接口请求中描述待返回的对象projection。详见 `参数如何对结果集做裁剪>> </docs/api/zh_CN/latest/api_faqs.html#projection>`__
+     - 用于在接口请求中描述待返回的对象projection。详见 `参数如何对结果集做裁剪>> </docs/api/zh_CN/2.0.9/api_faqs.html#projection>`__
 
 
 
@@ -67,7 +67,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset
 ### 请求示例
 
 ```
-https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset&orgId=1c499110e8800000
+POST https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=searchAsset&orgId=1c499110e8800000
 {
 "projection": ["attributes", "assetId", "name"]
 }

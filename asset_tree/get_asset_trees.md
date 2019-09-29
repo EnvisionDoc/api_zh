@@ -12,21 +12,21 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
 
 ## 请求参数（Body）
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| assetIds         | Query            | true     | String Array   | 一组资产ID，最多100个。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)   |
-| projection         | Query            | false    | String Array   | 用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪>>](/docs/api/zh_CN/latest/api_faqs.html#projection) |
+| assetIds         | Query            | true     | String Array   | 一组资产ID，最多100个。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid)   |
+| projection         | Query            | false    | String Array   | 用于在接口请求中描述待返回的对象projection。详见[projection参数如何对结果集做裁剪>>](/docs/api/zh_CN/2.0.9/api_faqs.html#projection) |
 
 
 ## 响应参数
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data| Map（Key为assetId，Value为AssetTree结构体Array）   | 资产和其所在的资产树列表，见[AssetTree结构体>>](/docs/api/zh_CN/latest/asset_tree/get_asset_trees.html#id3) |
+| data| Map（Key为assetId，Value为AssetTree结构体Array）   | 资产和其所在的资产树列表，见[AssetTree结构体>>](/docs/api/zh_CN/2.0.9/asset_tree/get_asset_trees.html#id3) |
 
 
 ### AssetTree结构体
@@ -44,7 +44,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=getAssetTree
 ### 请求示例
 
 ```
-https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action= getAssetTree&orgId=o15541858646501
+POST https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action= getAssetTree&orgId=o15541858646501
 {
  "assetIds": ["BtsYmF2r", "qf1vsBQW"]
 }

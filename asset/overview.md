@@ -4,7 +4,15 @@
 
 
 
-| 操作名称     | 描述                |
-|--------------|---------------------|
-| [Update Asset](update_asset) | 全量或部分更新资产信息  |
-| [Get Asset](get_asset)    | 根据资产ID获取资产数据 |
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - 操作名称
+     - 描述   
+   * - `Get Asset <get_asset>`__
+     - 根据资产ID获取资产数据
+   * - `Update Asset <update_asset>`__
+     - 全量或部分更新资产信息
+
+<!--end-->
