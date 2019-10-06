@@ -48,4 +48,4 @@ EnOS API身份验证采用服务账号SA（service account）作为应用或者�
 | Add Sub-device                 | Device Management     | Full-Access  |
 | Remove Sub-device              | Device Management     | Full-Access  |
 
-创建权限策略的详细步骤，请参考[创建和管理策略](/docs/iam/zh_CN/2.0.9/howto/managing_policies.html)。
+创建权限策略的详细步骤，请参考[创建和管理策略](/docs/enos/zh_CN/2.0.9/iam/howto/managing_policies.html)。
