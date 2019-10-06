@@ -37,7 +37,7 @@ POST http://{apigw-address}/app-portal-service/v2.0/organization/user/list
    * - pagination
      - false
      - Pagination请求结构体
-     - 分页参数。见 `Pagination请求结构体>> <http://docs.eniot.io/docs/api/zh_CN/latest/overview.html#pagination>`__。若不提供，则默认按照每页1000条数据的格式返回第0页的数据。
+     - 分页参数。见 `Pagination请求结构体>> </docs/api/zh_CN/2.0.9/overview.html#pagination>`__。若不提供，则默认按照每页1000条数据的格式返回第0页的数据。
 
 
 ## 响应参数
