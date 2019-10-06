@@ -23,7 +23,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-rules?action=search
      - Query
      - true
      - String
-     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid>`__
+     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/latest/api_faqs#id-orgid-orgid>`__
 
 
 
@@ -45,15 +45,15 @@ POST https://{apigw-address}/event-service/v2.1/alert-rules?action=search
    * - measurepointId
      - false
      - String
-     - 资产测点。`如何获取测点（pointId）信息>> </docs/api/zh_CN/2.0.9/api_faqs#pointid-pointid>`__
+     - 资产测点。`如何获取测点（pointId）信息>> </docs/api/zh_CN/latest/api_faqs#pointid-pointid>`__
    * - expression
      - false
      - String
-     - 查询表达式，支持类sql的查询。目前支持查询的字段是 ``ruleId``、``modelId``、``measurepointId``。支持的算术运算符是=和in，逻辑运算符是and和or。`如何使用查询表达式>> </docs/api/zh_CN/2.0.9/api_faqs.html#id1>`__
+     - 查询表达式，支持类sql的查询。目前支持查询的字段是 ``ruleId``、``modelId``、``measurepointId``。支持的算术运算符是=和in，逻辑运算符是and和or。`如何使用查询表达式>> </docs/api/zh_CN/latest/api_faqs.html#id1>`__
    * - pagination
      - false
      - Pagination请求结构体
-     - 分页的参数。如未指定，默认每页10条。按照 ``updateTime`` 降序排序。见 `Pagination请求结构体>> </docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination>`__。
+     - 分页的参数。如未指定，默认每页10条。按照 ``updateTime`` 降序排序。见 `Pagination请求结构体>> </docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination>`__。
 
 
 

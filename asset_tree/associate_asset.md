@@ -27,12 +27,12 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=associateAsse
      - Query
      - true
      - String
-     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid>`__
+     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/latest/api_faqs#id-orgid-orgid>`__
    * - treeId
      - Query
      - true
      - String
-     - 需要获取的资产树ID。`如何获取资产树信息ID>> </docs/api/zh_CN/2.0.9/api_faqs#id>`__
+     - 需要获取的资产树ID。`如何获取资产树信息ID>> </docs/api/zh_CN/latest/api_faqs#id>`__
    * - parentAssetId
      - Query
      - true
@@ -42,7 +42,7 @@ https://{apigw-address}/asset-tree-service/v2.1/asset-nodes?action=associateAsse
      - Query
      - false
      - String
-     - 待关联的资产ID，如指定 ``assetId``，则关联由 ``assetId`` 唯一识别的资产。`如何获取Asset ID信息>> </docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid>`__
+     - 待关联的资产ID，如指定 ``assetId``，则关联由 ``assetId`` 唯一识别的资产。`如何获取Asset ID信息>> </docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid>`__
          如未指定 ``assetId``，则关联以 ``productKey`` 与 ``deviceKey`` 组合唯一识别的资产。
    * - productKey
      - Quer

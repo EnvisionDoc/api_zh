@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=close
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -20,8 +20,8 @@ POST https://{apigw-address}/event-service/v2.1/active-alerts?action=close
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |------|-----------------|-----------|-------------|
 | eventId        | true     | String    | 当前告警ID    |
-| recoverTime          | true    | Long    | 触发告警的异常状况恢复正常的时间，以UTC时间表示，格式见[UTC采用的ISO8601标准时间格式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#utciso8601)  |
-| localRecoverTime    | false        | String       | 触发告警的异常状况恢复正常的时间，以本地时间表示，格式见[localtime采用的日期时间格式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#localtime)|
+| recoverTime          | true    | Long    | 触发告警的异常状况恢复正常的时间，以UTC时间表示，格式见[UTC采用的ISO8601标准时间格式>>](/docs/api/zh_CN/latest/api_faqs.html#utciso8601)  |
+| localRecoverTime    | false        | String       | 触发告警的异常状况恢复正常的时间，以本地时间表示，格式见[localtime采用的日期时间格式>>](/docs/api/zh_CN/latest/api_faqs.html#localtime)|
 | recoverReason | false         | String       | 异常状况恢复的原因|
 
 

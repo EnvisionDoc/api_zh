@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -21,13 +21,13 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 |------------------|---------------|----------|---|
 | productKey  | False         | String| Product Key|
 | deviceKey   | False         | String| Device Key|
-| assetId  | False  | String | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid)|
+| assetId  | False  | String | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid)|
 | tslEventKey | False         | String| 事件key|
 | tslEventType | False         | String| 事件类型|
 | startTime   | False         | String | 开始时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间，yyyy-MM-ddTHH:mm:ssZ代表utc时间，如果不填，默认最近一周的数据。|
 | endTime  | False         | String    | 结束时间，针对事件的发生时间而言，格式yyyy-MM-dd HH:mm:ss代表查询本地时间，yyyy-MM-ddTHH:mm:ssZ代表UTC时间，如果不填，默认最近一周的数据。|
-| expression  | False         | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`productKey`、`deviceKey`、`assetId`、`tslEventKey`、`tslEventType`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#id1) |
-| pagination  | False  |Pagination请求结构体 | 分页参数。如未指定，默认每页10条。参见[Pagination请求结构体>>](/docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination)  |
+| expression  | False         | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`productKey`、`deviceKey`、`assetId`、`tslEventKey`、`tslEventType`。支持的算术运算符是=、in，逻辑运算符是and和or。[如何使用查询表达式>>](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| pagination  | False  |Pagination请求结构体 | 分页参数。如未指定，默认每页10条。参见[Pagination请求结构体>>](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination)  |
 
 
 
@@ -35,7 +35,7 @@ https://{apigw-address}/connect-service/v2.1/events?action=search
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |  Event结构体      |查询得到的事件列表，见[Event结构体>>](/docs/api/zh_CN/2.0.9/connect/get_event.html#id3) |
+| data |  Event结构体      |查询得到的事件列表，见[Event结构体>>](/docs/api/zh_CN/latest/connect/get_event.html#id3) |
 
 
 ## 示例 1

@@ -19,7 +19,7 @@ POST https://{apigw-address}/iam/v1/api/open/organization/get
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |------------------|---------------|----------|---|
-| id  | True | String | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)  |
+| id  | True | String | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)  |
 
 
 ## 响应参数

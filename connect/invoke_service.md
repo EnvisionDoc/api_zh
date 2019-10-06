@@ -20,8 +20,8 @@ https://{apigw-address}/connect-service/v2.1/commands?action=invokeService
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
-| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid) |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | Query          | False       | String       | Product Key      |
 | deviceKey | Query           | False      | String       | Device Key|
 | serviceId      | Query| True | String    | 被调用服务ID|
@@ -41,7 +41,7 @@ https://{apigw-address}/connect-service/v2.1/commands?action=invokeService
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |  服务调用返回结构体       | 服务调用结果，见[服务调用返回结构体](/docs/api/zh_CN/2.0.9/connect/invoke_service.html#id4) |
+| data |  服务调用返回结构体       | 服务调用结果，见[服务调用返回结构体](/docs/api/zh_CN/latest/connect/invoke_service.html#id4) |
 
 
 ### 服务调用返回结构体

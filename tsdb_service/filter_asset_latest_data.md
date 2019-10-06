@@ -5,27 +5,27 @@
 ## 请求格式
 
 ```
-https://{apigw-address}/tsdb-service/v2.0/2.0.9/filter?orgId={}modelId={}assetIds={}measurepoint={}timeWindow={}operator={}valueFilter={}accessKey={}
+https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId={}modelId={}assetIds={}measurepoint={}timeWindow={}operator={}valueFilter={}accessKey={}
 ```
 
 ## 请求参数（URI）
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                                                                                                                                                                                                                            |
-| modelId       | Query            | true    | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#modelid-modelid)                                                                                                                                                                                                                           |
-| assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs#asset-id-assetid-assetid)                                                                                                                                                                                |
-| measurepoint | Query            | true     | String    | 资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/2.0.9/api_faqs#pointid-pointid)                                                                                                                                                                           |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                                                                                                                                                                                                                            |
+| modelId       | Query            | true    | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)                                                                                                                                                                                                                           |
+| assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid)                                                                                                                                                                                |
+| measurepoint | Query            | true     | String    | 资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)                                                                                                                                                                           |
 | timeWindow     | Query            | false     | Integer  | 返回数据时间窗口设定，单位是分钟，最小值为0，不传则不过滤。|
 | operator       | Query            | false     | String    | 运算符，支持eq：等于；nq：不等于；gt：大于；lt：小于；ge：大于等于；le：小于等于；between：2个值的区间；in：属于多个值之一。                                                                                                                                     |
 | valueFilter      | Query            | false    | String   | 范围值，需与运算符配套使用，eq、nq、gt、ge、lt、le对应单值；between对应2个值；in对应多个值，多个值之间用逗号隔开，且数据类型必须与测点数据类型一致。如：operator=betwteen&valueFilter=a, b表示过滤a与b之间的数值。                                                                   |
-| accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息>>](/docs/api/zh_CN/2.0.9/api_faqs#accesskey-accesskey-accesskey)                                                                     
+| accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息>>](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey-accesskey)                                                                     
 
 ## 响应参数
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| **items** | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/2.0.9/tsdb_service/filter_asset_latest_data.html#id2)。
+| **items** | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_service/filter_asset_latest_data.html#id2)。
 
 ### items
 
@@ -51,7 +51,7 @@ https://{apigw-address}/tsdb-service/v2.0/2.0.9/filter?orgId={}modelId={}assetId
 
 ### 请求示例
 ```
-https://{apigw-address}/tsdb-service/v2.0/2.0.9/filter?orgId=o15528761854851&assetIds=FGqRJKPM&modelId=model_xxx&measurepoint=pointId&timeWindow=&operator=le&valueFilter=55673.9&accessKey=accessKey
+https://{apigw-address}/tsdb-service/v2.0/latest/filter?orgId=o15528761854851&assetIds=FGqRJKPM&modelId=model_xxx&measurepoint=pointId&timeWindow=&operator=le&valueFilter=55673.9&accessKey=accessKey
 ```
 其中`operator=le&valueFilter=55673.9`的含义：以下示例将过滤出模型`model_xxx`的`pointId`数据点小于等于55673.9的值。
 
@@ -125,7 +125,7 @@ public void filterAssetsLatestDataTest(){
 
     try {
         JSONObject response =  Poseidon.config(PConfig.init().appKey(accessKey).appSecret(secretKey).debug())
-                .url("http://apim-gateway/tsdb-service/v2.0/2.0.9/filter")
+                .url("http://apim-gateway/tsdb-service/v2.0/latest/filter")
                 .getResponse(request, JSONObject.class);
         System.out.println(response);
     } catch (Exception e) {

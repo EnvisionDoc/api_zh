@@ -12,7 +12,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=update
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 |isPatchUpdate|Query|true|Boolean|是否全量更新。<br>当其值为true时，只更新参数中指定字段的值；<br>当其值为false时，更新所有字段的值，即未指定值的字段将被置空。|
 
 
@@ -29,7 +29,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-contents?action=update
 |------|-----------------|-----------|-------------|
 |contentId|true|String|告警内容编号|
 |contentDesc|true|String|告警内容描述|
-| modelId          | true    | String    | 告警内容所适用模型的ID。[如何获取modelId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#modelid-modelid)  |
+| modelId          | true    | String    | 告警内容所适用模型的ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid)  |
 | alertTypeId        | true     | String    | 关联的告警类型编号 |
 |tags|false|tags数据类型|标签，只支持全量更新|
 | source  | false | String |自定义数据来源，用以表明告警内容适用的数据源。若适用于EnOS Cloud，则为空；若适用于EnOS Edge，则为edge。|

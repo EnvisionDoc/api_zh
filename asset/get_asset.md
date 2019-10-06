@@ -23,12 +23,12 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get
      - Query
      - true
      - String
-     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid>`__
+     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/latest/api_faqs#id-orgid-orgid>`__
    * - assetId
      - Query
      - true
      - String
-     - 资产ID。`如何获取Asset ID信息>> </docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid>`__
+     - 资产ID。`如何获取Asset ID信息>> </docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid>`__
 
 
 
@@ -44,7 +44,7 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get
      - 描述
    * - data
      - asset结构体
-     - 资产。见 `asset结构体 </docs/api/zh_CN/2.0.9/asset/get_asset.html#id3>`__。
+     - 资产。见 `asset结构体 </docs/api/zh_CN/latest/asset/get_asset.html#id3>`__。
 
 
 
@@ -96,7 +96,7 @@ https://{apigw-address}/asset-service/v2.1/assets?action=get
 
 ## 错误码
 
-见[公共返回码](/docs/api/zh_CN/2.0.9/overview.html#id8)。
+见[公共返回码](/docs/api/zh_CN/latest/overview.html#id8)。
 
 
 

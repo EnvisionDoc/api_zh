@@ -12,9 +12,9 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=get
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |-------|-------------|-----|------|----------|
-| orgId   | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid) |
+| orgId   | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid) |
 | scope   | Query            | False    | Integer   | 查询范围。 0：只从`orgId`指定的组织搜索； 1：从`orgId`指定的组织和公有模型所在的组织搜索。默认为1。 |
-| modelId | Query            | True     | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#modelid-modelid)|
+| modelId | Query            | True     | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs.html#modelid-modelid)|
 
 
 
@@ -22,13 +22,13 @@ https://{apigw-address}/model-service/v2.1/thing-models?action=get
 
 |名称|数据类型|描述|
 |-----------|-----------|----------|
-|data|Object|物模型，见[ThingModel结构体>>](/docs/api/zh_CN/2.0.9/model/searchmodel.html#thingmodel-thingmodel)|
+|data|Object|物模型，见[ThingModel结构体>>](/docs/api/zh_CN/latest/model/searchmodel.html#thingmodel-thingmodel)|
 
 
 
 ## 错误码
 
-见[公共返回码（接入服务）](/docs/api/zh_CN/2.0.9/overview.html#id8)。
+见[公共返回码（接入服务）](/docs/api/zh_CN/latest/overview.html#id8)。
 
 
 

@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 
@@ -20,7 +20,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称          | 是否必须 | 数据类型 | 描述      |
 |--------------------|----------|-----------|--------------|
-| subDevice           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/2.0.9/connect/get_gateway.html#deviceidentifier)。 |
+| subDevice           | True      | DeviceIdentfier结构体 | 识别子设备的标志信息，见[DeviceIdentfier结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#deviceidentifier)。 |
 
 
 ### DeviceIdentifier结构体
@@ -32,7 +32,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称      | 数据类型 |描述|
 |----------------|----------------|------------------|
-| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid) |
+| assetId  | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | String         | Product Key      |
 | deviceKey | String         | Device Key          |
 
@@ -41,7 +41,7 @@ https://{apigw-address}/connect-service/v2.1/device-topos?action=getGateway
 
 | 名称| 数据类型 | 描述         |
 |-------------|-----------------------------------|-----------------------------|
-| data | Device结构体                          | 网关设备信息，见[Device结构体](/docs/api/zh_CN/2.0.9/connect/get_gateway.html#device-devicetstruc)。               |
+| data | Device结构体                          | 网关设备信息，见[Device结构体](/docs/api/zh_CN/latest/connect/get_gateway.html#device-devicetstruc)。               |
 
 
 ### Device结构体<devicetstruc>

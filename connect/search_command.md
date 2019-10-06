@@ -16,8 +16,8 @@ https://{apigw-address}/connect-service/v2.1/commands?action=search
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
-| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs.html#asset-id-assetid-assetid) |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
+| assetId  | Query            | False   | String         | 资产ID。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs.html#asset-id-assetid-assetid) |
 | productKey | Query          | False       | String       | Product Key      |
 | deviceKey | Query           | False      | String       | Device Key          |
 
@@ -26,9 +26,9 @@ https://{apigw-address}/connect-service/v2.1/commands?action=search
 
 | 名称 | 是否必须 | 数据类型 | 描述 |
 |----------------|----------|--------------------|----|
-| expression     | false    | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`state`、`commandName`、`createTime`。<br>`state`支持等于（=）运算符。<br>`commandName`支持模糊匹配，必须提供`locale`，如commandName.zh_CN或commandName.en_US。<br>`createTime`支持用>、=和<运算符来指定时间范围。[如何使用查询表达式>>](/docs/api/zh_CN/2.0.9/api_faqs.html#id1) |
-| pagination    | false     | Pagination请求结构体 | 分页参数。默认分页大小为100条记录。返回结果按照命令的`createTime`倒序排序。见[Pagination请求结构体>>](/docs/api/zh_CN/2.0.9/overview.html?highlight=pagination#pagination) |
-| projection  | false    | Projection结构体 | 指定对返回结果的裁剪。详见[projection参数如何对结果集做裁剪>>](/docs/api/zh_CN/2.0.9/api_faqs.html#projection)  |
+| expression     | false    | String| 查询表达式，支持类sql的查询。目前支持查询的字段是`state`、`commandName`、`createTime`。<br>`state`支持等于（=）运算符。<br>`commandName`支持模糊匹配，必须提供`locale`，如commandName.zh_CN或commandName.en_US。<br>`createTime`支持用>、=和<运算符来指定时间范围。[如何使用查询表达式>>](/docs/api/zh_CN/latest/api_faqs.html#id1) |
+| pagination    | false     | Pagination请求结构体 | 分页参数。默认分页大小为100条记录。返回结果按照命令的`createTime`倒序排序。见[Pagination请求结构体>>](/docs/api/zh_CN/latest/overview.html?highlight=pagination#pagination) |
+| projection  | false    | Projection结构体 | 指定对返回结果的裁剪。详见[projection参数如何对结果集做裁剪>>](/docs/api/zh_CN/latest/api_faqs.html#projection)  |
 
 
 

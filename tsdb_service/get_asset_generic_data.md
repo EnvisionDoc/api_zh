@@ -12,14 +12,14 @@ https://{apigw-address}/tsdb-service/v2.0/generic?orgId={}&modelId={}&assetIds={
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid) |
-| modelId       | Query            | false    | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#modelid-modelid) |
-| assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息>>](/docs/api/zh_CN/2.0.9/api_faqs#asset-id-assetid-assetid) |
-| measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取pointId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#pointid-pointid) |
+| orgId         | Query            | true     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid) |
+| modelId       | Query            | false    | String    | 资产所属模型ID。[如何获取modelId信息>>](/docs/api/zh_CN/latest/api_faqs#modelid-modelid) |
+| assetIds      | Query            | true     | String    | 资产ID，支持查询多个资产，多个资产ID之间用英文逗号隔开。[如何获取Asset ID信息>>](/docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid) |
+| measurepoints | Query            | true     | String    | 资产测点，支持多测点查询，各个测点间用逗号隔开；支持查询的（设备数*测点数）上限为3000。[如何获取pointId信息>>](/docs/api/zh_CN/latest/api_faqs#pointid-pointid) |
 | startTime     | Query            | true     | String    | 采样数据开始时间，支持UTC时间格式和local时间格式。 local时间格式为YYYY-MM-DD HH:MM:SS。当格式为本地时间时，应用按照设备所在地的当地时间进行查询。 UTC时间格式需要加入时区信息，例如：2019-06-01T00:00:00+08:00；当格式为UTC格式时，应用对所有资产按照统一的开始时间戳和结束时间戳进行查询。 |
 | endTime       | Query            | true     | String    | 采样数据结束时间，格式必须与开始时间保持一致 |
 | pageSize      | Query            | false    | Integer   | 单设备单测点单页返回记录条数的上限，默认为1000。对于单次查询，返回总数据量遵循约束: （设备数 * 点数 * pagesize）≤ 640000。 |
-| accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息>>](/docs/api/zh_CN/2.0.9/api_faqs#accesskey-accesskey-accesskey)    |
+| accessKey     | Query            | true     | String    | 应用的服务账号，应用以`accessKey`进行鉴权以获得其被授权访问的数据。[如何获取accessKey信息>>](/docs/api/zh_CN/latest/api_faqs#accesskey-accesskey-accesskey)    |
 | withQuality   | Query            | false    | Boolean   | 标识返回结果中是否包含数据质量位，true为包含，反之则不包含。 |
                                                                  
 
@@ -28,7 +28,7 @@ https://{apigw-address}/tsdb-service/v2.0/generic?orgId={}&modelId={}&assetIds={
 
 | 名称  | 数据类型      | 描述               |
 |-------|----------------|---------------------------|
-| **items** | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/2.0.9/tsdb_service/get_asset_generic_data.html#id3)。
+| **items** | `List<Object>` | 资产数据列表。单设备单点的返回数据按时间升序排列。其中的Object结构体中存储着参数，详见[items](/docs/api/zh_CN/latest/tsdb_service/get_asset_generic_data.html#id3)。
 
 ### items
 

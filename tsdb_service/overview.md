@@ -7,7 +7,7 @@
 - 通用类型数据
 - 电量数据
 
-有关TSDB存储的详细信息，参见[时序数据管理](/docs/data-asset/zh_CN/2.0.9/howto/storage/index.html)。
+有关TSDB存储的详细信息，参见[时序数据管理](/docs/data-asset/zh_CN/latest/howto/storage/index.html)。
 
 针对以上数据类型，TSDB服务提供以下配套的接口供开发者调用获取数据并进行应用开发。
 

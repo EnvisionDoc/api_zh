@@ -12,7 +12,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 
 | 名称          | 位置（Path/Query） | 是否必须 | 数据类型 | 描述      |
 |---------------|------------------|----------|-----------|--------------|
-| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid)                |
+| orgId         | Query            | True     | String    | 资产所属的组织ID。[如何获取orgId信息>>](/docs/api/zh_CN/latest/api_faqs#id-orgid-orgid)                |
 
 
 ## 请求参数（Body）
@@ -21,7 +21,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 |----------------|---------------|--------------------------|---|
 |productKey    | True          | String       | Product Key      |
 |timezone | True          | String         | 设备所在时区     |
-| deviceName | True          | StringI18n | 设备名称，见[国际化名称结构体>>](/docs/api/zh_CN/2.0.9/api_faqs.html#id3)         |
+| deviceName | True          | StringI18n | 设备名称，见[国际化名称结构体>>](/docs/api/zh_CN/latest/api_faqs.html#id3)         |
 | deviceAttributes | False         | Map       | 设备属性         |
 | deviceKey   | False         | String    | Device Key          |
 | deviceDesc  | False         | String    | 设备描述信息     |
@@ -34,7 +34,7 @@ https://{apigw-address}/connect-service/v2.1/devices?action=create
 
 | 名称| 数据类型 | 描述         |
 |-------------|-------------------|-----------------------------|
-| data |    DeviceCreateResult结构体        | 设备创建返回结果，见[DeviceCreateResult结构体](/docs/api/zh_CN/2.0.9/connect/create_device.html#id3) |
+| data |    DeviceCreateResult结构体        | 设备创建返回结果，见[DeviceCreateResult结构体](/docs/api/zh_CN/latest/connect/create_device.html#id3) |
 
 
 ### DeviceCreateResult结构体

@@ -29,7 +29,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-rules?action=create
      - Query
      - true
      - String
-     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/2.0.9/api_faqs#id-orgid-orgid>`__
+     - 资产所属的组织ID。`如何获取orgId信息>> </docs/api/zh_CN/latest/api_faqs#id-orgid-orgid>`__
 
 
 
@@ -59,11 +59,11 @@ POST https://{apigw-address}/event-service/v2.1/alert-rules?action=create
    * - measurepointId
      - true
      - String
-     - 资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/2.0.9/api_faqs#pointid-pointid)
+     - 资产测点。[如何获取测点（pointId）信息>>](/docs/api/zh_CN/latest/api_faqs#pointid-pointid)
    * - condition
      - true 
      - String
-     - 类查询表达式。如“${temperature} = 19”表示“测点temperature的值等于19”。使用“/”表达层级关系，如“${pointA/att1} = 18”表示“测点A的att1属性值为18”。目前只支持最多向下一层。`如何使用查询表达式>> </docs/api/zh_CN/2.0.9/api_faqs.html#id1>`__
+     - 类查询表达式。如“${temperature} = 19”表示“测点temperature的值等于19”。使用“/”表达层级关系，如“${pointA/att1} = 18”表示“测点A的att1属性值为18”。目前只支持最多向下一层。`如何使用查询表达式>> </docs/api/zh_CN/latest/api_faqs.html#id1>`__
    * - severityId
      - true
      - String
@@ -95,7 +95,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-rules?action=create
    * - triggeringDelayTimer
      - false
      - Integer
-     - 延后告警触发时间。单位为秒，范围[60 - 10800]。当发生匹配告警规则的异常状况，且该状况在所设定的时间内仍未恢复正常时，系统才会产生告警。若设为0则表示立即触发告警。详见 `教程：设置异常持续一段时间后触发的告警 <docs.eniot.io/docs/device-connection/zh_CN/2.0.9/howto/alert/setting_alert_triggering_delay_timer.html>`__。
+     - 延后告警触发时间。单位为秒，范围[60 - 10800]。当发生匹配告警规则的异常状况，且该状况在所设定的时间内仍未恢复正常时，系统才会产生告警。若设为0则表示立即触发告警。详见 `教程：设置异常持续一段时间后触发的告警 <docs.eniot.io/docs/device-connection/zh_CN/latest/howto/alert/setting_alert_triggering_delay_timer.html>`__。
 
 
 ### AssetNode结构体 <assetnode>
@@ -115,7 +115,7 @@ POST https://{apigw-address}/event-service/v2.1/alert-rules?action=create
    * - assetId
      - true
      - String 
-     - 资产ID。`如何获取Asset ID信息>>` </docs/api/zh_CN/2.0.9/api_faqs#asset-id-assetid-assetid>`__
+     - 资产ID。`如何获取Asset ID信息>>` </docs/api/zh_CN/latest/api_faqs#asset-id-assetid-assetid>`__
 
 
 

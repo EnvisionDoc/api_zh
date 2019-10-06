@@ -6,15 +6,15 @@ EnOS开放涵盖系统各个核心业务流程的REST API接口。基于这些�
 
 EnOS提供以下API服务：
 
-- [接入服务](/docs/api/zh_CN/2.0.9/connect/overview.html)：开放EnOS系统在设备连接和设备管理领域的业务能力，包括产品和设备的创建和管理。
-- [模型服务](/docs/api/zh_CN/2.0.9/model/overview.html)：支持搜索和获取组织内模型的详细信息。
-- [资产服务](/docs/api/zh_CN/2.0.9/asset/overview.html)：提供组织内资产的创建、管理、更新等服务。
-- [告警服务](/docs/api/zh_CN/2.0.9/event/overview.html)：提供资产告警的查询和管理服务。 
-- [资产树服务](/docs/api/zh_CN/2.0.9/asset_tree/overview.html)：提供组织内资产树的创建、管理、更新、查询等服务。
-- [TSDB数据服务](/docs/api/zh_CN/2.0.9/tsdb_service/overview.html)：提供获取已存储的资产数据服务。
-- [TSDB策略服务](/docs/api/zh_CN/2.0.9/tsdb_policy/overview.html)：提供获取TSDB存储策略配置信息的服务。
-- [IAM服务](/docs/api/zh_CN/2.0.9/iam/overview.html)：提供用户帐户生命周期管理，用户身份验证以及EnOS资源访问权限控制等服务。
-- [通用文件服务](/docs/api/zh_CN/2.0.9/common_file/overview.html)：如需查看通用文件服务的API文档，点击右上角**返回旧版EnOS API文档**，在目录树中选择**Common File Service**。
+- [接入服务](/docs/api/zh_CN/latest/connect/overview.html)：开放EnOS系统在设备连接和设备管理领域的业务能力，包括产品和设备的创建和管理。
+- [模型服务](/docs/api/zh_CN/latest/model/overview.html)：支持搜索和获取组织内模型的详细信息。
+- [资产服务](/docs/api/zh_CN/latest/asset/overview.html)：提供组织内资产的创建、管理、更新等服务。
+- [告警服务](/docs/api/zh_CN/latest/event/overview.html)：提供资产告警的查询和管理服务。 
+- [资产树服务](/docs/api/zh_CN/latest/asset_tree/overview.html)：提供组织内资产树的创建、管理、更新、查询等服务。
+- [TSDB数据服务](/docs/api/zh_CN/latest/tsdb_service/overview.html)：提供获取已存储的资产数据服务。
+- [TSDB策略服务](/docs/api/zh_CN/latest/tsdb_policy/overview.html)：提供获取TSDB存储策略配置信息的服务。
+- [IAM服务](/docs/api/zh_CN/latest/iam/overview.html)：提供用户帐户生命周期管理，用户身份验证以及EnOS资源访问权限控制等服务。
+- [通用文件服务](/docs/api/zh_CN/latest/common_file/overview.html)：如需查看通用文件服务的API文档，点击右上角**返回旧版EnOS API文档**，在目录树中选择**Common File Service**。
 
 ## API Request结构
 
@@ -94,7 +94,7 @@ EnOS API的返回为以下格式的JSON结构体：
 
 ## 公共参数说明
 
-对各API服务的公共参数说明如下。其他通用参数的获取和描述，详见[API FAQs](/docs/api/zh_CN/2.0.9/api_faqs.html)。
+对各API服务的公共参数说明如下。其他通用参数的获取和描述，详见[API FAQs](/docs/api/zh_CN/latest/api_faqs.html)。
 
 ### 公共请求参数（接入服务等）
 
