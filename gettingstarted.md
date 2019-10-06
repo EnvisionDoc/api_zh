@@ -12,7 +12,7 @@
 
 **获取资源权限**
 
-服务账号已取得系统中相关资源的访问权限。详细信息，参考 [管理服务账号](/docs/iam/zh_CN/latest/howto/service_account/managing_service_account.html)。
+服务账号已取得系统中相关资源的访问权限。详细信息，参考 [管理服务账号](/docs/enos/zh_CN/latest/iam/howto/service_account/managing_service_account.html)。
 
 **准备开发环境**
 
